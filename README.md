@@ -1,20 +1,3 @@
-If you are looking forward to install the Danphe you can follow the below labs <br>
-<a href="https://youtu.be/lKORZmKG0sA"> Lab 1 :- Installing Danphe App in desktop mode. </a> <br>
-<a href="https://youtu.be/HmAAbFiPOKw"> Lab 2 :- Configuring Danphe inside IIS. </a> <br>
-We will be adding more videos in coming time.
-<br>
-If you have any issues please send us mail at shiv_koirala@yahoo.com  more than happy to help you in understanding and installing. You can also <a href="https://www.ehospitalmanagementsystem.com/" target="_new">
- Chat with us here.
-</a> 
-<br> <br> <br><br>
-Scripts and tools will be listed here <br>
-<a href="https://github.com/opensource-emr/cleanupDanpheDM">Clean up script to start from scratch</a> <br>
- <br>
- If you wish to see demo <a href="http://202.51.74.168:302" target="_blank">
- Click here
-</a> Username  : admin / Password  : pass123 <br>
-Also please do read down for more details of how to install and configure.
-
 Introduction
 ==============
 Danphe EMR is a enterprise web-based application which covers all day to day aspects of Hospital management end to end. Its currently live 50 plus hospitals in Asia(India,Nepal and Bangladesh). 
