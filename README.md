@@ -1,6 +1,6 @@
 Introduction
 ==============
-Danphe EMR is a enterprise web-based application which covers all day to day aspects of Hospital management end to end. Its currently live 50 plus hospitals in Asia(India,Nepal and Bangladesh). 
+OmniCare is a enterprise web-based application which covers all day to day aspects of Hospital management end to end. Its currently live 50 plus hospitals in Asia(India,Nepal and Bangladesh). 
 
 ![danphelogin](https://user-images.githubusercontent.com/48054642/159859670-05cbe026-f0eb-43cf-811a-0404a36a76f7.jpg) ![danphepatientregistration](https://user-images.githubusercontent.com/48054642/159859505-84b59b71-d271-4e33-b504-1c15ecba3580.jpg)
 
