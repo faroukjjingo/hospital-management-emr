@@ -18,15 +18,61 @@
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "src/tsconfig.app.json",
-            "deployUrl": "/DanpheApp/dist/DanpheApp/",
+            "baseHref": "/", // Changed from deployUrl
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/themes", // Add themes folder
+              "src/assets-dph" // Add assets-dph folder
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/themes/theme-default/g-static/fonts-googleapi.css",
+              "src/assets-dph/external/global/plugins/font-awesome/css/font-awesome.min.css",
+              "src/assets-dph/external/global/plugins/simple-line-icons/simple-line-icons.min.css",
+              "src/assets-dph/external/global/plugins/bootstrap/css/bootstrap.min.css",
+              "src/assets-dph/external/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css",
+              "src/assets-dph/external/global/plugins/jqvmap/jqvmap.css",
+              "src/assets-dph/external/global/css/components.min.css",
+              "src/assets-dph/external/global/css/plugins.min.css",
+              "src/themes/theme-default/layout.min.css",
+              "src/assets-dph/external/layouts/css/darkblue.min.css",
+              "src/themes/theme-default/DanpheStyle.css",
+              "src/themes/theme-default/danphe-new-style.css",
+              "src/themes/theme-default/grid-style.css",
+              "src/themes/theme-default/lightbox.css",
+              "src/themes/theme-default/fonts.css",
+              "src/themes/theme-default/Danphe_ui_style.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/node_modules/core-js/client/shim.min.js",
+              "src/node_modules/zone.js/dist/zone.js",
+              "src/node_modules/reflect-metadata/Reflect.js",
+              "src/node_modules/systemjs/dist/system.src.js",
+              "src/systemjs.config.js",
+              "src/assets-dph/external/global/jquery.min.js",
+              "src/assets-dph/external/global/plugins/bootstrap/js/bootstrap.min.js",
+              "src/assets-dph/external/global/js.cookie.min.js",
+              "src/assets-dph/external/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js",
+              "src/assets-dph/external/amcharts/amcharts.js",
+              "src/assets-dph/external/amcharts/serial.js",
+              "src/assets-dph/external/amcharts/pie.js",
+              "src/assets-dph/external/amcharts/radar.js",
+              "src/assets-dph/external/amcharts/themes/light.js",
+              "src/assets-dph/external/amcharts/themes/patterns.js",
+              "src/assets-dph/external/amcharts/themes/chalk.js",
+              "src/assets-dph/external/amcharts/ammap/ammap.js",
+              "src/assets-dph/external/amcharts/amstock.js",
+              "src/assets-dph/external/amcharts/ammap/maps/nepalLow.js",
+              "src/assets-dph/external/global/app.min.js",
+              "src/assets-dph/external/layouts/layout.min.js",
+              "src/assets-dph/external/layouts/quick-sidebar.min.js",
+              "src/assets-dph/external/layouts/quick-nav.min.js",
+              "src/assets-dph/scripts/unicode/pramukhime.js",
+              "src/assets-dph/scripts/unicode/pramukhindic.js",
+              "src/assets-dph/scripts/unicode/pramukhindic-i18n.js",
+              "src/themes/theme-default/assets/ckeditor/ckeditor.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -58,7 +104,10 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "DanpheApp:build"
+            "browserTarget": "DanpheApp:build",
+            "port": 4200,
+            "host": "0.0.0.0", // Required for Codespaces
+            "proxyConfig": "proxy.conf.json" // Add proxy for API calls
           },
           "configurations": {
             "production": {
@@ -80,12 +129,30 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/themes/theme-default/g-static/fonts-googleapi.css",
+              "src/assets-dph/external/global/plugins/font-awesome/css/font-awesome.min.css",
+              "src/assets-dph/external/global/plugins/simple-line-icons/simple-line-icons.min.css",
+              "src/assets-dph/external/global/plugins/bootstrap/css/bootstrap.min.css",
+              "src/assets-dph/external/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css",
+              "src/assets-dph/external/global/plugins/jqvmap/jqvmap.css",
+              "src/assets-dph/external/global/css/components.min.css",
+              "src/assets-dph/external/global/css/plugins.min.css",
+              "src/themes/theme-default/layout.min.css",
+              "src/assets-dph/external/layouts/css/darkblue.min.css",
+              "src/themes/theme-default/DanpheStyle.css",
+              "src/themes/theme-default/danphe-new-style.css",
+              "src/themes/theme-default/grid-style.css",
+              "src/themes/theme-default/lightbox.css",
+              "src/themes/theme-default/fonts.css",
+              "src/themes/theme-default/Danphe_ui_style.css"
             ],
             "scripts": [],
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/themes",
+              "src/assets-dph"
             ]
           }
         },
