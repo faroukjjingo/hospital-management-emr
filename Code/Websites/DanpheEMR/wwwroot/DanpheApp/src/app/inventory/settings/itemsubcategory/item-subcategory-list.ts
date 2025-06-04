@@ -10,7 +10,7 @@ import * as moment from 'moment/moment';
 import { AccountHeadModel } from "../shared/account-head.model";
 @Component({
   selector: 'itemSubCategory-list',
-  templateUrl: './item-SubCategory-list.html',
+  templateUrl: './item-subcategory-list.html',
 })
 export class ItemSubCategoryListComponent {
   public itemSubCategoryList: Array<ItemSubCategoryModel> = new Array<ItemSubCategoryModel>();
