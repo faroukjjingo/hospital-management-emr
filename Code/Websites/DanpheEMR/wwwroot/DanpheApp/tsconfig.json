@@ -1,36 +1,29 @@
 {
-
   "compilerOptions": {
-    "baseUrl": "./",
+    "baseUrl": "src",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
+    "module": "esnext",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "importHelpers": false,
-    "target": "es5",
-    "typeRoots": [ "node_modules/@types" ],
-    "lib": [ "es2018", "dom" ],
-    "strict": false,
+    "importHelpers": true,
+    "target": "es2020",
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2020", "dom"],
+    "strict": true,
     "skipLibCheck": true,
     "paths": {
-      "*": [ "./typings/*" ],
-      "htmlDocx": [
-        "./typings/modules/htmldocx/htmldocx.d.ts"
-      ]
+      "*": ["types/*"],
+      "htmlDocx": ["types/modules/htmldocx/htmldocx.d.ts"]
     }
   },
-  // "angularCompilerOptions": {
-  //   "enableIvy": true
-  // },
+  "angularCompilerOptions": {
+    "enableIvy": true,
+    "compilationMode": "full"
+  },
   "compileOnSave": false,
-  "include": [
-    "src/**/*"
-  ],
-  "exclude": [
-    "node_modules",
-    "src/**/*.spec.ts"
-  ]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist"]
 }
