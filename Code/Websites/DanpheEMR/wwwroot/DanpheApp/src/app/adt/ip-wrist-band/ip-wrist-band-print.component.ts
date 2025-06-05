@@ -207,7 +207,7 @@ export class IPWristBandPrintComponent implements AfterViewInit {
     this.showLoading = true;
 
     this.admissionBlService
-      .saveWristBandHtmlFile(printerName, folderPath, printableHTML)
+      .SaveWristBandHtmlFile(printerName, folderPath, printableHTML)
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe({
         next: (res: DanpheHTTPResponse) => {
