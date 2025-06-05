@@ -23,7 +23,7 @@
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": ["src/polyfills.ts"],
-            "tsConfig": "src/tsconfig.app.json",
+            "tsConfig": "tsconfig.json",
             "baseHref": "/",
             "assets": [
               "src/favicon.ico",
@@ -32,23 +32,7 @@
               "src/assets-dph"
             ],
             "styles": [
-              "src/styles.css",
-              "src/themes/theme-default/g-static/fonts-googleapi.css",
-              "src/assets-dph/external/global/plugins/font-awesome/css/font-awesome.min.css",
-              "src/assets-dph/external/global/plugins/simple-line-icons/simple-line-icons.min.css",
-              "src/assets-dph/external/global/plugins/bootstrap/css/bootstrap.min.css",
-              "src/assets-dph/external/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css",
-              "src/assets-dph/external/global/plugins/jqvmap/jqvmap.css",
-              "src/assets-dph/external/global/css/components.min.css",
-              "src/assets-dph/external/global/css/plugins.min.css",
-              "src/themes/theme-default/layout.min.css",
-              "src/assets-dph/external/layouts/css/darkblue.min.css",
-              "src/themes/theme-default/DanpheStyle.css",
-              "src/themes/theme-default/danphe-new-style.css",
-              "src/themes/theme-default/grid-style.css",
-              "src/themes/theme-default/lightbox.css",
-              "src/themes/theme-default/fonts.css",
-              "src/themes/theme-default/Danphe_ui_style.css"
+              "src/styles.css"
             ],
             "scripts": [
               "src/assets-dph/external/global/jquery.min.js",
@@ -73,6 +57,24 @@
               "src/assets-dph/scripts/unicode/pramukhindic.js",
               "src/assets-dph/scripts/unicode/pramukhindic-i18n.js",
               "src/themes/theme-default/assets/ckeditor/ckeditor.js"
+            ],
+            "externalDependencies": [
+              "src/themes/theme-default/g-static/fonts-googleapi.css",
+              "src/assets-dph/external/global/plugins/font-awesome/css/font-awesome.min.css",
+              "src/assets-dph/external/global/plugins/simple-line-icons/simple-line-icons.min.css",
+              "src/assets-dph/external/global/plugins/bootstrap/css/bootstrap.min.css",
+              "src/assets-dph/external/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css",
+              "src/assets-dph/external/global/plugins/jqvmap/jqvmap.css",
+              "src/assets-dph/external/global/css/components.min.css",
+              "src/assets-dph/external/global/css/plugins.min.css",
+              "src/themes/theme-default/layout.min.css",
+              "src/assets-dph/external/layouts/css/darkblue.min.css",
+              "src/themes/theme-default/DanpheStyle.css",
+              "src/themes/theme-default/danphe-new-style.css",
+              "src/themes/theme-default/grid-style.css",
+              "src/themes/theme-default/lightbox.css",
+              "src/themes/theme-default/fonts.css",
+              "src/themes/theme-default/Danphe_ui_style.css"
             ]
           },
           "configurations": {
@@ -158,23 +160,7 @@
             "tsConfig": "src/tsconfig.spec.json",
             "karmaConfig": "src/karma.conf.js",
             "styles": [
-              "src/styles.css",
-              "src/themes/theme-default/g-static/fonts-googleapi.css",
-              "src/assets-dph/external/global/plugins/font-awesome/css/font-awesome.min.css",
-              "src/assets-dph/external/global/plugins/simple-line-icons/simple-line-icons.min.css",
-              "src/assets-dph/external/global/plugins/bootstrap/css/bootstrap.min.css",
-              "src/assets-dph/external/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css",
-              "src/assets-dph/external/global/plugins/jqvmap/jqvmap.css",
-              "src/assets-dph/external/global/css/components.min.css",
-              "src/assets-dph/external/global/css/plugins.min.css",
-              "src/themes/theme-default/layout.min.css",
-              "src/assets-dph/external/layouts/css/darkblue.min.css",
-              "src/themes/theme-default/DanpheStyle.css",
-              "src/themes/theme-default/danphe-new-style.css",
-              "src/themes/theme-default/grid-style.css",
-              "src/themes/theme-default/lightbox.css",
-              "src/themes/theme-default/fonts.css",
-              "src/themes/theme-default/Danphe_ui_style.css"
+              "src/styles.css"
             ],
             "scripts": [],
             "assets": [
