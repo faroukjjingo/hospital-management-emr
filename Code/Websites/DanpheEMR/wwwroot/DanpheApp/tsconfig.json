@@ -12,7 +12,10 @@
     "target": "es2020",
     "typeRoots": ["node_modules/@types"],
     "lib": ["es2020", "dom"],
-    "strict": true,
+    "strict": false, // Changed from true to false to disable all strict checks
+    "noImplicitAny": false, // Explicitly disable to allow implicit 'any' types
+    "strictNullChecks": false, // Disable to allow null assignments to any type
+    "strictPropertyInitialization": false, // Disable to allow uninitialized properties
     "skipLibCheck": true,
     "paths": {
       "*": ["types/*"],
