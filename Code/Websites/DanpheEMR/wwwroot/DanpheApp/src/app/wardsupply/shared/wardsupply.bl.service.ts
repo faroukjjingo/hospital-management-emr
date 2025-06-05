@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 import * as _ from 'lodash';
 
 import { Requisition } from '../../inventory/shared/requisition.model';
@@ -7,548 +9,346 @@ import { PHRMSubStoreRequisition } from './phrm-substore-requisition.model';
 import { WARDReportsModel } from './ward-report.model';
 import { WardStockModel } from './ward-stock.model';
 import { WardSupplyAssetRequisitionModel } from './wardsupply-asset-requisition.model';
-import { WardSupplyAssetReturnModel } from './wardsupply-asset-return.model'; //swapnil-2-april-2021
+import { WardSupplyAssetReturnModel } from './wardsupply-asset-return.model';
 import { WardSupplyDLService } from './wardsupply.dl.service';
-@Injectable()
+
+// Generic API response interface
+interface ApiResponse<T = any> {
+  Results: T;
+  Status: string;
+  ErrorMessage?: string;
+}
+
+@Injectable({
+  providedIn: 'root' // Angular 18: tree-shakable service
+})
 export class WardSupplyBLService {
 
-  constructor(public wardSplDLservice: WardSupplyDLService) {
+  constructor(private wardSplDLservice: WardSupplyDLService) {}
 
-  }
-  // GET: Stock Details 
-  public GetAllWardItemsStockDetailsList(storeId: number) {
-
-    try {
-      return this.wardSplDLservice.GetAllWardItemsStockDetailsList(storeId)
-        .map(res => { return res });
-    }
-    catch (ex) {
-      throw ex;
-    }
-  }
-  // GET: Stock Details 
-  public GetAvailableWardItemsStockDetailsList(storeId: number) {
-
-    try {
-      return this.wardSplDLservice.GetAvailableWardItemsStockDetailsList(storeId)
-        .map(res => { return res });
-    }
-    catch (ex) {
-      throw ex;
-    }
-  }
-  //GET: REQUISITION
-  public GetSubstoreRequistionList(fromDate: string, toDate: string, storeId: number) {
-    return this.wardSplDLservice.GetSubstoreRequistionList(fromDate, toDate, storeId)
-      .map((responseData) => {
-        return responseData;
-      });
-  }
-  public GetInventoryStockByStoreId(StoreId: number) {
-
-    try {
-      return this.wardSplDLservice.GetInventoryStockByStoreId(StoreId)
-        .map(res => { return res });
-    }
-    catch (ex) {
-      throw ex;
-    }
-  }
-  public GetFixedAssetStockBySubStoreId(substoreId: number) {
-    try {
-      return this.wardSplDLservice.GetFixedAssetStockBySubStoreId(substoreId)
-        .map(res => { return res });
-    }
-    catch (ex) {
-      throw ex;
-    }
-  }
-  public GetInventorySubStoreItemsByStoreIdForReturn(substoreId: number) {
-    try {
-      return this.wardSplDLservice.GetInventorySubStoreItemsByStoreIdForReturn(substoreId)
-        .map(res => { return res });
-    }
-    catch (ex) {
-      throw ex;
-    }
-  }
-  //get substore asset requisition items by requisition id
-  public GetSubstoreAssetRequistionItemsById(reqId: number) {
-    return this.wardSplDLservice.GetSubstoreAssetRequistionItemsById(reqId)
-      .map(res => { return res });
+  // GET: Stock Details
+  public GetAllWardItemsStockDetailsList(storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetAllWardItemsStockDetailsList(storeId);
   }
 
-  public GetWardInventoryReturnItemsByReturnId(returnId: number) {
-    return this.wardSplDLservice.GetWardInventoryReturnItemsByReturnId(returnId)
-      .map(res => { return res });
-  }
-  // get ward list.
-  public GetActiveSubStoreList() {
-    return this.wardSplDLservice.GetActiveSubStoreList()
-      .map(res => { return res });
-  }
-  // get ward list.
-  public GetWardList(currentStoreId: number) {
-    return this.wardSplDLservice.WardList(currentStoreId)
-      .map(res => { return res });
+  public GetAvailableWardItemsStockDetailsList(storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetAvailableWardItemsStockDetailsList(storeId);
   }
 
-  // Get Consumption Details list.
-  public GetAllComsumptionListDetails(wardId, storeId) {
-    return this.wardSplDLservice.GetAllComsumptionListDetails(wardId, storeId)
-      .map(res => { return res });
-  }
-  //Get Inventory Consumption Details List
-  public GetInventoryConsumptionListDetails(storeId, fromDate, toDate) {
-    return this.wardSplDLservice.GetInventoryComsumptionListDetails(storeId, fromDate, toDate)
-      .map(res => { return res });
+  // GET: Requisition List
+  public GetSubstoreRequistionList(fromDate: string, toDate: string, storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetSubstoreRequistionList(fromDate, toDate, storeId);
   }
 
-  // get ward resuistion list.
-  public GetWardRequisitionList(status: string, storeId: number) {
-    return this.wardSplDLservice.GetWardRequisitionList(status, storeId)
-      .map(res => { return res });
+  public GetInventoryStockByStoreId(storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInventoryStockByStoreId(storeId);
   }
 
-  //GET: To get ward Items List.
-  public GetWardReqItemList(requisitionID) {
-    return this.wardSplDLservice.GetWardReqItemList(requisitionID)
-      .map(res => { return res });
-  }
-  public GetDepartments() {
-    return this.wardSplDLservice.GetDepartments()
-      .map((responseData) => {
-        return responseData;
-      });
-  }
-  //GET: To get Consumption Items List.
-  public GetConsumptionItemList(patientId, wardId, storeId) {
-    return this.wardSplDLservice.GetConsumptionItemList(patientId, wardId, storeId)
-      .map(res => { return res });
-  }
-  //Get: To get Inventory Consumption Items List.
-  public GetInventoryConsumptionItemList(userName, storeId) {
-    return this.wardSplDLservice.GetInventoryConsumptionItemList(userName, storeId)
-      .map(res => { return res });
+  public GetFixedAssetStockBySubStoreId(substoreId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetFixedAssetStockBySubStoreId(substoreId);
   }
 
-  //Get: To get Internal Consumption Items List.
-  public GetInternalConsumptionList(storeId: number) {
-    return this.wardSplDLservice.GetInternalConsumptionList(storeId)
-      .map(res => { return res });
-  }
-  //Get: To get Internal Consumption Items List.
-  public GetInternalConsumptionItemList(consumptionId) {
-    return this.wardSplDLservice.GetInternalConsumptionItemList(consumptionId)
-      .map(res => { return res });
+  public GetInventorySubStoreItemsByStoreIdForReturn(substoreId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInventorySubStoreItemsByStoreIdForReturn(substoreId);
   }
 
-  //Get: To get Internal Consumption Details.
-  public GetInternalConsumptionDetails(consumptionId) {
-    return this.wardSplDLservice.GetInternalConsumptionDetails(consumptionId)
-      .map(res => { return res });
-  }
-  //get phrm stock list
-  GetItemTypeListWithItems() {
-    return this.wardSplDLservice.GetItemTypeListWithItems()
-      .map(res => { return res });
+  public GetSubstoreAssetRequistionItemsById(reqId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetSubstoreAssetRequistionItemsById(reqId);
   }
 
-  //GET: Patient List
-  public GetPatients() {
-    return this.wardSplDLservice.GetPatients()
-      .map(res => { return res })
-  }
-  //GET: Dispatch Lists for item receive feature
-  public GetDispatchListForItemReceive(RequisitionId) {
-    return this.wardSplDLservice.GetDispatchListForItemReceive(RequisitionId)
-      .map(res => { return res })
-  }
-  //Get: Ward Stock Report
-  public GetStockItemsReport(itemId, storeId) {
-    try {
-      return this.wardSplDLservice.GetStockItemsReport(itemId, storeId)
-        .map(res => { return res });
-    }
-    catch (ex) {
-      throw ex;
-    }
+  public GetWardInventoryReturnItemsByReturnId(returnId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetWardInventoryReturnItemsByReturnId(returnId);
   }
 
-  //Get: Ward Requisition Report
-  public GetWardRequsitionReport(wardReports: WARDReportsModel) {
-    return this.wardSplDLservice.GetWardRequsitionReport(wardReports)
-      .map((responseData) => {
-        return responseData;
-      });
+  public GetActiveSubStoreList(): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetActiveSubStoreList();
   }
 
-  //Get: Ward Breakage Report
-  public GetWardBreakageReport(wardReports: WARDReportsModel) {
-    return this.wardSplDLservice.GetWardBreakageReport(wardReports)
-      .map((responseData) => {
-        return responseData;
-      });
+  public GetWardList(currentStoreId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.WardList(currentStoreId);
   }
 
-
-  //Get: Ward Consumpiton Report
-  public GetWardConsumptionReport(wardReports: WARDReportsModel) {
-    return this.wardSplDLservice.GetWardConsumptionReport(wardReports)
-      .map((responseData) => {
-        return responseData;
-      });
+  public GetAllComsumptionListDetails(wardId: number, storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetAllComsumptionListDetails(wardId, storeId);
   }
 
-  //Get:Ward Internal Consumption Report
-  public GetWardInernalConsumptionReport(wardReports: WARDReportsModel) {
-    return this.wardSplDLservice.GetWardInernalConsumptionReport(wardReports)
-      .map((responseData) => {
-        return responseData
-      });
-
+  public GetInventoryConsumptionListDetails(storeId: number, fromDate: string, toDate: string): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInventoryComsumptionListDetails(storeId, fromDate, toDate);
   }
 
-
-
-
-
-  //Get: Ward Transfer Report
-  public GetWardTransferReport(wardReports: WARDReportsModel) {
-    return this.wardSplDLservice.GetWardTransferReport(wardReports)
-      .map((responseData) => {
-        return responseData;
-      });
+  public GetWardRequisitionList(status: string, storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetWardRequisitionList(status, storeId);
   }
 
-  //Ward Inventory Reports
-  //Get: Requisition and Dispatch Report
-  public GetRequisitionDispatchReport(wardReports: WARDReportsModel) {
-    return this.wardSplDLservice.GetRequisitionDispatchReport(wardReports)
-      .map((responseData) => {
-        return responseData;
-      });
+  public GetWardReqItemList(requisitionID: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetWardReqItemList(requisitionID);
   }
 
-  //Get: Transfer Report
-  public GetTransferReport(wardReports: WARDReportsModel) {
-    return this.wardSplDLservice.GetTransferReport(wardReports)
-      .map((responseData) => {
-        return responseData;
-      });
+  public GetDepartments(): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetDepartments();
   }
 
-  //Get: Transfer Report
-  public GetConsumptionReport(wardReports: WARDReportsModel) {
-    return this.wardSplDLservice.GetConsumptionReport(wardReports)
-      .map((responseData) => {
-        return responseData;
-      });
-  }
-  GetInventoryList() {
-    return this.wardSplDLservice.GetInventoryList()
-      .map(res => { return res });
+  public GetConsumptionItemList(patientId: number, wardId: number, storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetConsumptionItemList(patientId, wardId, storeId);
   }
 
-  //Get
-  GetDispatchDetails(RequisitionId: number) {
-    return this.wardSplDLservice.GetDispatchDetails(RequisitionId)
-      .map((responseData) => {
-        return responseData;
-      });
+  public GetInventoryConsumptionItemList(userName: string, storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInventoryConsumptionItemList(userName, storeId);
   }
 
-  //POST
-  PostConsumptionData(data) {
-    let temp = data.map(a => {
-      return _.omit(a, ['ConsumptionValidator', 'SelectedItem', 'selectedPatient']);
-    });
-    return this.wardSplDLservice.PostConsumptionData(temp)
-      .map(res => { return res });
-  }
-  //POST  internal consumption data
-  PostInternalConsumptionData(data) {
-    let newConsumption = _.omit(data, ['InternalConsumptionValidator', 'SelectedItem']);
-    let newConsumptionItems = newConsumption.WardInternalConsumptionItemsList;
-    newConsumptionItems = newConsumptionItems.map(a => { return _.omit(a, ['InternalConsumptionItemsValidator', 'SelectedItem']) });
-    newConsumption.WardInternalConsumptionItemsList = newConsumptionItems;
-    return this.wardSplDLservice.PostInternalConsumptionData(newConsumption)
-      .map(res => { return res });
-  }
-  //POST Inventory Consumption Data
-  PostInventoryConsumptionData(data) {
-    let temp = data.map(a => {
-      return _.omit(a, ['ConsumptionValidator', 'SelectedItem', 'selectedPatient']);
-    });
-    return this.wardSplDLservice.PostInventoryConsumptionData(temp)
-      .map(res => { return res });
+  public GetInternalConsumptionList(storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInternalConsumptionList(storeId);
   }
 
-  //Post to Stock table and post to Transaction table 
-  PostManagedStockDetails(selectedData, ReceivedBy: string) {
-    try {
-      let newItem: any = _.omit(selectedData, ['StockManageValidator']);
-      let data = JSON.stringify(newItem);
-      return this.wardSplDLservice.PostManagedStockDetails(data, ReceivedBy)
-        .map(res => { return res });
-    } catch (ex) {
-      throw ex;
-    }
-  }
-  //Post Inventory stock from one department to another.
-  PostInventoryStockTransfer(selectedData) {
-    try {
-      let newItem: any = _.omit(selectedData, ['StockManageValidator']);
-      let data = JSON.stringify(newItem);
-      return this.wardSplDLservice.PostInventoryStockTransfer(data)
-        .map(res => { return res });
-    } catch (ex) {
-      throw ex;
-    }
-  }
-  //Post ward supply stock back to inventory
-  PostBackToInventory(selectedData) {
-    try {
-      let newItem: any = _.omit(selectedData, ['StockManageValidator']);
-      let data = JSON.stringify(newItem);
-      return this.wardSplDLservice.PostBackToInventory(data)
-        .map(res => { return res });
-    } catch (ex) {
-      throw ex;
-    }
-  }
-  //Post to Stock table and Transaction table for breakage items
-  PostBreakageStockDetails(selectedData) {
-    try {
-      let newItem: any = _.omit(selectedData, ['StockManageValidator']);
-      let data = JSON.stringify(newItem);
-      return this.wardSplDLservice.PostBreakageStockDetails(data)
-        .map(res => { return res });
-    } catch (ex) {
-      throw ex;
-    }
+  public GetInternalConsumptionItemList(consumptionId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInternalConsumptionItemList(consumptionId);
   }
 
-
-  //get item list
-  public GetCapitalGoodsItemList() {
-    return this.wardSplDLservice.GetCapitalGoodsItemList()
-      .map((responseData) => {
-        return responseData;
-      });
+  public GetInternalConsumptionDetails(consumptionId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInternalConsumptionDetails(consumptionId);
   }
 
-  //Posting the  Requisiton and requisitionItems table FixedAssetRequisition/FixedAssetRequisitionItems
-  PostToAssetRequisition(requisition: WardSupplyAssetRequisitionModel) {
-    let newRequ: any = _.omit(requisition, ['RequisitionValidator']);
-
-    let newRequItems = requisition.RequisitionItemsList.map(item => {
-      return _.omit(item, ['RequisitionItemValidator']);
-    });
-
-
-    newRequ.RequisitionItemsList = newRequItems;
-    let data = JSON.stringify(newRequ);
-    return this.wardSplDLservice.PostToAssetRequisition(data)
-      .map(res => { return res })
-  }
-  //swapnil-2-april-2021
-  //Posting the  Return and returnItems table FixedAssetReturn/FixedAssetReqturnItems
-  PostToAssetReturn(Return: WardSupplyAssetReturnModel) {
-    let newReturn: any = _.omit(Return, ['ReturnValidator']);
-
-    let newReturnItems = Return.ReturnItemsList.map(item => {
-      return _.omit(item, ['ReturnItemValidator']);
-    });
-
-
-    newReturn.ReturnItemsList = newReturnItems;
-    let data = JSON.stringify(newReturn);
-    return this.wardSplDLservice.PostToAssetReturn(data)
-      .map(res => { return res })
-  }
-  PostToWardInventoryReturn(Return: WardInventoryReturnModel) {
-    let newReturn: any = _.omit(Return, ['ReturnValidator']);
-
-    let newReturnItems = Return.ReturnItemsList.map(item => {
-      return _.omit(item, ['ReturnItemValidator']);
-    });
-
-
-    newReturn.ReturnItemsList = newReturnItems;
-    let data = JSON.stringify(newReturn);
-    return this.wardSplDLservice.PostToWardInventoryReturn(data)
-      .map(res => { return res })
+  public GetItemTypeListWithItems(): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetItemTypeListWithItems();
   }
 
-  //GET: REQUISITION
-  public GetSubstoreAssetRequistionList(fromDate: string, toDate: string, subStoreId: number) {
-    return this.wardSplDLservice.GetSubstoreAssetRequistionList(fromDate, toDate, subStoreId)
-      .map((responseData) => {
-        return responseData;
-      });
-  }
-  //get return assets
-  public GetSubstoreAssetReturnList(fromDate: string, toDate: string, subStoreId: number) {
-    return this.wardSplDLservice.GetSubstoreAssetReturnList(fromDate, toDate, subStoreId)
-      .map((responseData) => {
-        return responseData;
-      });
-  }
-  //get return assets
-  public GetWardInventoryReturnList(fromDate: string, toDate: string, subStoreId: number) {
-    return this.wardSplDLservice.GetWardInventoryReturnList(fromDate, toDate, subStoreId)
-      .map((responseData) => {
-        return responseData;
-      });
-  }
-  //post ward stock to pharmacy
-  public PostReturnStock(stockItems: Array<WardStockModel>, ReceivedBy: string) {
-
-    let StockItems = stockItems.map(item => {
-      return _.omit(item, ['StockManageValidator', 'positiveNumberValdiator'])
-    })
-    let data = JSON.stringify(StockItems);
-    return this.wardSplDLservice.PostReturnStock(data, ReceivedBy)
-      .map((res) => { return res });
-  }
-  //Put Consumption Item List
-  public PutConsumptionData(data) {
-    let temp = data.map(a => {
-      return _.omit(a, ['ConsumptionValidator', 'SelectedItem', 'selectedPatient']);
-    });
-    return this.wardSplDLservice.PutConsumptionData(temp)
-      .map(res => { return res });
-  }
-  // Put Internal Consumption Item List
-  public PutInternalConsumptionData(data) {
-    let temp = data.map(a => {
-      return _.omit(a, ['InternalConsumptionValidator', 'SelectedItem']);
-    });
-    return this.wardSplDLservice.PutInternalConsumptionData(temp)
-      .map(res => { return res })
-  }
-  public PutUpdateDispatchedItemsReceiveStatus(dispatchId, receivedRemarks) {
-    let data = JSON.stringify(receivedRemarks);
-    return this.wardSplDLservice.PutUpdateDispatchedItemsReceiveStatus(dispatchId, data)
-      .map(res => { return res })
+  public GetPatients(): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetPatients();
   }
 
-  PutUpdateRequisition(requisition: Requisition) {
-
-    //omiting the validators during post because it causes cyclic error during serialization in server side.
-    //omit validator from inputPO (this will give us object)
-    let newreq: any = _.omit(requisition, ['RequisitionValidator']);
-    let newreqItems = requisition.RequisitionItems.map(item => {
-      return _.omit(item, ['RequisitionItemValidator']);
-    });
-
-    newreq.RequisitionItems = newreqItems;
-
-    let data = JSON.stringify(newreq);
-    return this.wardSplDLservice.PutUpdateRequisition(data).map(res => { return res })
-  }
-  public PutReturnData(data) {
-    // let temp = data.map(a => {
-    //   return _.omit(a, ['InternalConsumptionValidator', 'SelectedItem']);
-    // });
-    return this.wardSplDLservice.PostReturnData(data)
-      .map(res => { return res })
-  }
-  //Put : Send Stock to CSSD
-  SendStockToCssd(FixedAssetStockId: number) {
-    return this.wardSplDLservice.PutSendStockToCssd(FixedAssetStockId).map(res => { return res })
+  public GetDispatchListForItemReceive(requisitionId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetDispatchListForItemReceive(requisitionId);
   }
 
-
-  public GetAllPatients(searchtxt) {
-    return this.wardSplDLservice.GetAllPatients(searchtxt).map(res => { return res });
+  public GetStockItemsReport(itemId: number, storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetStockItemsReport(itemId, storeId);
   }
 
-  //POST Inventory Consumption Data
-  PostInventoryPatConsumptionData(data) {
-    let temp = data.ConsumptionList.map(a => {
-      return _.omit(a, ['ConsumptionValidator', 'SelectedItem', 'selectedPatient']);
-    });
-    data.ConsumptionList = temp
-    return this.wardSplDLservice.PostInventoryPatConsumptionData(data)
-      .map(res => { return res });
+  public GetWardRequsitionReport(wardReports: WARDReportsModel): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetWardRequsitionReport(wardReports);
   }
 
-  public GetInventoryItemsForPatConsumptionByStoreId(StoreId) {
-    try {
-      return this.wardSplDLservice.GetInventoryItemsForPatConsumptionByStoreId(StoreId)
-        .map(res => { return res });
-    }
-    catch (ex) {
-      throw ex;
-    }
+  public GetWardBreakageReport(wardReports: WARDReportsModel): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetWardBreakageReport(wardReports);
   }
 
-  public GetInventoryPatientConsumptionReceiptList(storeId, fromDate, toDate) {
-    return this.wardSplDLservice.GetInventoryPatientComsumptionReceiptList(storeId, fromDate, toDate)
-      .map(res => { return res });
+  public GetWardConsumptionReport(wardReports: WARDReportsModel): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetWardConsumptionReport(wardReports);
   }
 
-  public GetInventoryPatConsumptionItemListById(receiptId) {
-    return this.wardSplDLservice.GetInventoryPatConsumptionItemListById(receiptId)
-      .map(res => { return res });
-  }
-  //GET: Dispatch Lists for item receive feature
-  public GetFixedAssetDispatchListForItemReceive(RequisitionId) {
-    return this.wardSplDLservice.GetFixedAssetDispatchListForItemReceive(RequisitionId)
-      .map(res => { return res })
-  }
-  UpdateReconciledStockFromExcelFile(ChangedStockList: Array<WardStockModel>) {
-    let data = JSON.stringify(ChangedStockList);
-    return this.wardSplDLservice.UpdateReconciledStockFromExcelFile(data)
-      .map(res => { return res })
-
+  public GetWardInernalConsumptionReport(wardReports: WARDReportsModel): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetWardInernalConsumptionReport(wardReports);
   }
 
-  ExportStocksForReconciliationToExcel(StoreId: number) {
-    return this.wardSplDLservice.ExportStocksForReconciliationToExcel(StoreId)
-      .map(res => { return res })
+  public GetWardTransferReport(wardReports: WARDReportsModel): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetWardTransferReport(wardReports);
   }
 
-  GetItemSubCategory() {
-    return this.wardSplDLservice.GetItemCategory()
-      .map(res => { return res })
+  public GetRequisitionDispatchReport(wardReports: WARDReportsModel): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetRequisitionDispatchReport(wardReports);
   }
 
-  AddRequisition(requisition: PHRMSubStoreRequisition) {
-    let newRequ: any = _.omit(requisition, ['RequisitionValidator']);
-
-    let newRequItems = requisition.RequisitionItems.map(item => {
-      return _.omit(item, ['RequisitionItemValidator']);
-    });
-
-
-    newRequ.RequisitionItems = newRequItems;
-    // let data = JSON.stringify(newRequ);
-    return this.wardSplDLservice.AddRequisition(newRequ)
-      .map(res => { return res })
+  public GetTransferReport(wardReports: WARDReportsModel): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetTransferReport(wardReports);
   }
 
-  GetRequisitionDetailView(requisitionId: number) {
-    return this.wardSplDLservice.GetRequisitionView(requisitionId).map(res => { return res });
+  public GetConsumptionReport(wardReports: WARDReportsModel): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetConsumptionReport(wardReports);
   }
 
-  CancelRequisitionItem(requisition: any) {
-    return this.wardSplDLservice.CancelRequisitionItems(requisition).map(res => { return res });
-  }
-  GetDispatchedItemToReceive(RequisionId: number) {
-    return this.wardSplDLservice.GetDispatchedItemToReceive(RequisionId).map(res => { return res });
-  }
-  ReceiveDispatchedItem(DispatchId: number, Remarks: string) {
-    return this.wardSplDLservice.ReceiveDispatchedItem(DispatchId, Remarks).map(res => { return res });
-  }
-  GetPHRMSubStoreAvailableStockByStoreId(StoreId: number) {
-    return this.wardSplDLservice.GetPHRMSubStoreAvailableStockByStoreId(StoreId).map(res => { return res });
+  public GetInventoryList(): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInventoryList();
   }
 
-  GetVerifiers() {
-    return this.wardSplDLservice.GetVerifiers().map(res => { return res });
+  public GetDispatchDetails(requisitionId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetDispatchDetails(requisitionId);
   }
 
+  // POST Methods
+  public PostConsumptionData(data: any[]): Observable<ApiResponse> {
+    const temp = data.map(a => _.omit(a, ['ConsumptionValidator', 'SelectedItem', 'selectedPatient']));
+    return this.wardSplDLservice.PostConsumptionData(temp);
+  }
+
+  public PostInternalConsumptionData(data: any): Observable<ApiResponse> {
+    const newConsumption = _.omit(data, ['InternalConsumptionValidator', 'SelectedItem']);
+    newConsumption.WardInternalConsumptionItemsList = newConsumption.WardInternalConsumptionItemsList.map(a =>
+      _.omit(a, ['InternalConsumptionItemsValidator', 'SelectedItem'])
+    );
+    return this.wardSplDLservice.PostInternalConsumptionData(newConsumption);
+  }
+
+  public PostInventoryConsumptionData(data: any[]): Observable<ApiResponse> {
+    const temp = data.map(a => _.omit(a, ['ConsumptionValidator', 'SelectedItem', 'selectedPatient']));
+    return this.wardSplDLservice.PostInventoryConsumptionData(temp);
+  }
+
+  public PostManagedStockDetails(selectedData: any, receivedBy: string): Observable<ApiResponse> {
+    const newItem = _.omit(selectedData, ['StockManageValidator']);
+    return this.wardSplDLservice.PostManagedStockDetails(JSON.stringify(newItem), receivedBy);
+  }
+
+  public PostInventoryStockTransfer(selectedData: any): Observable<ApiResponse> {
+    const newItem = _.omit(selectedData, ['StockManageValidator']);
+    return this.wardSplDLservice.PostInventoryStockTransfer(JSON.stringify(newItem));
+  }
+
+  public PostBackToInventory(selectedData: any): Observable<ApiResponse> {
+    const newItem = _.omit(selectedData, ['StockManageValidator']);
+    return this.wardSplDLservice.PostBackToInventory(JSON.stringify(newItem));
+  }
+
+  public PostBreakageStockDetails(selectedData: any): Observable<ApiResponse> {
+    const newItem = _.omit(selectedData, ['StockManageValidator']);
+    return this.wardSplDLservice.PostBreakageStockDetails(JSON.stringify(newItem));
+  }
+
+  public GetCapitalGoodsItemList(): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetCapitalGoodsItemList();
+  }
+
+  public PostToAssetRequisition(requisition: WardSupplyAssetRequisitionModel): Observable<ApiResponse> {
+    const newRequ = _.omit(requisition, ['RequisitionValidator']);
+    newRequ.RequisitionItemsList = requisition.RequisitionItemsList.map(item =>
+      _.omit(item, ['RequisitionItemValidator'])
+    );
+    return this.wardSplDLservice.PostToAssetRequisition(JSON.stringify(newRequ));
+  }
+
+  public PostToAssetReturn(returnData: WardSupplyAssetReturnModel): Observable<ApiResponse> {
+    const newReturn = _.omit(returnData, ['ReturnValidator']);
+    newReturn.ReturnItemsList = returnData.ReturnItemsList.map(item =>
+      _.omit(item, ['ReturnItemValidator'])
+    );
+    return this.wardSplDLservice.PostToAssetReturn(JSON.stringify(newReturn));
+  }
+
+  public PostToWardInventoryReturn(returnData: WardInventoryReturnModel): Observable<ApiResponse> {
+    const newReturn = _.omit(returnData, ['ReturnValidator']);
+    newReturn.ReturnItemsList = returnData.ReturnItemsList.map(item =>
+      _.omit(item, ['ReturnItemValidator'])
+    );
+    return this.wardSplDLservice.PostToWardInventoryReturn(JSON.stringify(newReturn));
+  }
+
+  public GetSubstoreAssetRequistionList(fromDate: string, toDate: string, subStoreId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetSubstoreAssetRequistionList(fromDate, toDate, subStoreId);
+  }
+
+  public GetSubstoreAssetReturnList(fromDate: string, toDate: string, subStoreId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetSubstoreAssetReturnList(fromDate, toDate, subStoreId);
+  }
+
+  public GetWardInventoryReturnList(fromDate: string, toDate: string, subStoreId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetWardInventoryReturnList(fromDate, toDate, subStoreId);
+  }
+
+  public PostReturnStock(stockItems: Array<WardStockModel>, receivedBy: string): Observable<ApiResponse> {
+    const stockItemsCleaned = stockItems.map(item =>
+      _.omit(item, ['StockManageValidator', 'positiveNumberValdiator'])
+    );
+    return this.wardSplDLservice.PostReturnStock(JSON.stringify(stockItemsCleaned), receivedBy);
+  }
+
+  public PutConsumptionData(data: any[]): Observable<ApiResponse> {
+    const temp = data.map(a => _.omit(a, ['ConsumptionValidator', 'SelectedItem', 'selectedPatient']));
+    return this.wardSplDLservice.PutConsumptionData(temp);
+  }
+
+  public PutInternalConsumptionData(data: any[]): Observable<ApiResponse> {
+    const temp = data.map(a => _.omit(a, ['InternalConsumptionValidator', 'SelectedItem']));
+    return this.wardSplDLservice.PutInternalConsumptionData(temp);
+  }
+
+  public PutUpdateDispatchedItemsReceiveStatus(dispatchId: number, receivedRemarks: string): Observable<ApiResponse> {
+    return this.wardSplDLservice.PutUpdateDispatchedItemsReceiveStatus(dispatchId, JSON.stringify(receivedRemarks));
+  }
+
+  public PutUpdateRequisition(requisition: Requisition): Observable<ApiResponse> {
+    const newReq = _.omit(requisition, ['RequisitionValidator']);
+    newReq.RequisitionItems = requisition.RequisitionItems.map(item =>
+      _.omit(item, ['RequisitionItemValidator'])
+    );
+    return this.wardSplDLservice.PutUpdateRequisition(JSON.stringify(newReq));
+  }
+
+  public PutReturnData(data: any): Observable<ApiResponse> {
+    return this.wardSplDLservice.PostReturnData(data);
+  }
+
+  public SendStockToCssd(fixedAssetStockId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.PutSendStockToCssd(fixedAssetStockId);
+  }
+
+  public GetAllPatients(searchTxt: string): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetAllPatients(searchTxt);
+  }
+
+  public PostInventoryPatConsumptionData(data: any): Observable<ApiResponse> {
+    const temp = data.ConsumptionList.map(a =>
+      _.omit(a, ['ConsumptionValidator', 'SelectedItem', 'selectedPatient'])
+    );
+    data.ConsumptionList = temp;
+    return this.wardSplDLservice.PostInventoryPatConsumptionData(data);
+  }
+
+  public GetInventoryItemsForPatConsumptionByStoreId(storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInventoryItemsForPatConsumptionByStoreId(storeId);
+  }
+
+  public GetInventoryPatientConsumptionReceiptList(storeId: number, fromDate: string, toDate: string): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInventoryPatientComsumptionReceiptList(storeId, fromDate, toDate);
+  }
+
+  public GetInventoryPatConsumptionItemListById(receiptId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetInventoryPatConsumptionItemListById(receiptId);
+  }
+
+  public GetFixedAssetDispatchListForItemReceive(requisitionId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetFixedAssetDispatchListForItemReceive(requisitionId);
+  }
+
+  public UpdateReconciledStockFromExcelFile(changedStockList: Array<WardStockModel>): Observable<ApiResponse> {
+    return this.wardSplDLservice.UpdateReconciledStockFromExcelFile(JSON.stringify(changedStockList));
+  }
+
+  public ExportStocksForReconciliationToExcel(storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.ExportStocksForReconciliationToExcel(storeId);
+  }
+
+  public GetItemSubCategory(): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetItemCategory();
+  }
+
+  public AddRequisition(requisition: PHRMSubStoreRequisition): Observable<ApiResponse> {
+    const newRequ = _.omit(requisition, ['RequisitionValidator']);
+    newRequ.RequisitionItems = requisition.RequisitionItems.map(item =>
+      _.omit(item, ['RequisitionItemValidator'])
+    );
+    return this.wardSplDLservice.AddRequisition(newRequ);
+  }
+
+  public GetRequisitionDetailView(requisitionId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetRequisitionView(requisitionId);
+  }
+
+  public CancelRequisitionItem(requisition: any): Observable<ApiResponse> {
+    return this.wardSplDLservice.CancelRequisitionItems(requisition);
+  }
+
+  public GetDispatchedItemToReceive(requisitionId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetDispatchedItemToReceive(requisitionId);
+  }
+
+  public ReceiveDispatchedItem(dispatchId: number, remarks: string): Observable<ApiResponse> {
+    return this.wardSplDLservice.ReceiveDispatchedItem(dispatchId, remarks);
+  }
+
+  public GetPHRMSubStoreAvailableStockByStoreId(storeId: number): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetPHRMSubStoreAvailableStockByStoreId(storeId);
+  }
+
+  public GetVerifiers(): Observable<ApiResponse> {
+    return this.wardSplDLservice.GetVerifiers();
+  }
 }
