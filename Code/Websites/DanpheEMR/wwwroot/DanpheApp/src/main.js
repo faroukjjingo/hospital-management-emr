@@ -1,12 +1,16 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-var core_1 = require("@angular/core");
-var platform_browser_dynamic_1 = require("@angular/platform-browser-dynamic");
-var app_module_1 = require("./app/app.module");
-var environment_1 = require("./environments/environment");
-if (environment_1.environment.production) {
-    core_1.enableProdMode();
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideRouter } from '@angular/router';
+import { AppComponent } from './app/app.component';
+import { APP_ROUTES } from './app/app.routes';
+import { environment } from './environments/environment';
+import { enableProdMode } from '@angular/core';
+
+if (environment.production) {
+  enableProdMode();
 }
-platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1.AppModule)
-    .catch(function (err) { return console.error(err); });
-//# sourceMappingURL=main.js.map
+
+bootstrapApplication(AppComponent, {
+  providers: [
+    provideRouter(APP_ROUTES)
+  ]
+}).catch(err => console.error(err));
