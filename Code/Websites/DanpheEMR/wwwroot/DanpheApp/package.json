@@ -25,7 +25,6 @@
     "@types/jspdf": "^2.0.0",
     "ag-grid-angular": "^32.1.0",
     "ag-grid-community": "^32.1.0",
-    "angular-draggable-droppable": "^4.8.2",
     "angular2-lightbox": "^1.4.0",
     "angular2-multiselect-dropdown": "^5.0.0",
     "angular2-qrcode": "^2.0.3",
