@@ -5,13 +5,13 @@ import { MessageboxService } from '../../shared/messagebox/messagebox.service';
 import { CommonFunctions } from '../../shared/common.functions';
 import { CoreService } from '../../core/shared/core.service';
 import { NepaliCalendarService } from '../../shared/calendar/np/nepali-calendar.service';
-import { Observable, takeUntilDestroyed } from 'rxjs';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop'; // Correct import
 import { DestroyRef } from '@angular/core';
 import { IPWristBandViewModel } from './ip-wrist-band-info.model';
 import { ADT_BLService } from '../shared/adt.bl.service';
 import { DanpheHTTPResponse } from '../../shared/common-models';
-import html2canvas from 'html2canvas';
 import { PrinterSettingsModel, ENUM_PrintingType } from '../../settings-new/printers/printer-settings.model';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'ip-wrist-band',
