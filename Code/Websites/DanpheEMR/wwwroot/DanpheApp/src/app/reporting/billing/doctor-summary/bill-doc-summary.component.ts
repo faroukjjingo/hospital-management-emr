@@ -44,7 +44,7 @@ export class RPT_BIL_DocSummaryComponent {
 
     public loadDocSummary() {
         this.dlService.Read("/BillingReports/BillDocSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate)
-            .map(res => res)
+            
             .subscribe(res => {
                 if (res.Status == "OK") {
                     // let data = JSON.parse(res.Results.JsonData);
@@ -81,7 +81,7 @@ export class RPT_BIL_DocSummaryComponent {
 
     // public ExportToExcelDocSummary() {
     //     this.dlService.ReadExcel("/ReportingNew/ExportToExcelDocSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate)
-    //         .map(res => res)
+    //         
     //         .subscribe(data => {
     //             let blob = data;
     //             let a = document.createElement("a");

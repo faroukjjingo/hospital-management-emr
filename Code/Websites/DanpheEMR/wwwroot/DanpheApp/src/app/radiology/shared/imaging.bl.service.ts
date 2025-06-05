@@ -43,13 +43,13 @@ export class ImagingBLService {
   //Method below is commented as it is not in use.
   // public GetPatientImagingRequisitions(patientId: number, orderStatus: string) {
   //   return this.imagingDLService.GetPatientImagingRequisitions(patientId, orderStatus)
-  //     .map(res => { return res });
+  //     ;
 
   // }
   //imaging-requisition.component
   //gets types of imaging in radiology
   public GetImagingTypes() {
-    return this.imagingDLService.GetImagingTypes().map(res => { return res });
+    return this.imagingDLService.GetImagingTypes();
   }
   //imaging-report.component
   //gets all the active requisitions and pending reports
@@ -58,7 +58,7 @@ export class ImagingBLService {
     var reportOrderStatus = "pending";
     let typeListStr = JSON.stringify(typeList);
     return this.imagingDLService.GetImagingReqsAndReportsByStatus(reqOrderStatus, reportOrderStatus, typeListStr, fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
 
 
@@ -69,13 +69,13 @@ export class ImagingBLService {
   // public GetPatientReports(patientId) {
   //   var reportOrderStatus = "final";
   //   return this.imagingDLService.GetPatientReports(patientId, reportOrderStatus)
-  //     .map(res => { return res });
+  //     ;
   // }
 
   //gets dicom Image list
   public GetDicomImageList(PatientStudyId) {
     return this.imagingDLService.GetDicomImageList(PatientStudyId)
-      .map(res => { return res });
+      ;
   }
   //imaging-result.component
   //gets reports of selected patient
@@ -83,57 +83,57 @@ export class ImagingBLService {
     var reportOrderStatus: string = "final";
     let typeStr = JSON.stringify(typeList);
     return this.imagingDLService.GetAllImagingReports(reportOrderStatus, frmDate, toDate, typeStr)
-      .map(res => { return res });
+      ;
   }
   public GetImagingReportByRequisitionId(requisitionId: number) {
     return this.imagingDLService.GetImagingReportByRequisitionId(requisitionId)
-      .map(res => { return res });
+      ;
   }
 
   public GetDoctorsList() {
     return this.billingDLService.GetDoctorsList()
-      .map(res => res);
+      ;
   }
 
   //gets all the imaging types
   // Method below is commented as it has no references
   // public GetImagingType() {
   //   return this.imagingDLService.GetImagingType()
-  //     .map(res => { return res });
+  //     ;
   // }
   public GetEmpPreference(employeeId) {
 
     return this.imagingDLService.GetEmpPreference(employeeId)
-      .map(res => { return res })
+      
   }
   //public GetReportingDoctor(imagingTypeId) {
 
   //    return this.imagingDLService.GetReportingDoctor(imagingTypeId)
-  //        .map(res => { return res })
+  //        
   //}
   //get ReportText, imageNames, imageFolderpath by Id from imgRequisition or imgReport table
   public GetImagingReportContent(isRequisitionReport, id) {
     try {
       return this.imagingDLService.GetImagingReportContent(isRequisitionReport, id)
-        .map(res => { return res });
+        ;
     } catch (exception) {
       throw exception;
     }
   }
   public GetAllReportTemplates() {
     return this.imagingDLService.GetAllReportTemplates()
-      .map(res => { return res })
+      
   }
   public GetDoctorList() {
     return this.imagingDLService.GetDoctorList()
-      .map(res => { return res })
+      
   };
   //Get scanned imaging files list for add to report
   //get data from pac server
   GetImgFileList(fromDate: string, toDate: string) {
     try {
       return this.imagingDLService.GetImgFileList(fromDate, toDate)
-        .map(res => { return res });
+        ;
     } catch (exception) {
       throw exception;
     }
@@ -143,7 +143,7 @@ export class ImagingBLService {
   // GetReportTextByImagingReportId(ImagingReportId) {
   //   try {
   //     return this.imagingDLService.GetReportTextByImagingReportId(ImagingReportId)
-  //       .map(res => { return res });
+  //       ;
   //   } catch (exception) {
   //     throw exception;
   //   }
@@ -153,7 +153,7 @@ export class ImagingBLService {
   // GetDICOMViewerByImgRptId(ImagingReportId, PatientStudyId) {
   //   try {
   //     return this.imagingDLService.GetDICOMViewerByImgRptId(ImagingReportId, PatientStudyId)
-  //       .map(res => { return res });
+  //       ;
   //   } catch (exception) {
   //     throw exception;
   //   }
@@ -171,7 +171,7 @@ export class ImagingBLService {
   //posts the report of an item
   public PostItemReport(itemReport: ImagingItemReport) {
     return this.imagingDLService.PostItemReport(itemReport)
-      .map(res => { return res });
+      ;
   }
 
   //imaging-requisition.component
@@ -202,7 +202,7 @@ export class ImagingBLService {
       });
     });
     return this.billingDLService.PostBillingItemRequisition(billItems)
-      .map(res => res)
+      
   }
   //imaging-report.component
   //post report 
@@ -253,11 +253,11 @@ export class ImagingBLService {
       
       if (imgReport.ImagingReportId)
         return this.imagingDLService.PutImgItemReport(input)
-          .map(res => res);
+          ;
       //else post the item
       else
         return this.imagingDLService.PostImgItemReport(input)
-          .map(res => res);
+          ;
     } catch (exception) {
       throw exception;
     }
@@ -268,7 +268,7 @@ export class ImagingBLService {
     data = Object.assign(data, email);
     var omited = _.omit(data, ['RadEmailValidator']);
     return this.imagingDLService.SendEmail(omited)
-      .map(res => res);
+      ;
   }
 
 
@@ -279,11 +279,11 @@ export class ImagingBLService {
       reportData.Patient = null;
       if (reportData.ImagingReportId)
         return this.imagingDLService.PutPatientStudy(reportData)
-          .map(res => res);
+          ;
       //else post the item
       else
         return this.imagingDLService.PostPatientStudy(reportData)
-          .map(res => res);
+          ;
     } catch (exception) {
       throw exception;
     }
@@ -292,7 +292,7 @@ export class ImagingBLService {
   DeleteImgsByImgingRptId(reportModelData) {
     try {
       return this.imagingDLService.DeleteImgsByImagingRptId(reportModelData)
-        .map(res => res);
+        ;
     } catch (exception) {
       throw exception;
     }
@@ -308,7 +308,7 @@ export class ImagingBLService {
   CancelInpatientCurrentLabTest(currentInpatientLabTest: InPatientLabTest) {
     let data = JSON.stringify(currentInpatientLabTest);
     return this.imagingDLService.CancelInpatientCurrentLabTest(data)
-      .map(res => { return res });
+      ;
   }
 
   public CancelRadRequest(item: BillingTransactionItem) {
@@ -331,7 +331,7 @@ export class ImagingBLService {
   //start: sud:5Feb'19--for radiology ward billing
   public GetRadiologyBillingItems() {
     return this.imagingDLService.GetRadiologyBillingItems()
-      .map(res => res);
+      ;
   }
   //end: sud:5Feb'19--for radiology ward billing
 
@@ -340,12 +340,12 @@ export class ImagingBLService {
   //Update ReferredBy Doctor
   PutDoctor(prescriberId: number, prescriberName: string, reqId: number) {
     return this.imagingDLService.PutDoctor(prescriberId, prescriberName, reqId)
-      .map(res => { return res });
+      ;
   }
 
   PutScannedDetails(reqId) {
     return this.imagingDLService.PutScannedDetails(reqId)
-      .map(res => { return res });
+      ;
   }
 
 }

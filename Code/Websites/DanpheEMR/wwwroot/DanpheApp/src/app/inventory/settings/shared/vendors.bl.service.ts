@@ -17,16 +17,16 @@ export class VendorsBLService {
  //Get
     public GetVendorsList() {
         return this.vendorsDLService.GetVendorsList()
-            .map(res => { return res });
+            ;
     }
     // public GetVendors() {
     //     return this.vendorsDLService.GetVendors()
-    //         .map(res => { return res });
+    //         ;
     // }
     //GetCurrencyCode
     public GetCurrencyCode() {
         return this.vendorsDLService.GetCurrencyCode()
-            .map(res => { return res });
+            ;
     }
 
     //Post
@@ -34,7 +34,7 @@ export class VendorsBLService {
         //omiting the appointmentvalidator during post because it causes cyclic error during serialization in server side.
         var temp = _.omit(CurrentVendor, ['VendorsValidator']);
         return this.vendorsDLService.PostVendor(temp)
-            .map(res => { return res });
+            ;
     }
 
     //Put
@@ -46,7 +46,7 @@ export class VendorsBLService {
        
         var temp = _.omit(vendor, ['VendorsValidator']);
         return this.vendorsDLService.PutVendor(temp)
-            .map(res => { return res });
+            ;
     }
 
 }

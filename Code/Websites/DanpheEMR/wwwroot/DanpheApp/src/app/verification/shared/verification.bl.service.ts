@@ -247,12 +247,12 @@ export class VerificationBLService {
 
 
   GetPharmacyPurchaseOrderInfo(PurchaseOrderId: number) {
-    return this.verificationDLService.GetPharmacyPurchaseOrderInfo(PurchaseOrderId).map(res => { return res });
+    return this.verificationDLService.GetPharmacyPurchaseOrderInfo(PurchaseOrderId);
   }
 
   ApprovePharmacyPurchaseOrder(purchaseOrderDTO: PharmacyPurchaseOrder_DTO) {
     try {
-      return this.verificationDLService.ApprovePharmacyPurchaseOrder(purchaseOrderDTO).map(res => { return res });
+      return this.verificationDLService.ApprovePharmacyPurchaseOrder(purchaseOrderDTO);
     }
     catch (ex) {
       throw ex;
@@ -260,7 +260,7 @@ export class VerificationBLService {
   }
   ApprovePharmacyRequisition(requisitionDTO: PharmacySubStoreRequisitionVerification_DTO) {
     try {
-      return this.verificationDLService.ApprovePharmacyRequisition(requisitionDTO).map(res => { return res });
+      return this.verificationDLService.ApprovePharmacyRequisition(requisitionDTO);
     }
     catch (ex) {
       throw ex;
@@ -269,7 +269,7 @@ export class VerificationBLService {
 
   RejectPharmacyPurchaseOrder(PurchaseOrderId: number, CurrentVerificationLevel: number, CurrentVerificationLevelCount: number, MaxVerificationLevel: number, VerificationRemarks: string) {
     try {
-      return this.verificationDLService.RejectPharmacyPurchaseOrder(PurchaseOrderId, CurrentVerificationLevel, CurrentVerificationLevelCount, MaxVerificationLevel, VerificationRemarks).map(res => { return res });
+      return this.verificationDLService.RejectPharmacyPurchaseOrder(PurchaseOrderId, CurrentVerificationLevel, CurrentVerificationLevelCount, MaxVerificationLevel, VerificationRemarks);
     }
     catch (ex) {
       throw ex;
@@ -299,7 +299,7 @@ export class VerificationBLService {
   }
   RejectPharmacyRequisition(RequisitionId: number, CurrentVerificationLevel: number, CurrentVerificationLevelCount: number, MaxVerificationLevel: number, VerificationRemarks: string) {
     try {
-      return this.verificationDLService.RejectPharmacyRequisition(RequisitionId, CurrentVerificationLevel, CurrentVerificationLevelCount, MaxVerificationLevel, VerificationRemarks).map(res => { return res });
+      return this.verificationDLService.RejectPharmacyRequisition(RequisitionId, CurrentVerificationLevel, CurrentVerificationLevelCount, MaxVerificationLevel, VerificationRemarks);
     }
     catch (ex) {
       throw ex;

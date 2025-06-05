@@ -83,7 +83,7 @@ export class QuestionEditComponent {
                 let url = "/api/DynTemplates?reqType=updateQtn";
 
                 let data = JSON.stringify(this.qtnToUpdate);
-                this.dlService.Update(data, url).map(res => res).subscribe(res => {
+                this.dlService.Update(data, url).subscribe(res => {
                     if (res.Status == "OK") {
                         this.dynTemplateServ.qtnContainer = res.Results;
                         this.qtnToUpdate = res.Results;

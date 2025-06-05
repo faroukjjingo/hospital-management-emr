@@ -1,7 +1,7 @@
 import { ChangeDetectorRef, Component, EventEmitter, Input, Output } from "@angular/core";
 import { Subscription } from "rxjs";
 import { CommonFunctions } from "../../shared/common.functions";
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { VaccinationStickerVM } from "./vaccination-sticker.model";
 import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { MessageboxService } from "../../shared/messagebox/messagebox.service";
@@ -138,7 +138,7 @@ export class VaccinationStickerComponent {
 
     //     GetDetailsForVaccSticker(PatientId) {
     //         this.http.get<any>('/api/Patient/PatientDetailForVaccination?patientId=' + PatientId, this.options)
-    //             .map(res => res)
+    //             
     //             .subscribe(res => this.CallBackStickerOnly(res),
     //                 res => this.Error(res));
     //     }
@@ -294,7 +294,7 @@ export class VaccinationStickerComponent {
         this.showLoading = true;
         console.log(printableHTML);
         this.http.post<any>("/api/Billing/saveHTMLfile?PrinterName=" + PrinterName + "&FilePath=" + filePath, printableHTML, this.options)
-            .map(res => res).subscribe(res => {
+            .subscribe(res => {
                 if (res.Status = "OK") {
                     this.timerFunction();
                 }

@@ -51,7 +51,7 @@ export class RPT_BIL_CustomReportComponent {
       this.toDate = this.currentCustomReport.toDate;
       this.reportName = this.currentCustomReport.reportName;
       this.dlService.Read("/BillingReports/CustomReport?FromDate=" + this.fromDate + "&ToDate=" + this.toDate + "&ReportName=" + this.reportName)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           err => this.Error(err));
     }
@@ -114,7 +114,7 @@ export class RPT_BIL_CustomReportComponent {
 
   ExportToExcel() {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelCustomReport?FromDate=" + this.fromDate + "&ToDate=" + this.toDate + "&ReportName=" + this.reportName)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

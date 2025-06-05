@@ -113,7 +113,7 @@ export class OPDGeneralNoteComponenet {
 
   GetOPDGeneralNotes() {
     this.http.get<any>("/api/Clinical/OPDGeneralNote?notesId=" + this.notesId, this.options)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK" && res.Results) {
           this.MapOPDGeneralNote(res.Results);
@@ -247,7 +247,7 @@ export class OPDGeneralNoteComponenet {
     this.http.get<any>("/api/Clinical/ClinicalDetail?patientId="
       + this.PatientDetail.PatientId
       + '&patientVisitId=' + this.PatientDetail.PatientVisitId, this.options)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.clinicalDetail = res.Results;
@@ -416,7 +416,7 @@ export class OPDGeneralNoteComponenet {
 
   //    let data = JSON.stringify(this.opdGeneralNote.AllIcdAndOrders);
   //    this.http.post<any>("/api/Clinical?reqType=clinical-diagnosis", data, this.options)
-  //        .map(res => res)
+  //        
   //        .subscribe(res => {
   //            if (res.Status == "OK") {
   //                this.msgBoxServ.showMessage("success", ["Clinical Diagnosis successfully Added"]);
@@ -434,7 +434,7 @@ export class OPDGeneralNoteComponenet {
   PostOPDGeneralNote(data) {
 
     this.http.post<any>("/api/Clinical/OPDGeneralNote", data, this.options)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.msgBoxServ.showMessage("success", ["OPD General Note added successfully."]);
@@ -467,7 +467,7 @@ export class OPDGeneralNoteComponenet {
 
   UpdateOPDGeneralNote(data) {
     this.http.put<any>("/api/Clinical?reqType=opd-general-note", data, this.options)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.msgBoxServ.showMessage("success", ["OPD General Note updated successfully."]);

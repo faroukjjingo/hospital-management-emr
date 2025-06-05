@@ -50,7 +50,7 @@ export class RPT_BIL_DocDeptSummaryComponent {
 
     public loadDocDeptSummary() {
         this.dlService.Read("/BillingReports/BillDocDeptSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&DoctorId=" + this.DoctorId)
-            .map(res => res)
+            
             .subscribe(res => {
                 if (res.Status == "OK") {
                     // let data = JSON.parse(res.Results.JsonData);
@@ -82,7 +82,7 @@ export class RPT_BIL_DocDeptSummaryComponent {
 
     // public ExportToExcelDocDeptSummary() {
     //     this.dlService.ReadExcel("/ReportingNew/ExportToExcelBilDocDeptSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&ProviderId=" + this.ProviderId)
-    //         .map(res => res)
+    //         
     //         .subscribe(data => {
     //             let blob = data;
     //             let a = document.createElement("a");

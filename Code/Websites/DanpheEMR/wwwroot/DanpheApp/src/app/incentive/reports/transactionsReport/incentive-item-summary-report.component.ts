@@ -60,7 +60,7 @@ export class INCTV_BIL_IncentiveItemComponent {
   LoadDocDeptItemSummary() {
     //let srvDept = this.ServDeptName.replace(/&/g, '%26');//this is URL-Encoded value for character  '&'    --see: URL Encoding in Google for details.
     this.dlService.Read("/BillingReports/INCTV_DocterItemSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&employeeId=" + this.employeeId + "&IsRefferalOnly=" + this.IsReferralOnly)
-      //.map(res => res)
+      //
       .subscribe(res => {
         if (res.Status === ENUM_DanpheHTTPResponses.OK) {
           let data = JSON.parse(res.Results.JsonData);

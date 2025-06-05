@@ -44,7 +44,7 @@ export class IpBillMainComponent {
 
   LoadInpatientList() {
     this.dlService.Read("/api/IpBilling/AdmittedPatients")
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           this.allInpatList = res.Results;

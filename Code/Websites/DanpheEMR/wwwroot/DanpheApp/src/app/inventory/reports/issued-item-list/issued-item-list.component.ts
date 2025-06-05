@@ -125,7 +125,7 @@ export class IssuedItemListComponent implements OnInit {
 
   ShowStoreList() {
     this.inventoryReportBLService.LoadInventoryStores()
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.changedDetector.detectChanges();

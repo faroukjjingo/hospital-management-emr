@@ -42,7 +42,7 @@ export class RPT_APPT_DoctorwiseOutPatientReportComponent {
     if (this.currentDrPatReport.fromDate != null && this.currentDrPatReport.toDate != null) {
       this.dlService.Read("/Reporting/DoctorwiseOutPatientReport?FromDate="
         + this.currentDrPatReport.fromDate + "&ToDate=" + this.currentDrPatReport.toDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {

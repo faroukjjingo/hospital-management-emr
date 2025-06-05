@@ -18,66 +18,66 @@ export class MR_BLService {
 
   public GetDischargedPatientsList(fromDate: string, toDate: string) {
     return this.medicalRecordsDLService.GetDischargedPatientsList(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
 
   public GetAllMasterDataForMR() {
     return this.medicalRecordsDLService.GetAllMasterDataForMR()
-      .map(res => { return res });
+      ;
   }
 
   public GetAllTestsByPatIdAndVisitId(patId, visitId) {
     return this.medicalRecordsDLService.GetAllTestsByPatIdAndVisitId(patId, visitId)
-      .map(res => { return res });
+      ;
   }
 
   public GetPatientMRDetailWithMasterData(medicalRecordId, patVisitId) {
     return this.medicalRecordsDLService.GetPatientMRDetailWithMasterData(medicalRecordId, patVisitId)
-      .map(res => { return res });
+      ;
   }
 
   public GetBirthList(fromDate, toDate) {
     return this.medicalRecordsDLService.GetBirthList(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
 
   public GetAllBirthCertificateNumbers() {
 
     return this.medicalRecordsDLService.GetAllBirthCertificateNumbers()
-      .map(res => { return res });
+      ;
   }
   public GetAllDeadPatients() {
 
     return this.medicalRecordsDLService.GetAllDeadPatient()
-      .map(res => { return res });
+      ;
   }
 
   public GetPatientDeathDetailsById(PatId) {
 
     return this.medicalRecordsDLService.GetPatientDeathDetailsById(PatId)
-      .map(res => { return res });
+      ;
   }
   public GetAllDeathCertificateNumbers() {
     return this.medicalRecordsDLService.GetAllDeathCertificateNumbers()
-      .map(res => { return res });
+      ;
   }
   public GetAllMRFileNumbers() {
     return this.medicalRecordsDLService.GetAllMRFileNumbers()
-      .map(res => { return res });
+      ;
   }
   public GetDeathList(fromDate, toDate) {
     return this.medicalRecordsDLService.GetDeathList(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
 
   public GetBirthDetailForCertificate(deathDetailId) {
     return this.medicalRecordsDLService.GetBirthDetailForCertificate(deathDetailId)
-      .map(res => { return res });
+      ;
   }
 
   public GetDeathDetailForCertificate(deathDetailId) {
     return this.medicalRecordsDLService.GetDeathDetailForCertificate(deathDetailId)
-      .map(res => { return res });
+      ;
   }
 
   public PostMRofPatient(medicalRec: MedicalRecordsSummary) {
@@ -109,7 +109,7 @@ export class MR_BLService {
     var str = JSON.stringify(record);
 
     return this.medicalRecordsDLService.PostMRofPatient(str)
-      .map(res => { return res });
+      ;
 
   }
 
@@ -158,42 +158,42 @@ export class MR_BLService {
     var str = JSON.stringify(record);
 
     return this.medicalRecordsDLService.PutMedicalRecord(str)
-      .map(res => { return res });
+      ;
   }
 
   public PutBirthDetail(birthDet: BabyBirthDetails) {
     var detail = _.omit(birthDet, ['BabyBirthDetailsValidator']);
     let data = JSON.stringify(detail);
     return this.medicalRecordsDLService.PutBirthDetail(data)
-      .map(res => { return res });
+      ;
   }
 
   public PutBirthCertificateReportDetail(birthDet: BabyBirthDetails) {
     var detail = _.omit(birthDet, ['BabyBirthDetailsValidator']);
     let data = JSON.stringify(detail);
     return this.medicalRecordsDLService.PutBirthCertificateReportDetail(data)
-      .map(res => { return res });
+      ;
   }
 
   public PostDeathDetails(data: DeathDetails) {
     var detail = _.omit(data, ['DeathDetailsValidator']);
     let dataTemp = JSON.stringify(detail);
     return this.medicalRecordsDLService.PostDeathDetails(dataTemp)
-      .map(res => { return res });
+      ;
   }
 
   public PutDeathCertificateReportDetail(deathPat: DeathDetails) {
     var detail = _.omit(deathPat, ['DeathDetailsValidator']);
     let data = JSON.stringify(detail);
     return this.medicalRecordsDLService.PutDeathCertificateReportDetail(data)
-      .map(res => { return res });
+      ;
   }
 
   public PutDeathDetails(deathPat: DeathDetails) {
     var detail = _.omit(deathPat, ['DeathDetailsValidator']);
     let data = JSON.stringify(detail);
     return this.medicalRecordsDLService.PutDeathDetails(data)
-      .map(res => { return res });
+      ;
   }
 
 
@@ -202,7 +202,7 @@ export class MR_BLService {
     birthDet.forEach(a => { temp.push(_.omit(a, ['BabyBirthDetailsValidator'])) });
     let data = JSON.stringify(temp);
     return this.medicalRecordsDLService.PostBirthCertificateDetail(data)
-      .map(res => { return res });
+      ;
   }
 
 
@@ -211,52 +211,52 @@ export class MR_BLService {
     var detail = _.omit(birthDet, ['BabyBirthDetailsValidator']);
     let data = JSON.stringify(detail);
     return this.medicalRecordsDLService.PutBirthCertificatePrintDetail(data)
-      .map(res => { return res });
+      ;
   }
 
   public PutDeathCertificatePrintDetail(deathPat: DeathDetails) {
     var detail = _.omit(deathPat, ['DeathDetailsValidator']);
     let data = JSON.stringify(detail);
     return this.medicalRecordsDLService.PutDeathCertificatePrintDetail(data)
-      .map(res => { return res });
+      ;
   }
 
 
   public GetAllPatients(searchtxt) {
-    return this.medicalRecordsDLService.GetAllPatients(searchtxt).map(res => { return res });
+    return this.medicalRecordsDLService.GetAllPatients(searchtxt);
   }
   public GetAllFemalePatients(searchtxt) {
-    return this.medicalRecordsDLService.GetAllFemalePatients(searchtxt).map(res => { return res });
+    return this.medicalRecordsDLService.GetAllFemalePatients(searchtxt);
   }
 
   public GetOutpatientList(fromDate, toDate) {
     return this.medicalRecordsDLService.GetAllOutpatientListWithVisitInfo(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
 
   public GetICD10ReportingGroup() {
-    return this.medicalRecordsDLService.GetICD10ReportingGroup().map(res => { return res });
+    return this.medicalRecordsDLService.GetICD10ReportingGroup();
   }
 
   public GetICD10DiseaseGroup() {
-    return this.medicalRecordsDLService.GetICD10DiseaseGroup().map(res => { return res });
+    return this.medicalRecordsDLService.GetICD10DiseaseGroup();
   }
 
   public GetICDList() {
-    return this.medicalRecordsDLService.GetICDList().map(res => { return res });
+    return this.medicalRecordsDLService.GetICDList();
   }
 
   public GetOutpatientDiagnosisByVisitId(patId, patVisitId) {
-    return this.medicalRecordsDLService.GetOutpatientDiagnosisByVisitId(patId, patVisitId).map(res => { return res });
+    return this.medicalRecordsDLService.GetOutpatientDiagnosisByVisitId(patId, patVisitId);
   }
 
   public PostFinalDiagnosis(data: any) {
     let strData = JSON.stringify(data);
-    return this.medicalRecordsDLService.PostFinalDiagnosis(strData).map(res => { return res });
+    return this.medicalRecordsDLService.PostFinalDiagnosis(strData);
   }
   public GetBabyDetailsListByMotherPatientId(patientId: any) {
 
-    return this.medicalRecordsDLService.GetBabyDetailsListByMotherPatientId(patientId).map(res => { return res });
+    return this.medicalRecordsDLService.GetBabyDetailsListByMotherPatientId(patientId);
   }
 
   public GetLatestDeathCertificate() {
@@ -264,26 +264,26 @@ export class MR_BLService {
   }
   public GetEmergencypatientList(fromDate, toDate) {
     return this.medicalRecordsDLService.GetAllEmergencypatientListWithVisitInfo(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
   public GetICDReportingGroupForEmergency() {
-    return this.medicalRecordsDLService.GetICDReportingGroupForEmergency().map(res => { return res });
+    return this.medicalRecordsDLService.GetICDReportingGroupForEmergency();
   }
 
   public GetICDDiseaseGroupForEmergency() {
-    return this.medicalRecordsDLService.GetICDDiseaseGroupForEmergency().map(res => { return res });
+    return this.medicalRecordsDLService.GetICDDiseaseGroupForEmergency();
   }
 
   public GetEmergencyPatientDiagnosisByVisitId(patId, patVisitId) {
-    return this.medicalRecordsDLService.GetEmergencypatientDiagnosisByVisitId(patId, patVisitId).map(res => { return res });
+    return this.medicalRecordsDLService.GetEmergencypatientDiagnosisByVisitId(patId, patVisitId);
   }
   public PostFinalDiagnosisForEmergencyPatient(data: any) {
     let strData = JSON.stringify(data);
-    return this.medicalRecordsDLService.PostFinalDiagnosisForEmergencyPatient(strData).map(res => { return res });
+    return this.medicalRecordsDLService.PostFinalDiagnosisForEmergencyPatient(strData);
   }
   public GetEthnicGroupStatisticsData(fromDate: string, toDate: string) {
     return this.medicalRecordsDLService.GetEthnicGroupStatisticsData(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
 
 }

@@ -80,7 +80,7 @@ export class RPT_BIL_IncentiveReferralSummaryReportMainComponent {
 
   LoadDocterList() {
     this.incentiveBLService.GetIncentiveApplicableDocterList()
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.allDocterList = res.Results;

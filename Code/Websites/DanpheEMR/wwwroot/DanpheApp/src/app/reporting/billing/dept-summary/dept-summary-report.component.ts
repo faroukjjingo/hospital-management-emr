@@ -72,7 +72,7 @@ export class RPT_BIL_DepartmentSummaryComponent {
       ///called /BillingReports/IncomeSegregationStaticReport to use same data source of Current Income Segregation Report.
       this.dlService.Read("/BillingReports/DepartmentSummaryReport?FromDate=" + this.selectedModel.fromDate
         + "&ToDate=" + this.selectedModel.toDate + "&billingType=" + this.selBillingTypeName)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })
         .subscribe(res => {
           if (res.Status == "OK") {
@@ -98,7 +98,7 @@ export class RPT_BIL_DepartmentSummaryComponent {
   // public ExportToExcelBilDeptSummary() {
   //     this.dlService.ReadExcel("/ReportingNew/ExportToExcelBilDeptSummary?FromDate=" + this.selectedModel.fromDate
   //         + "&ToDate=" + this.selectedModel.toDate)
-  //         .map(res => res)
+  //         
   //         .subscribe(data => {
   //             let blob = data;
   //             let a = document.createElement("a");
@@ -178,7 +178,7 @@ export class RPT_BIL_DepartmentSummaryComponent {
   //getting service departments name from FN_BIL_GetTxnItemsInfoWithDateSeparation
   // public LoadDeptList() {
   //     this.dlService.Read("/BillingReports/LoadDeptListFromFN")
-  //         .map(res => res)
+  //         
   //         .subscribe(res => {
   //             if (res.Status == "OK") {
   //               this.servDeptsList = res.Results;

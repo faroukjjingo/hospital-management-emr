@@ -52,7 +52,7 @@ export class RPT_BIL_DepartmentRevenueReportComponent {
     LoadReportData() {
         if (this.CheckDateValidation()) {
           this.dlService.Read("/BillingReports/DepartmentRevenueReport?FromDate=" + this.fromDate + "&ToDate=" + this.toDate)
-                .map(res => res)
+                
                 .subscribe(res => {
                     if (res.Status == "OK") {
                         this.reportData = [];

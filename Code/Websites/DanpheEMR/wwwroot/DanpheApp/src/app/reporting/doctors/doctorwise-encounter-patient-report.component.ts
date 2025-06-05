@@ -47,7 +47,7 @@ export class RPT_DOC_DoctorWiseEncounterPatientReportComponent {
   };
   loadDoctorsList() {
     this.dlService.Read("/BillingReports/GetDoctorList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.doctorList = res.Results;
@@ -62,7 +62,7 @@ export class RPT_DOC_DoctorWiseEncounterPatientReportComponent {
 
       this.dlService.Read("/Reporting/DoctorWisePatientReport?FromDate="
         + this.CurrentDoctorEncounterPatient.fromDate + "&ToDate=" + this.CurrentDoctorEncounterPatient.toDate + "&PerformerName=" + this.CurrentDoctorEncounterPatient.PerformerName)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {

@@ -90,7 +90,7 @@ export class RPT_BIL_ReferralSummaryMainComponent {
 
   LoadReferralList() {
     this.dlService.Read("/BillingReports/GetReferralList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.allReferrerList = res.Results;

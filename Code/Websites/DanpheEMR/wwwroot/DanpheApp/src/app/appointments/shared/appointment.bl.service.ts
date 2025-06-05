@@ -24,14 +24,14 @@ export class AppointmentBLService {
     //createappointment.component
     public GenerateDoctorList(departmentId: number) {
         return this.appointmentDLService.GetDoctorFromDepartmentId(departmentId)
-            .map(res => res);
+            ;
     }
 
     // //gets providers availablity using appointmentDate and ProviderId.
     // public ShowProviderAvailability(selProviderId: number, appointmentDate: string) {
     //     if ((appointmentDate != "" && appointmentDate != null) && (selProviderId != 0 && selProviderId != null)) {
     //         return this.appointmentDLService.GetProviderAvailability(selProviderId, appointmentDate)
-    //             .map(res => res);
+    //             ;
     //     }
     //     else {
     //         alert("select correct date and/or provider.");
@@ -41,7 +41,7 @@ export class AppointmentBLService {
     // getting patients 
     public GetAppointmentProviderList(performerId: number, appointmentDate: string) {
         return this.appointmentDLService.GetAppointmentProviderList(performerId, appointmentDate)
-            .map(res => { return res })
+            
 
     }
 
@@ -49,11 +49,11 @@ export class AppointmentBLService {
     public CheckForClashingAppointment(patientId: number, apptDate: string, performerId: number) {
         if (patientId) {
             return this.appointmentDLService.CheckForClashingAppointment(patientId, apptDate, performerId)
-                .map(res => res);
+                ;
         }
         else {
             return this.appointmentDLService.CheckForClashingAppointment(0, apptDate, performerId)
-                .map(res => res);
+                ;
         }
     }
 
@@ -61,53 +61,53 @@ export class AppointmentBLService {
     public LoadAppointmentList(fromDate, toDate, performerId) {
         status = "new";
         return this.appointmentDLService.GetAppointmentList(fromDate, toDate, performerId, status)
-            .map(res => res);
+            ;
     }
     // getting the CountrySubDivision from dropdown
     public GetCountrySubDivision(countryId: number) {
         return this.patientDLService.GetCountrySubDivision(countryId)
-            .map(res => { return res })
+            
 
     }
     // getting patients 
     public GetPatients(searchTxt) {
         return this.patientDLService.GetPatients(searchTxt)
-            .map(res => { return res })
+            
 
     }
 
     public GetPatientsListForNewVisit(searchTxt, searchUsingHospitalNo, searchUsingIdCardNo) {
         return this.patientDLService.GetPatientsListForNewVisit(searchTxt, searchUsingHospitalNo, searchUsingIdCardNo)
-            .map(res => { return res })
+            
 
     }
     // getting department list 
     public GetDepartment() {
         return this.appointmentDLService.GetDepartment()
-            .map(res => { return res })
+            
 
     }
 
     public GetPatientById(patientId: number) {
         return this.patientDLService.GetPatientById(patientId)
-            .map(res => { return res })
+            
     }
     //getting membership deatils by membershiptype id 
     public GetMembershipDeatilsByMembershipTyepId(membershipTypeId) {
         return this.appointmentDLService.GetMembershipDeatilsByMembershipTyepId(membershipTypeId)
-            .map(res => { return res });
+            ;
 
     }
     //getting total amoutn opd by doctorId
     //     public GetTotalAmountByProviderId(providerId) {
     //         return this.appointmentDLService.GetTotalAmountByProviderId(providerId)
-    //             .map(res => { return res })
+    //             
     //   }
     //pupdate  for  phonebook appointment
     public PutAppointment(currentAppointment) {
         var temp = _.omit(currentAppointment, ['AppointmentValidator']);
         return this.appointmentDLService.PutAppointment(temp)
-            .map(res => res);
+            ;
 
     }
 
@@ -120,7 +120,7 @@ export class AppointmentBLService {
         //omiting the appointmentvalidator during post because it causes cyclic error during serialization in server side.
         var temp = _.omit(currentAppointment, ['AppointmentValidator']);
         return this.appointmentDLService.PostAppointment(temp)
-            .map(res => { return res });
+            ;
     }
 
     //map selected appointment data to global appointment
@@ -182,7 +182,7 @@ export class AppointmentBLService {
     //    let data = JSON.stringify(temp);
     //    //this.CurrentPatient.Guarantor.GuarantorValidator = guarValidator;
     //    return this.patientDLService.PostPatient(data)
-    //        .map(res => { return res })
+    //        
 
 
     //}
@@ -198,21 +198,21 @@ export class AppointmentBLService {
         ]);
 
         return this.appointmentDLService.PostQuickAppointmentTemp(temp)
-            .map(res => res);
+            ;
     }
 
     public UpdateAppointmentStatus(currentAppointment: Appointment) {
         var temp = _.omit(currentAppointment, ['AppointmentValidator']);
         return this.appointmentDLService.UpdateAppointmentStatus(temp)
-            .map(res => res);
+            ;
     }
 
     public getOnlineAppointmentData(url: string, fromDate: Date, toDate: Date) {
-        return this.appointmentDLService.getOnlineAppointmentData(url, fromDate, toDate).map(res => { return res });
+        return this.appointmentDLService.getOnlineAppointmentData(url, fromDate, toDate);
     }
 
     public GetPatientByGUID(GUID: number) {
         return this.patientDLService.GetPatientByGUID(GUID)
-            .map(res => { return res })
+            
     }
 }

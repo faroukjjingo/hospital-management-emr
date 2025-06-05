@@ -61,7 +61,7 @@ export class RPT_BIL_IncentiveReportSummaryComponent {
 
   public loadDocSummary() {
     this.dlService.Read("/BillingReports/INCTV_DocterSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate +"&IsRefferalOnly="+ this.IsReferralOnly)
-      .map(res => res)
+      
       .subscribe((res:DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           let data = JSON.parse(res.Results.JsonData);
@@ -94,7 +94,7 @@ export class RPT_BIL_IncentiveReportSummaryComponent {
 
   public ExportToExcelDocSummaryReport(tableId) {
     //this.dlService.ReadExcel("/ReportingNew/ExportToExcelRefSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate)
-    //  .map(res => res)
+    //  
     //  .subscribe(data => {
     //    let blob = data;
     //    let a = document.createElement("a");

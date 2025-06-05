@@ -182,7 +182,7 @@ export class DispDailySalesReportComponent implements OnInit {
   ////and in that event we are calling the server excel export....
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/api/PharmacyReport/ExportToExcelPHRMDailySalesSummaryReport?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&ItemName=" + this.ItemName)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

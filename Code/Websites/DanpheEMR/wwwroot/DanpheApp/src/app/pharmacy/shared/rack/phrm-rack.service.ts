@@ -12,12 +12,12 @@ export class PhrmRackService {
 
     public GetRackList() {
         return this.phrmRackEndpoint.GetRackList()
-            .map(res => { return res });
+            ;
     }
 
     public AddRack(CurrentRack: PhrmRackModel) {
         return this.phrmRackEndpoint.AddRack(CurrentRack)
-            .map(res => { return res });
+            ;
     }
     public AddRackItem(LatestRack: PhrmRackModel) {
         return this.phrmRackEndpoint.AddRackItem(LatestRack).map(res =>{return res});
@@ -25,7 +25,7 @@ export class PhrmRackService {
 
     public UpdateRack(id: number,CurrentRack: PhrmRackModel) {
         return this.phrmRackEndpoint.UpdateRack(id, CurrentRack)
-            .map(res => { return res });
+            ;
     }
 
     public GetAllRackList() {
@@ -37,7 +37,7 @@ export class PhrmRackService {
 
     public GetRack(id: number) {
         return this.phrmRackEndpoint.GetRack(id)
-            .map(res => { return res });
+            ;
     }
 
     public GetDrugList(rackId,storeid) {

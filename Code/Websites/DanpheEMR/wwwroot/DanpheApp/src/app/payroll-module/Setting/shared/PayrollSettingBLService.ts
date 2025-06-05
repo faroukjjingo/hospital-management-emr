@@ -43,13 +43,13 @@ export class PayrollSettingBLService {
         public AddLeaveCategory(CurrentLeaveCategory: LeaveCategories) {
              var temp = _.omit(CurrentLeaveCategory, ['LeaveCategoryValidator']);
             return this.payrollsettingDLService.PostLeaveCategory(temp)
-                .map(res => { return res });
+                ;
         }
 
         //put
         public UpdateLeaveCategory(CurrentLeaveCategory: LeaveCategories) {
             var temp = _.omit(CurrentLeaveCategory, ['LeaveCategoryValidator']);
             return this.payrollsettingDLService.PutLeaveCategory(temp)
-                .map(res => { return res });
+                ;
         }
 }

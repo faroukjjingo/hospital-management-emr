@@ -48,7 +48,7 @@ import { ENUM_DanpheHTTPResponseText } from "../../../shared/shared-enums";
       public LoadReport(){
         
         this.dlService.Read("/BillingReports/CreditSettlementReport?FromDate=" + this.fromDate + "&ToDate=" + this.toDate)
-            .map(res => res)
+            
             .finally(() => { this.loading = false; })
             .subscribe(res => this.Success(res),
             res => this.Error(res));

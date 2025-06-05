@@ -5,7 +5,7 @@ import { MessageboxService } from '../../shared/messagebox/messagebox.service';
 import { NotificationViewModel } from './notification.model'
 import { NotificationBLService } from "./notification.bl.service"
 import 'rxjs/Rx';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Subscription } from 'rxjs/Subscription';
 import 'rxjs/add/operator/map';
 import { RouteFromService } from "../../shared/routefrom.service";

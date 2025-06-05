@@ -68,7 +68,7 @@ export class StockLevelComponent implements OnInit {
   }
   ShowStoreList() {
     this.inventoryReportBLService.LoadInventoryStores()
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.changedDetector.detectChanges();
@@ -123,7 +123,7 @@ export class StockLevelComponent implements OnInit {
     this.summary = { TotalQuantity: 0, TotalStockValue: 0 }
     if (this.selectedIds != "") {
       this.inventoryReportBLService.ShowStockLevelReportDataByItemId(this.selectedIds)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     }
@@ -217,7 +217,7 @@ export class StockLevelComponent implements OnInit {
   GetItemDetails(selectedIds, itemId) {
     if (itemId > 0 || itemId != null) {
       this.inventoryReportBLService.GetItemDetailsByIds(selectedIds, itemId)
-        .map(res => res)
+        
         .subscribe(res => {
           if (res.Status == "OK") {
             this.grdetails = res.Results;

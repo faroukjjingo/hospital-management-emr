@@ -80,7 +80,7 @@ export class VisitSummaryCreateComponent {
     GetQtnTemplateFromServer() {
         let url = "/api/DynTemplates?reqType=getSurveyTemplate&templateCode=OPDSummary"
 
-        this.dlService.Read(url).map(res => res).subscribe(res => {
+        this.dlService.Read(url).subscribe(res => {
             let templateData: Template = res.Results;
             this.template = templateData;
             this.isTemplateLoaded = true;
@@ -90,7 +90,7 @@ export class VisitSummaryCreateComponent {
 
     public GetPatientVisitList() {
         let url = "/api/Visit/VisitsSignedByDoctor?patientId=" + this.selectedPatient.PatientId;
-        this.dlService.Read(url).map(res => res).subscribe(res => {
+        this.dlService.Read(url).subscribe(res => {
             if (res.Status == ENUM_DanpheHTTPResponseText.OK && res.Results.length) {
                 this.visitList = res.Results;
                 if (this.currentVisitId) {
@@ -111,7 +111,7 @@ export class VisitSummaryCreateComponent {
 
     public GetPatientData(visitId: number) {
         let url = "/api/VisitSummary/VisitDetails?visitId=" + visitId;
-        this.dlService.Read(url).map(res => res).subscribe(res => {
+        this.dlService.Read(url).subscribe(res => {
             if (res.Status == ENUM_DanpheHTTPResponseText.OK && res.Results) {
                 if (!this.loadInQnairLevel) {
                     this.existingAnswers = this.dynTempService.MapWithSelectedAnswer(this.template.TemplateId, res.Results);
@@ -184,7 +184,7 @@ export class VisitSummaryCreateComponent {
         //    let dsmList = DSM_V_Code.GetAllDSMCodes();
         let url = "/api/Master?reqType=dsm-codes"
         let dsmCodes = [];
-        this.dlService.Read(url).map(res => res).subscribe(res => {
+        this.dlService.Read(url).subscribe(res => {
 
             if (res.Status == ENUM_DanpheHTTPResponseText.OK) {
                 dsmCodes = res.Results;
@@ -249,7 +249,7 @@ export class VisitSummaryCreateComponent {
 
     public PostPatientData(patDataJson) {
         let url = "/api/VisitSummary/VisitDetils";
-        this.dlService.Add(patDataJson, url).map(res => res).subscribe(res => {
+        this.dlService.Add(patDataJson, url).subscribe(res => {
             if (res.Status == ENUM_DanpheHTTPResponseText.OK && res.Results.length) {
                 this.msgBoxServ.showMessage(ENUM_MessageBox_Status.Success, ["Data added succesfully"]);
                 this.CallBackAddUpdate(res.Results);
@@ -258,7 +258,7 @@ export class VisitSummaryCreateComponent {
     }
     public UpdatePatientData(patDataJson) {
         let url = "/api/VisitSummary/VisitDetails";
-        this.dlService.Update(patDataJson, url).map(res => res).subscribe(res => {
+        this.dlService.Update(patDataJson, url).subscribe(res => {
             if (res.Status == ENUM_DanpheHTTPResponseText.OK) {
                 this.msgBoxServ.showMessage(ENUM_MessageBox_Status.Success, ["Data updated succesfully"]);
                 this.CallBackAddUpdate(res.Results);
@@ -274,7 +274,7 @@ export class VisitSummaryCreateComponent {
     }
     public UpdateIsSignedStatus() {
         let url = "/api/Visit/UpdateSignedStatus?visitId=" + this.currentVisitId;
-        this.dlService.Update(null, url).map(res => res).subscribe(res => {
+        this.dlService.Update(null, url).subscribe(res => {
             if (res.Status == ENUM_DanpheHTTPResponseText.OK) {
                 this.msgBoxServ.showMessage(ENUM_MessageBox_Status.Success, ["Data submitted succesfully"]);
                 this.router.navigate(['/Doctors/PatientOverviewMain/VisitSummary/SummaryHistory']);

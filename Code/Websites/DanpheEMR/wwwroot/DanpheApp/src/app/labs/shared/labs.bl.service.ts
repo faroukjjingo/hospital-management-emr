@@ -626,13 +626,13 @@ export class LabsBLService {
 
   //public GetTemplateStoragePath() {
   //    return this.labDLService.GetTemplateStoragePath()
-  //        .map(res => { return res })
+  //        
   //}
   //delete this:ashim
   //getting multiple template under single parent where orderstatus is final..(all the reports against that patient from the beginning)
   //GetViewAllReportsTemplate(patientId: number) {
   //    return this.labDLService.GetViewAllReportsTemplate(patientId)
-  //        .map(res => { return res })
+  //        
   //}
 
   //getting the data from requisition and component to add
@@ -655,18 +655,18 @@ export class LabsBLService {
   //getting list of patient report who labOrder is final and isprint is false ..(used in list-report.component)
   //public GetListPatientWithReport() {
   //    return this.labDLService.GetListPatientWithReport()
-  //        .map(res => { return res })
+  //        
   //}
   //getting list of patient report who labOrder is final..(list all the patient from the beginning to view the report)
   //public GetListAllPatientsReport() {
   //    return this.labDLService.GetListAllPatientsReport()
-  //        .map(res => { return res })
+  //        
   //}
 
   //getting report for patient view..(all the reports from the beginning)
   //GetAllReportByTemplateId(templateId: number, patientId: number, labReportId) {
   //    return this.labDLService.GetAllReportByTemplateId(templateId, patientId, labReportId)
-  //        .map(res => { return res })
+  //        
   //}
 
   //GetComponentValueLookups() {
@@ -682,7 +682,7 @@ export class LabsBLService {
   //PutDoctorsRemark(labResult: Array<LabTestResult>) {
   //    let data = labResult;
   //    return this.labDLService.PutDoctorsRemark(data)
-  //        .map(res => { return res })
+  //        
   //}
 
   ////start: sud: 22Jun'18--for view-report new implementation  [Needs Revision]
@@ -764,7 +764,7 @@ export class LabsBLService {
     data = Object.assign(data, email);
     var omited = _.omit(data, ['LabEmailValidator']);
     return this.labDLService.SendEmail(omited)
-      .map(res => res);
+      ;
   }
 
   uploadFile(url, patient, formData: FormData) {

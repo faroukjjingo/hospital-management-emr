@@ -55,7 +55,7 @@ export class RPT_BIL_ReferralSummaryComponent {
 
   public loadRefSummary() {
     this.dlService.Read("/BillingReports/Bill_ReferralSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&isExternal=" + this.isExternal)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           let data = JSON.parse(res.Results.JsonData);
@@ -104,7 +104,7 @@ export class RPT_BIL_ReferralSummaryComponent {
   }
   // public ExportToExcelRefSummary() {
   //   this.dlService.ReadExcel("/ReportingNew/ExportToExcelRefSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate)
-  //     .map(res => res)
+  //     
   //     .subscribe(data => {
   //       let blob = data;
   //       let a = document.createElement("a");

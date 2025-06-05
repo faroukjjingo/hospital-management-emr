@@ -59,7 +59,7 @@ export class InventoryDashboardComponent {
   }
   LoadDsbStatistics() {
     this.dlService.Read("/Reporting/HomeInvDashboardStats?SourceStoreId=" + this.activeInventoryId)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Results) {
           let parsedData = res.Results;
@@ -75,7 +75,7 @@ export class InventoryDashboardComponent {
   }
   LoadDepartmentAppts() {
     this.dlService.Read("/Reporting/DepartmentWiseConsumerItems?SourceStoreId=" + this.activeInventoryId)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Results) {
           let dataToParse: Array<any> = res.Results;
@@ -90,7 +90,7 @@ export class InventoryDashboardComponent {
   }
   LoadMonthlyWiseAppts() {
     this.dlService.Read("/Reporting/MonthlyWisePurchaseOrdervsGoodsReceiptValue?SourceStoreId=" + this.activeInventoryId)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Results) {
           let dataToParse: Array<any> = res.Results;
@@ -105,7 +105,7 @@ export class InventoryDashboardComponent {
   }
   LoadSubcategoryAppts() {
     this.dlService.Read("/Reporting/SubCategoryWiseInventoryStockValue?SourceStoreId=" + this.activeInventoryId)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Results) {
           let dataToParse: Array<any> = res.Results;
@@ -123,7 +123,7 @@ export class InventoryDashboardComponent {
   // * Laod All Inventory Dashboard Statics | Rohit
   LoadInventoryDashboardStatistics() {
     this.dlService.Read(`/Reporting/InventoryDashboardStatistics?SourceStoreId=${this.activeInventoryId}`)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Results) {
           let parsedData = res.Results;
@@ -140,7 +140,7 @@ export class InventoryDashboardComponent {
   // * Get All Storewise Dispatch Value | Rohit
   GetAllStorewiseDispatchValue() {
     this.dlService.Read(`/Reporting/DepertmentwiseDispatchedValue?SourceStoreId=${this.activeInventoryId}&&FromDate=${this.FromDate}&ToDate=${this.ToDate}`)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Results) {
           let dataToParse: Array<any> = res.Results;
@@ -156,7 +156,7 @@ export class InventoryDashboardComponent {
   // * Get All SubCategory Wise Inventory Stock Value | Rohit
   LoadSubcategoryInventoryStockValue() {
     this.dlService.Read(`/Reporting/GetSubCategoryWiseInventoryStockValue?SourceStoreId=${this.activeInventoryId}`)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Results) {
           let dataToParse: Array<any> = res.Results;
@@ -172,7 +172,7 @@ export class InventoryDashboardComponent {
   // * Get All Purchase Order, GoodReceipt and Dispatch Value | Rohit
   LoadMonthlyWiseTransactions() {
     this.dlService.Read("/Reporting/MonthlyWiseTransaction?SourceStoreId=" + this.activeInventoryId)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Results) {
           let dataToParse: Array<any> = res.Results;

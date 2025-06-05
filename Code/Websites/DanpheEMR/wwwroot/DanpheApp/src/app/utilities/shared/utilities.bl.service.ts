@@ -69,15 +69,15 @@ export class UtilitiesBLService {
   }
   public GetPriceCategory() {
     return this.utilitiesDLSerivce.GetPriceCategory()
-      .map(res => { return res });
+      ;
   }
   public GetCreditOrganizationList(searchText: string) {
     return this.utilitiesDLSerivce.GetCreditOrganizationList(searchText)
-      .map(res => { return res });
+      ;
   }
   public GetDepositHead() {
     return this.utilitiesDLSerivce.GetDepositHead()
-      .map(res => { return res });
+      ;
   }
   public GetPatientPastBillSummary(patientId: number) {
     return this.utilitiesDLSerivce.GetPatientPastBillSummary(patientId)
@@ -94,11 +94,11 @@ export class UtilitiesBLService {
   }
   public GetOrganizationDepositBalance(organizationId: number) {
     return this.utilitiesDLSerivce.GetOrganizationDepositBalance(organizationId)
-      .map(res => res);
+      ;
   }
   public GetDepositDetails(depositId: number) {
     return this.utilitiesDLSerivce.GetDepositDetails(depositId)
-      .map(res => res);
+      ;
   }
   public GetPatientSchemeRefunds(patientId): Observable<DanpheHTTPResponse> {
     return this.utilitiesDLSerivce.GetPatientSchemeRefunds(patientId)
@@ -108,6 +108,6 @@ export class UtilitiesBLService {
   }
   public ConfirmProcess(processToConfirmUserCredentials: ProcessConfirmationUserCredentials_DTO) {
     return this.utilitiesDLSerivce.ConfirmProcess(processToConfirmUserCredentials)
-      .map(res => res);
+      ;
   }
 }

@@ -65,7 +65,7 @@ export class RPT_APPT_DistrictWiseAppointmentReportComponent {
       this.dlService.Read("/Reporting/DistrictwiseAppointmentReport?FromDate="
         + this.districtwiseappointment.fromDate + "&ToDate=" + this.districtwiseappointment.toDate + "&CountrySubDivisionName=" + this.districtwiseappointment.distProvider
         + "&gender=" + this.selGenderName)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {

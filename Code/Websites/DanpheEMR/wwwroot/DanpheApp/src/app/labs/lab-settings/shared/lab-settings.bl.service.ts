@@ -52,11 +52,11 @@ export class LabSettingsBLService {
 
   GetAllLabCategory() {
     return this.labSettingDlServ.GetAllLabCategory()
-      .map(res => { return res });
+      ;
   }
   GetAllSpecimenList() {
     return this.labSettingDlServ.GetAllLabSpecimen()
-      .map(res => { return res });
+      ;
   }
 
 
@@ -68,7 +68,7 @@ export class LabSettingsBLService {
 
     let data = JSON.stringify(newReportTemplateData);
     return this.labSettingDlServ.PostNewReportTemplate(data)
-      .map(res => { return res })
+      
   }
 
   //Post New Lab Test
@@ -78,7 +78,7 @@ export class LabSettingsBLService {
 
     let data = JSON.stringify(newlabTestData);
     return this.labSettingDlServ.PostNewLabTest(data)
-      .map(res => { return res })
+      
   }
 
   PostLabTestComponent(componentList: Array<LabComponentModel>) {
@@ -89,26 +89,26 @@ export class LabSettingsBLService {
     });
     let data = JSON.stringify(newComponents);
     return this.labSettingDlServ.PostLabTestComponent(data)
-      .map(res => { return res })
+      
   }
   PostLabLookUp(componentList: CoreCFGLookUp) {
     let data = JSON.stringify(componentList);
     return this.labSettingDlServ.PostLabLookUp(data)
-      .map(res => { return res })
+      
   }
   PostNewLabCategory(category: LabCategoryModel) {
     let data = JSON.stringify(category);
     return this.labSettingDlServ.PostNewLabCategory(data)
-      .map(res => { return res })
+      
   }
   PostNewLabSpecimen(specimen: string) {
     return this.labSettingDlServ.PostNewLabSpecimen(specimen)
-      .map(res => { return res })
+      
   }
   PutLabCategory(category: LabCategoryModel) {
     let data = JSON.stringify(category);
     return this.labSettingDlServ.PutLabCategory(data)
-      .map(res => { return res })
+      
   }
 
 
@@ -118,7 +118,7 @@ export class LabSettingsBLService {
     let newReportTemplateData: any = _.omit(reportTemplateData, ['ReportTemplateValidator']);
     let data = JSON.stringify(newReportTemplateData);
     return this.labSettingDlServ.PutNewReportTemplate(data)
-      .map(res => { return res })
+      
   }
 
   UpdateNewLabTest(labTestData: LabTest) {
@@ -130,13 +130,13 @@ export class LabSettingsBLService {
     let newlabTestData: any = _.omit(labTestData, ['LabTestValidator']);
     let data = JSON.stringify(newlabTestData);
     return this.labSettingDlServ.PutNewLabTest(data)
-      .map(res => { return res })
+      
   }
 
   UpdateDefaultSignatories(SignatoriesData: Array<CFGParameterModel>) {
     let data = JSON.stringify(SignatoriesData);
     return this.labSettingDlServ.UpdateDefaultSignatories(data)
-      .map(res => { return res })
+      
   }
 
   UpdateLabTestComponent(componentList: Array<LabComponentModel>) {
@@ -147,12 +147,12 @@ export class LabSettingsBLService {
     });
     let data = JSON.stringify(newComponents);
     return this.labSettingDlServ.UpdateLabTestComponent(data)
-      .map(res => { return res })
+      
   }
   UpdateLabLookUpComponent(componentList: CoreCFGLookUp) {
     let data = JSON.stringify(componentList);
     return this.labSettingDlServ.UpdateLabLookUpComponent(data)
-      .map(res => { return res })
+      
   }
 
   //start: sud:28Apr'19--for lab-external vendors.
@@ -187,14 +187,14 @@ export class LabSettingsBLService {
   MapGovLabComponent(comp: MappedGovernmentItems) {
     let temp = _.omit(comp, ['GovItemValidator']);
     let data = JSON.stringify(temp);
-    return this.labSettingDlServ.MapGovLabComponent(data).map(res => { return res });
+    return this.labSettingDlServ.MapGovLabComponent(data);
   }
 
   UpdateMappedGovLabComponent(comp: MappedGovernmentItems) {
     let temp = _.omit(comp, ['GovItemValidator']);
     let data = JSON.stringify(temp);
 
-    return this.labSettingDlServ.UpdateMappedGovLabComponent(data).map(res => { return res });
+    return this.labSettingDlServ.UpdateMappedGovLabComponent(data);
   }
   //end: Anjana: 8/31/2020 : getting all gov specified lab components
 

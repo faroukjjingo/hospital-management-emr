@@ -121,19 +121,19 @@ export class InventoryBLService {
   }
   public GetItemwiseRequistionList() {
     return this.inventoryDLService.GetItemwiseRequistionList()
-      .map(res => { return res })
+      
   }
 
   //GET: Getting the return items list
   public GetVendorItemReturnList() {
     return this.inventoryDLService.GetVendorItemReturnList()
-      .map(res => { return res })
+      
   }
 
   //GET: Getting the write off items list
   public GetWriteOffItemList() {
     return this.inventoryDLService.GetWriteOffItemList()
-      .map(res => { return res })
+      
   }
 
   public GetVendorDetailsByVendorId(VendorId) {
@@ -145,7 +145,7 @@ export class InventoryBLService {
 
   public GetVendorDetails() {
     return this.inventoryDLService.GetVendorDetails()
-      .map(res => { return res })
+      
   }
 
   //GET Get GetAvailableQtyItemList Item List which has Available Quntity >0 from Stock
@@ -203,71 +203,71 @@ export class InventoryBLService {
   //GET: STOCK : get all stock quantity details
   public GetStockList() {
     return this.inventoryDLService.GetStockList()
-      .map(res => { return res });
+      ;
   }
   public GetStockListForManage() {
     return this.inventoryDLService.GetStockListForManage()
-      .map(res => { return res });
+      ;
   }
   public GetStockListForDirectDispatch(storeId: number) {
-    return this.inventoryDLService.GetStockListForDirectDispatch(storeId).map(res => res);
+    return this.inventoryDLService.GetStockListForDirectDispatch(storeId);
   }
   //GET: STOCK : get stock details by ItemId
   public GetStockDetailsByItemId(ItemId, StoreId) {
     return this.inventoryDLService.GetStockDetailsByItemId(ItemId, StoreId)
-      .map(res => { return res });
+      ;
   }
   //GET: STOCK : get stock manage by ItemId
   public GetStockManageByItemId(ItemId, StoreId) {
     return this.inventoryDLService.GetStockManageByItemId(ItemId, StoreId)
-      .map(res => { return res });
+      ;
   }
   //GET: Internal : get item list by VendorId for ReturnToVendor
   public GetItemListForReturnToVendor(VendorId, GoodsReceiptNo, FiscYrId, StoreId) {
     return this.inventoryDLService.GetItemListForReturnToVendor(VendorId, GoodsReceiptNo, FiscYrId, StoreId)
-      .map(res => { return res });
+      ;
   }
   //GET: External : get all goods receipt list
   public GetGoodsReceiptList(fromDate, toDate) {
     return this.inventoryDLService.GetGoodsReceiptList(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
 
   //GET: External : get all goods receipt list
   public GetGoodsReceiptStockList(fromDate, toDate) {
     return this.inventoryDLService.GetGoodsReceiptStockList(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
 
   //GET: External : get all  fixed asset donation list
   public GetFixedAssetDonationList() {
     return this.inventoryDLService.GetFixedAssetDonationList()
-      .map(res => { return res });
+      ;
   }
 
   public GetVendorsDetailsList() {
     return this.inventoryDLService.GetVendorsDetailsList()
-      .map(res => { return res });
+      ;
   }
   public GetEachVendorDetailsList(VendorId) {
     return this.inventoryDLService.GetEachVendorDetailsList(VendorId)
-      .map(res => { return res });
+      ;
   }
 
   //GET: External : get all goods receipt items by goodsReceiptId
   public GetGRItemsByGRId(GoodsReceiptId) {
     return this.inventoryDLService.GetGRItemsByGRId(GoodsReceiptId)
-      .map(res => { return res });
+      ;
   }
   public GetGRItemsWithAvailableQtyByGRId(GoodsReceiptId) {
     return this.inventoryDLService.GetGRItemsWithAvailableQtyByGRId(GoodsReceiptId)
-      .map(res => { return res });
+      ;
   }
 
   //GET: get purchase order details by purchase order ID
   public GetPOItemsByPOId(PurchaseOrderId) {
     return this.inventoryDLService.GetPOItemsByPOId(PurchaseOrderId)
-      .map(res => { return res });
+      ;
   }
   //GET:Get All Requision with Requisition Items for Dispatch purpose
   GetRequisitionWithRItemsById(RequisitionId: number) {
@@ -345,7 +345,7 @@ export class InventoryBLService {
   //GET requested quotation list
   GetRequestedQuotationList() {
     return this.inventoryDLService.GetRequestedQuotationList()
-      .map(res => { return res });
+      ;
   }
   //Get Quotaion details
   GetQuotationDetails(ReqForQuotationId: number) {
@@ -357,45 +357,45 @@ export class InventoryBLService {
   //GET PO requisition
   GetPORequisition(fromDate, toDate) {
     return this.inventoryDLService.GetPORequisition(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
   //Get Active Inventory List
   GetActiveInventoryList() {
     return this.inventoryDLService.GetActiveInventoryList()
-      .map(res => { return res });
+      ;
   }
   //GET PO requisition
   GetPurchaseRequestById(RequisitionId: number) {
     return this.inventoryDLService.GetPurchaseRequestById(RequisitionId)
-      .map(res => { return res });
+      ;
   }
   GetPurchaseRequestItemsById(RequisitionId: number) {
     return this.inventoryDLService.GetPurchaseRequestItemsById(RequisitionId)
-      .map(res => { return res });
+      ;
   }
   GetItemPriceHistory() {
     return this.inventoryDLService.GetItemPriceHistory()
-      .map(res => { return res });
+      ;
   }
   GetAllInventoryFiscalYears() {
     return this.inventoryDLService.GetAllInventoryFiscalYears()
-      .map(res => { return res });
+      ;
   }
   //GET: Track Requisition and all its verification
   TrackRequisitionById(RequisitionId) {
     return this.inventoryDLService.TrackRequisitionById(RequisitionId)
-      .map(res => { return res });
+      ;
   }
 
   //GET:FiscalYears
   public GetAllFiscalYears() {
     return this.inventoryDLService.GetAllFiscalYears()
-      .map(res => res);
+      ;
   }
 
   public GetAvailableQuantityByItemId(ItemId: number) {
     return this.inventoryDLService.GetAvailableQuantityByItemId(ItemId)
-      .map(res => res);
+      ;
   }
 
   //POST:posting the requisitions in requistion table..(tests-order.component)
@@ -412,13 +412,13 @@ export class InventoryBLService {
 
     let data = JSON.stringify(newPO);
     return this.inventoryDLService.PostToPurchaseOrder(data)
-      .map(res => { return res })
+      
   }
   //POST: posting the purchase order cancel
   PostPurchaseOrderCancelDetail(selectedPoId, cancelationRemarks) {
     try {
       return this.inventoryDLService.PostPurchaseOrderCancelDetail(selectedPoId, cancelationRemarks)
-        .map(res => { return res });
+        ;
     } catch (ex) {
       throw ex;
     }
@@ -427,7 +427,7 @@ export class InventoryBLService {
   WithdrawRequisitionById(RequisitionId, cancelationRemarks) {
     try {
       return this.inventoryDLService.WithdrawRequisitionById(RequisitionId, cancelationRemarks)
-        .map(res => { return res });
+        ;
     } catch (ex) {
       throw ex;
     }
@@ -436,7 +436,7 @@ export class InventoryBLService {
   WithdrawPurchaseRequestById(PurchaseRequestId, cancelationRemarks) {
     try {
       return this.inventoryDLService.WithdrawPurchaseRequestById(PurchaseRequestId, cancelationRemarks)
-        .map(res => { return res });
+        ;
     } catch (ex) {
       throw ex;
     }
@@ -445,7 +445,7 @@ export class InventoryBLService {
   PostGoodsReceiptCancelDetail(selectedGRId, cancelationRemarks) {
     try {
       return this.inventoryDLService.PostGoodsReceiptCancelDetail(selectedGRId, cancelationRemarks)
-        .map(res => { return res });
+        ;
     } catch (ex) {
       throw ex;
     }
@@ -463,7 +463,7 @@ export class InventoryBLService {
 
     let data = JSON.stringify(newPO);
     return this.inventoryDLService.UpdatePurchaseOrder(data)
-      .map(res => { return res })
+      
   }
   //POST:posting the requisitions in PO requistion table..(tests-order.component)
   PostToPORequisition(PO: PurchaseRequestModel) {
@@ -479,7 +479,7 @@ export class InventoryBLService {
 
     let data = JSON.stringify(newPurchaseRequest);
     return this.inventoryDLService.PostToPORequisition(data)
-      .map(res => { return res })
+      
   }
 
   //Post:posting the request for quotation in requestforquotation table
@@ -496,7 +496,7 @@ export class InventoryBLService {
 
     let data = JSON.stringify(newPO);
     return this.inventoryDLService.PostToReqForQuotation(data)
-      .map(res => { return res })
+      
   }
   //POST: Posting Dispatched Items
   PostToDispatchItems(dispatch: Dispatch) {
@@ -506,7 +506,7 @@ export class InventoryBLService {
     });
     const data = JSON.stringify({ ...dispatch, DispatchItems: dispatchItemsTemp });
     return this.inventoryDLService.PostToDispatchItems(data)
-      .map(res => { return res })
+      
   }
   //POST: Posting WriteOffItems
   PostToWriteOffItems(writeOffItems: Array<WriteOffItems>) {
@@ -516,7 +516,7 @@ export class InventoryBLService {
     });
     let data = JSON.stringify(newWriteOffItems);
     return this.inventoryDLService.PostToWriteOffItems(data)
-      .map(res => { return res })
+      
   }
   //Posting the Requisiton and requisitionItems table
   PostToRequisition(requisition: Requisition) {
@@ -529,7 +529,7 @@ export class InventoryBLService {
 
     newRequ.RequisitionItems = newRequItems;
     return this.inventoryDLService.PostToRequisition(newRequ)
-      .map(res => { return res })
+      
   }
   //Posting the Requisiton and requisitionItems table
   PostDirectDispatch(dispatch: Dispatch, fromRoute?) {
@@ -539,7 +539,7 @@ export class InventoryBLService {
     });
     const data = JSON.stringify({ ...dispatch, DispatchItems: dispatchItemsTemp });
     return this.inventoryDLService.PostDirectDispatch(data, fromRoute)
-      .map(res => { return res })
+      
   }
   //Save Return to vendor Item
   public PostToReturnToVendor(returnToVendor: ReturnToVendorModel) {
@@ -550,42 +550,42 @@ export class InventoryBLService {
 
     let data = JSON.stringify(returnToVendor);
     return this.inventoryDLService.PostToReturnToVendor(data)
-      .map(res => { return res })
+      
   }
   //PUT:Update Purchase order and Purchase Order Items Status after Goods Receipt Generation
   UpdatePOAndPOItemStatus(purchaseOrder: PurchaseOrder) {
     let data = JSON.stringify(purchaseOrder);
     return this.inventoryDLService.UpdatePOAndPOItemStatus(data)
-      .map(res => { return res })
+      
   }
 
   //PUT:Update Purchase order and Purchase Order Items Status after Goods Receipt Generation
   UpdateRequisitionStatus(req: Requisition) {
     let data = JSON.stringify(req);
     return this.inventoryDLService.UpdateRequisitionStatus(data)
-      .map(res => { return res })
+      
   }
   //PUT:Approve requisition
   ApprovePORequisition(RequisitionId) {
     let data = JSON.stringify(RequisitionId);
     return this.inventoryDLService.ApprovePORequisition(data)
-      .map(res => { return res })
+      
   }
   //PUT:Approve requisition
   ApproveRequisition(CurrentVerificationLevel: number, RequisitionId: number, StoreId: number) {
     return this.inventoryDLService.ApproveRequisition(CurrentVerificationLevel, RequisitionId, StoreId)
-      .map(res => { return res })
+      
   }
   //PUT:Deny requisition
   RejectRequisition(CurrentVerificationLevel: number, RequisitionId: number, StoreId: number) {
     return this.inventoryDLService.RejectRequisition(CurrentVerificationLevel, RequisitionId, StoreId)
-      .map(res => { return res })
+      
   }
   //PUT : Stock Manage
   public UpdateStock(stocks: Array<StockModel>) {
     let data = JSON.stringify(stocks);
     return this.inventoryDLService.PutStock(data)
-      .map(res => { return res });
+      ;
   }
   //Cancel itms 
   CancelRequisitionItems(requisition: Requisition) {
@@ -598,7 +598,7 @@ export class InventoryBLService {
     newRequ.RequisitionItems = newRequItems;
     let data = JSON.stringify(newRequ);
     return this.inventoryDLService.CancelRequisitionItems(data)
-      .map(res => { return res })
+      
   }
 
   //PUT:update Selected Quotation and RequestedQuotation
@@ -608,7 +608,7 @@ export class InventoryBLService {
 
     let data = JSON.stringify(omit);
     return this.inventoryDLService.UpdateVendorForPO(data)
-      .map(res => { return res });
+      ;
 
   }
   //PUT: Edit PO Requisition
@@ -625,12 +625,12 @@ export class InventoryBLService {
 
     let data = JSON.stringify(newPORequisition);
     return this.inventoryDLService.UpdatePORequisition(data)
-      .map(res => { return res })
+      
   }
 
   UpdatePORequisitionAfterPOCreation(RequisitionId: number) {
     return this.inventoryDLService.UpdatePORequisitionAfterPOCreation(RequisitionId)
-      .map(res => { return res })
+      
   }
   //Save Return to vendor Item
   public PostQuotationDetails(quoDetails: QuotationModel) {
@@ -645,7 +645,7 @@ export class InventoryBLService {
     //  formToPost.append("quotationDetails", quotationDetails);
 
     return this.inventoryDLService.PostQuotationDetails(data)
-      .map(res => { return res })
+      
   }
 
   public AddQuotationFiles(filesToUpload, reqQuotation: QuotationUpLoadFileModel) {
@@ -672,7 +672,7 @@ export class InventoryBLService {
       formToPost.append("quotationFileDetails", quotationFileDetails);
 
       return this.inventoryDLService.PostQuotationFiles(formToPost)
-        .map(res => res);
+        ;
 
     } catch (exception) {
       throw exception;
@@ -681,34 +681,34 @@ export class InventoryBLService {
   //GET : vendor's goods received billing history
   public GetGRVendorBillHistory() {
     return this.inventoryDLService.GetGRVendorBillingHistory()
-      .map(res => { return res });
+      ;
   }
 
   //POST: Add GR in Stock
   ReceiveGR(grId: number, receivedRemarks: string) {
     return this.inventoryDLService.ReceiveGR(grId, receivedRemarks)
-      .map(res => { return res })
+      
   }
   //GET: External : get all  fixed asset location list
   // public GetFixedAssetLocationList() {
   //   return this.inventoryDLService.GetFixedAssetLocationList()
-  //     .map(res => { return res });
+  //     ;
   // }
   UpdateReconciledStockFromExcelFile(ChangedStockList: Array<StockModel>) {
     let data = JSON.stringify(ChangedStockList);
     return this.inventoryDLService.UpdateReconciledStockFromExcelFile(data)
-      .map(res => { return res })
+      
 
   }
 
   ExportStocksForReconciliationToExcel(StoreId: number) {
     return this.inventoryDLService.ExportStocksForReconciliationToExcel(StoreId)
-      .map(res => { return res })
+      
   }
 
 
   GetSubCategoryList() {
-    return this.inventoryDLService.GetSubCategoryList().map(res => { return res });
+    return this.inventoryDLService.GetSubCategoryList();
   }
 
   public GetAvailableQuantityByItemIdAndStoreId(ItemId: number, StoreId: number) {

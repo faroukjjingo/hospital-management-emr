@@ -41,7 +41,7 @@ export class INCTV_RPT_HospitalIncomeComponent{
 
     LoadServiceDepartments(){
       this.dlService.Read("/BillingReports/GetServiceDeptList")
-      .map(res => res).subscribe(res => {
+      .subscribe(res => {
           if (res.Status == "OK") {
               this.serviceDepartmentsList = res.Results;
 

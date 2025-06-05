@@ -47,7 +47,7 @@ export class INCTV_RPT_IncentivePatientVsServiceComponent {
 
   LoadDocterList() {
     this.incentiveBLService.GetIncentiveApplicableDocterList()
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.allDocterList = res.Results;
@@ -75,7 +75,7 @@ export class INCTV_RPT_IncentivePatientVsServiceComponent {
     //let srvDept = this.ServDeptName.replace(/&/g, '%26');//this is URL-Encoded value for character  '&'    --see: URL Encoding in Google for details.
     if (this.curDocReportMain.providerId != null && this.curDocReportMain.providerId != 0) {
       this.dlService.Read("/BillingReports/INCTV_DocterItemSummary?FromDate=" + this.curDocReportMain.fromDate + "&ToDate=" + this.curDocReportMain.toDate + "&employeeId=" + this.curDocReportMain.providerId)
-        .map(res => res)
+        
         .subscribe(res => {
           if (res.Status == "OK") {
             this.showReport = false;

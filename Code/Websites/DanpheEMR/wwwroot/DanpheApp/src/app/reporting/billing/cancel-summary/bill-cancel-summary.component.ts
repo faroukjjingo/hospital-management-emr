@@ -43,7 +43,7 @@ export class RPT_BIL_BillCancelSummaryComponent {
 
   Load() {
     this.dlService.Read("/BillingReports/BillCancelSummaryReport?FromDate=" + this.fromDate + "&ToDate=" + this.toDate)
-      .map(res => res)
+      
       .finally(() => { this.loading = false; })
       .subscribe(res => this.Success(res),
         res => this.Error(res));
@@ -68,7 +68,7 @@ export class RPT_BIL_BillCancelSummaryComponent {
   //and in that event we are calling the server excel export....
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelCancelBills?FromDate=" + this.fromDate + "&ToDate=" + this.toDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

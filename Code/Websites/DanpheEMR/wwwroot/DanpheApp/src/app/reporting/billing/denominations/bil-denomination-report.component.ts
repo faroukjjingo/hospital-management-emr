@@ -58,7 +58,7 @@ export class RPT_BIL_BilDenominationReportComponent {
       this.dlService.Read("/BillingReports/BilDenominationReport?FromDate=" + this.currentDenominationReport.fromDate +
         "&ToDate=" + this.currentDenominationReport.toDate +
         "&UserId=" + UserId)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     }
@@ -71,7 +71,7 @@ export class RPT_BIL_BilDenominationReportComponent {
     if (this.currentDenominationReport.fromDate != null && this.currentDenominationReport.toDate != null) {
       this.dlService.Read("/BillingReports/BilDenominationReportAllList?FromDate=" + this.currentDenominationReport.fromDate +
         "&ToDate=" + this.currentDenominationReport.toDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     }

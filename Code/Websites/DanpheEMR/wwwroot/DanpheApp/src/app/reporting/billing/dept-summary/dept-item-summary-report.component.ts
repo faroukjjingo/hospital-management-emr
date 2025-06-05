@@ -50,7 +50,7 @@ export class RPT_BIL_BillDeptItemSummaryComponent {
     public LoadDeptItemSummary() {
         let srvDept = this.ServiceDepartment.replace(/&/g, '%26');
       this.dlService.Read("/BillingReports/BillDeptItemSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&SrvDeptName=" + srvDept)
-            .map(res => res).subscribe(res => {
+            .subscribe(res => {
                 if (res.Status == "OK") {
                     let data = JSON.parse(res.Results.JsonData);
                     if (data.ReportData.length > 0) {
@@ -76,7 +76,7 @@ export class RPT_BIL_BillDeptItemSummaryComponent {
     // public ExportToExcelBilDeptItemSummary() {
     //     let srvDept = this.ServiceDepartment.replace(/&/g, '%26');
     //     this.dlService.ReadExcel("/ReportingNew/ExportToExcelBilDeptItemSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&SrvDeptName=" + srvDept)
-    //         .map(res => res)
+    //         
     //         .subscribe(data => {
     //             let blob = data;
     //             let a = document.createElement("a");

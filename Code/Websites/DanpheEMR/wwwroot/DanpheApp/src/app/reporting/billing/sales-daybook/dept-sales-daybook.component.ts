@@ -37,7 +37,7 @@ export class RPT_BIL_DepartmentSalesDaybookComponent {
     if (this.currentdepartmentsales.fromDate != null && this.currentdepartmentsales.toDate != null) {
       this.dlService.Read("/BillingReports/DepartmentSalesDaybook?FromDate="
         + this.currentdepartmentsales.fromDate + "&ToDate=" + this.currentdepartmentsales.toDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     }
@@ -71,7 +71,7 @@ export class RPT_BIL_DepartmentSalesDaybookComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelDepartmentSales?FromDate="
       + this.currentdepartmentsales.fromDate + "&ToDate=" + this.currentdepartmentsales.toDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

@@ -206,20 +206,20 @@ export class BillingBLService {
   // Load the Deposit amount of the Patient
   public GetDepositFromPatient(patientId: number) {
     return this.billingDLService.GetDepositFromPatient(patientId)
-      //.map(res => res);
+      //;
       .map((responseData) => {
         return responseData;
       })
   }
   public GetDepositHead() {
     return this.billingDLService.GetDepositHead()
-      .map(res => { return res });
+      ;
   }
 
   // // Load the Deposit amount of the Patient
   // public GetPreviousAmount() {
   //   return this.billingDLService.GetPreviousAmount()
-  //     //.map(res => res);
+  //     //;
   //     .map((responseData) => {
   //       return responseData;
   //     })
@@ -229,7 +229,7 @@ export class BillingBLService {
   // Load the User List
   public GetUserList() {
     return this.billingDLService.GetUserList()
-      //.map(res => res);
+      //;
       .map((responseData) => {
         return responseData;
       })
@@ -237,7 +237,7 @@ export class BillingBLService {
 
   public GetEmpDueAmount() {
     return this.billingDLService.GetEmpDueAmount()
-      //.map(res => res);
+      //;
       .map((responseData) => {
         return responseData;
       })
@@ -358,140 +358,140 @@ export class BillingBLService {
 
   public GetPatients(searchTxt) {
     return this.patientDLService.GetPatients(searchTxt)
-      .map(res => res);
+      ;
   }
 
   public GetPatientsWithVisitsInfo(searchTxt) {
     return this.patientDLService.GetPatientsWithVisitsInfo(searchTxt)
-      .map(res => res);
+      ;
   }
 
   public GetMembershipType() {
     return this.billingDLService.GetMembershipType()
-      .map(res => res);
+      ;
   }
 
   // public GetPatientMembershipInfo(patientId) {
   //   return this.billingDLService.GetPatientMembershipInfo(patientId)
-  //     .map(res => res);
+  //     ;
   // }
 
   //sud: 19Jun'18--for RequestingDepartment and BillingType.
   public GetPatientById(patientId) {
     return this.patientDLService.GetPatientById(patientId)
-      .map(res => res);
+      ;
   }
 
 
   public GetTxnItemsForEditDoctor(searchTxt) {
     return this.billingDLService.GetTxnItemsForEditDoctor(searchTxt)
-      .map(res => res);
+      ;
   }
 
   public GetTxnItemsForEditDoctorRad(searchTxt) {
-    return this.billingDLService.GetTxnItemsForEditDoctorRad(searchTxt).map(res => res);
+    return this.billingDLService.GetTxnItemsForEditDoctorRad(searchTxt);
   }
 
   //Sud/yub: 11Aug'19--to get txn items by date - duplicate implementation needed for date filter.
   public GetTxnItemsForEditDoctorByDate(fromDate: string, toDate: string) {
     return this.billingDLService.GetTxnItemsForEditDoctorByDate(fromDate, toDate)
-      .map(res => res);
+      ;
   }
   public GetTxnItemsForEditDoctorByDateRad(fromDate: string, toDate: string) {
     return this.billingDLService.GetTxnItemsForEditDoctorByDateRad(fromDate, toDate)
-      .map(res => res);
+      ;
   }
 
   // Get Doctor List -- use GetDoctorsList instead of this: sud--19May'18,
   //check for dependencies before removing this.
   public GetProviderList() {
     return this.billingDLService.GetProviderList()
-      .map(res => res);
+      ;
   }
 
   public GetDoctorsList() {
     return this.billingDLService.GetDoctorsList()
-      .map(res => res);
+      ;
   }
 
 
   //get the list of patient visit provider wise
   public GetPatientVisitsProviderWise(patientId: number) {
     return this.visitDLService.GetPatientVisitsProviderWise(patientId)
-      .map(res => res);
+      ;
   }
   public GetCurrentFiscalYear() {
     return this.billingDLService.GetCurrentFiscalYear()
-      .map(res => res);
+      ;
   }
   public GetAllFiscalYears() {
     return this.billingDLService.GetAllFiscalYears()
-      .map(res => res);
+      ;
   }
 
   public GetDepositList() {
     return this.billingDLService.GetDepositList()
-      .map(res => res);
+      ;
   }
 
   public GetPastTestList(patientId) {
     return this.billingDLService.GetPastTestList(patientId)
-      .map(res => res);
+      ;
   }
 
   public GetExistedMatchingPatientList(FirstName, LastName, PhoneNumber, Age, Gender, IsInsurance = false, IMISCode = null) {
     return this.patientDLService.GetExistedMatchingPatientList(FirstName, LastName, PhoneNumber, Age, Gender, IsInsurance, IMISCode)
-      .map(res => res);
+      ;
   }
 
   ////Getting Patient List excluding insurance patient..
   //public GetPatientList() {
   //  return this.patientDLService.GetPatientList()
-  //    .map(res => res);
+  //    ;
   //}
 
   //mapping with billingDLServices
   public UpdateInsBalance(patientId: number, insuranceProviderId: number, updatedInsBalance: number) {
     return this.billingDLService.UpdateInsuranceBalance(patientId, insuranceProviderId, updatedInsBalance)
-      .map(res => res);
+      ;
   }
 
   public GetPatientBillHistoryDetail(patientId: number) {
     return this.billingDLService.GetPatientBillHistoryDetail(patientId)
-      .map(res => res);
+      ;
   }
   public GetPatientReturnedReceiptList(patientId: number) {
     return this.billingDLService.GetPatientReturnedReceiptList(patientId)
-      .map(res => res);
+      ;
   }
 
   public GetHandoverTransactionDetails() {
     return this.billingDLService.GetHandoverTransactionDetails()
-      .map(res => res);
+      ;
   }
   public GetHandoverReceivedReport(fromDate, Todate) {
     return this.billingDLService.GetHandoverReceivedReport(fromDate, Todate)
-      .map(res => res);
+      ;
   }
 
   public GetTransferHandoverReceivedReport(fromDate: string, Todate: string, status: string, handoverType: string) {
     return this.billingDLService.GetTransferHandoverReceivedReport(fromDate, Todate, status, handoverType)
-      .map(res => res);
+      ;
   }
 
 
   public GetDailyCollectionVsHandoverReport(fromDate, Todate) {
     return this.billingDLService.GetDailyCollectionVsHandoverReport(fromDate, Todate)
-      .map(res => res);
+      ;
   }
   public loadHandoverDetailReport(fromDate, Todate, employeeId) {
     return this.billingDLService.GetHandoverDetailReport(fromDate, Todate, employeeId)
-      .map(res => res);
+      ;
   }
 
   public GetHandoverSummaryReport(fiscalYrId: number) {
     return this.billingDLService.GetHandoverSummaryReport(fiscalYrId)
-      .map(res => res);
+      ;
   }
 
   //unclaimed Insurance
@@ -500,7 +500,7 @@ export class BillingBLService {
       return invoice.BillingTransactionId;
     });
     return this.billingDLService.UpdateInsuranceClaimed(billingTransactionIdList, counterId)
-      .map(res => res);
+      ;
   }
   public PostBillingTransactionItems(billTranItems: Array<BillingTransactionItem>) {
     //this map is javascript map not rxjs map..
@@ -733,11 +733,11 @@ export class BillingBLService {
   //   let integratonName = this.coreService.GetServiceIntegrationName(departmentName);
   //   if (integratonName == "LAB") {
   //     return this.labsDLService.PutLabBillStatus(requisitionIds, billStatus)
-  //       .map(res => res);
+  //       ;
   //   }
   //   else if (integratonName == "Radiology") {
   //     return this.imagingDLService.PutImagingReqsBillingStatus(requisitionIds, billStatus)
-  //       .map(res => res)
+  //       
   //   }
   //   else if (integratonName == "OPD") {
   //     return this.visitDLService.PutVisitsBillingStatus(requisitionIds, billStatus)
@@ -756,7 +756,7 @@ export class BillingBLService {
   //updates BillStatus of BillItemRequisition table.
   public UpdateBillStatus_BillItemRequisitions(billItemReqIds: Array<number>, status) {
     return this.billingDLService.PutStatusOfBillItemReqisitions(billItemReqIds, status)
-      .map(res => res);
+      ;
   }
 
   //updates BillStatus of ServiceDepartment's Requisition tables.-- default status=paid
@@ -771,11 +771,11 @@ export class BillingBLService {
     let integratonName = this.coreService.GetServiceIntegrationName(srvDeptName);
     if (integratonName == "LAB") {
       return this.labsDLService.PutLabBillStatus(requisitionIds, billStatus)
-        .map(res => res);
+        ;
     }
     else if (integratonName == "Radiology") {
       return this.imagingDLService.PutImagingReqsBillingStatus(requisitionIds, billStatus)
-        .map(res => res)
+        
     }
     else if (integratonName == "OPD" || integratonName == "ER") {
       return this.visitDLService.PutVisitsBillingStatus(requisitionIds, billStatus)
@@ -1041,17 +1041,17 @@ export class BillingBLService {
     let dptRequestIndexes = [];
     let currIndex = 0;
     if (labItms && labItms.length > 0) {
-      deptHttpRequests.push(this.labsDLService.PostToRequisition(labItms).map(res => res));
+      deptHttpRequests.push(this.labsDLService.PostToRequisition(labItms));
       dptRequestIndexes.push({ dptName: "lab", index: currIndex });
       currIndex++;
     }
     if (imgItems && imgItems.length > 0) {
-      deptHttpRequests.push(this.imagingDLService.PostRequestItems(imgItems).map(res => res));
+      deptHttpRequests.push(this.imagingDLService.PostRequestItems(imgItems));
       dptRequestIndexes.push({ dptName: "radiology", index: currIndex });
       currIndex++;
     }
     if (visititems && visititems.length > 0) {
-      deptHttpRequests.push(this.visitDLService.PostVisitsFromBillingTransaction(visititems).map(res => res));
+      deptHttpRequests.push(this.visitDLService.PostVisitsFromBillingTransaction(visititems));
       dptRequestIndexes.push({ dptName: "visit", index: currIndex });
       currIndex++;
     }
@@ -1313,7 +1313,7 @@ export class BillingBLService {
 
   public UpdateDepositPrintCount(depositId: number) {
     return this.billingDLService.PutDepositPrintCount(depositId)
-      .map(res => res);
+      ;
   }
 
 
@@ -1334,7 +1334,7 @@ export class BillingBLService {
     });
 
     return this.billingDLService.CancelMultipleBillTxnItems(billTransItemTemp)
-      .map(res => res);
+      ;
   }
 
   //sud: 10may'18 -- to cancel multiple txn items at once.
@@ -1361,67 +1361,67 @@ export class BillingBLService {
 
   public UpdateSettlementPrintCount(settlementId: number) {
     return this.billingDLService.PutSettlementPrintCount(settlementId)
-      .map(res => res);
+      ;
   }
 
   public GetAllSettlements() {
     return this.billingDLService.GetAllSettlements()
-      .map(res => res);
+      ;
   }
 
   //added: sud: 21May'18
   public GetSettlementInfoBySettlmentId(settlementId: number) {
     return this.billingDLService.GetSettlementInfoBySettlmentId(settlementId)
-      .map(res => res);
+      ;
   }
 
   //added: sud: 21May'18
   public GetPatientBillingContext(patientId: number) {
     return this.billingDLService.GetPatientBillingContext(patientId)
-      .map(res => res);
+      ;
   }
   //added: ashim : 20Aug2018 : to display admission detail in provisional page.
   public GetLatestAdmissionDetail(patientId: number) {
     return this.admissionDLService.GetLatestAdmissionDetail(patientId)
-      .map(res => res);
+      ;
   }
 
   //added: ashim : 20Aug2018 : to display admission detail in provisional page.
   public GetAdmissionNDepositsInfoForDischarge(patientVisitId: number) {
     return this.billingDLService.GetAdmissionNDepositsInfoForDischarge(patientVisitId)
-      .map(res => res);
+      ;
   }
 
 
   //added: ashim : 16Sep2018 : to display admission detail in provisional page.
   public GetAdditionalInfoForDischarge(patientVisitId: number, billingTxnId: number) {
     return this.billingDLService.GetAdditionalInfoForDischarge(patientVisitId, billingTxnId)
-      .map(res => res);
+      ;
   }
 
   //added: ashim : 16Sep2018 : to display admission detail in provisional page.
   public GetBillItemsForIPReceipt(patientId: number, billingTxnId: number, billStatus) {
     return this.billingDLService.GetBillItemsForIPReceipt(patientId, billingTxnId, billStatus)
-      .map(res => res);
+      ;
   }
 
   public GetProvisionalItemsInfoForPrint(patientId: number, provFiscalYrId: number, provReceiptNo: number, visitType: string, schemeId: number) {
     return this.billingDLService.GetProvisionalItemsInfoForPrint(patientId, provFiscalYrId, provReceiptNo, visitType, schemeId)
-      .map(res => res);
+      ;
   }
   public GetDetailForCancellationReceipt(patientId: number, provisionalReturnItemId: number) {
     return this.billingDLService.GetDetailForCancellationReceipt(patientId, provisionalReturnItemId)
-      .map(res => res);
+      ;
   }
 
   public GetDetailForIpCancellationItems(patientId: number, patientVisitId: number) {
     return this.billingDLService.GetDetailForIpCancellationItems(patientId, patientVisitId)
-      .map(res => res);
+      ;
   }
 
   public GetInsuranceProvisionalInfoForPrint(patientId: number, provFiscalYrId: number, provReceiptNo: number, visitType: string) {
     return this.billingDLService.GetInsuranceProvisionalInfoForPrint(patientId, provFiscalYrId, provReceiptNo, visitType)
-      .map(res => res);
+      ;
   }
 
 
@@ -1478,7 +1478,7 @@ export class BillingBLService {
     input.append("billTransaction", biltxndata);
 
     return this.billingDLService.PostReturnReceipt(input)
-      .map(res => res);
+      ;
   }
 
 
@@ -1496,28 +1496,28 @@ export class BillingBLService {
     let itmToSend = _.omit(billTxnItem, ['ItemList', 'BillingTransactionItemValidator', 'Patient', 'ServiceDepartment'])
 
     return this.billingDLService.UpdateBillItem_PriceQtyDiscNDoctor(itmToSend)
-      .map(res => res);
+      ;
   }
 
   public DischargePatient(dischargePatient: DischargeDetailBillingVM) {
     return this.admissionDLService.DischargePatient(dischargePatient)
-      .map(res => res);
+      ;
   }
 
   public DischargePatientWithZeroItem(obj: any) {
     let data = JSON.stringify(obj);
     return this.admissionDLService.DischargePatientWithZeroItem(data)
-      .map(res => res);
+      ;
   }
   //older code
   // public UpdateBedDurationBillTxn(bedDurationDetail: Array<BedDurationTxnDetailsVM>) {
   //   return this.billingDLService.PutBedDurationBillTxn(bedDurationDetail)
-  //     .map(res => res);
+  //     ;
   // }
 
   public UpdateBedDurationBillTxn(visitId: number) {
     return this.billingDLService.PutBedDurationBillTxn(visitId)
-      .map(res => res);
+      ;
   }
 
   public GetDataOfInPatient(patId: number, visitId: number) {
@@ -1529,7 +1529,7 @@ export class BillingBLService {
 
   // public GetInpatientList() {
   //   return this.patientDLService.GetInpatientList()
-  //     .map(res => res);
+  //     ;
   // }
 
   public CloseInsurancePackage(patientInsurancePkgId: number) {
@@ -1542,7 +1542,7 @@ export class BillingBLService {
   //start: Yubaraj: 18Jul'19--For Insurance Billing
   public GetInsurancePatients() {
     return this.billingDLService.GetInsurancePatients()
-      .map(res => res);
+      ;
   }
   //end: Yubaraj: 18Jul'19--For Insurance Billing
 
@@ -1550,13 +1550,13 @@ export class BillingBLService {
   //Get All-Referrer-List--this function is copied from settings-bl service.
   public GetAllReferrerList() {
     return this.billingDLService.GetAllReferrerList()
-      .map(res => res);
+      ;
   }
 
   //sud:30Apr'20--Active Employee List for reusablilty
   public GetActiveEmployeesList() {
     return this.billingDLService.GetActiveEmployeesList()
-      .map(res => res);
+      ;
   }
 
   //Anjana: 19Aug-2020: Cancellation of Items in Cancel Bils
@@ -1598,7 +1598,7 @@ export class BillingBLService {
   //Sud:20Feb'21--To get Only IPD Patients List with VisitInfo
   public GetIpdPatientsWithVisitsInfo(searchTxt) {
     return this.patientDLService.GetIpdPatientsWithVisitsInfo(searchTxt)
-      .map(res => res);
+      ;
   }
 
   //sud:1May'21--For Credit Note
@@ -1704,53 +1704,53 @@ export class BillingBLService {
   //!Krishna 31stMarch'23 Below methods are copied from EMR_V2.3.1_manipal for Discharge Statement
   public GetEstimatePharmacyBillDetails(patientId: number) {
     return this.billingDLService.GetEstimatePharmacyBillDetails(patientId)
-      .map(res => res);
+      ;
   }
 
 
   public GetDuplicateDischargeStatementList(fromDate: string, toDate: string) {
-    return this.billingDLService.GetDischargeStatementList(fromDate, toDate).map(res => res);
+    return this.billingDLService.GetDischargeStatementList(fromDate, toDate);
   }
 
   public GetDischrageStatement(PatientId: number, DischargeStatementId: number, PatientVisitId: number) {
-    return this.billingDLService.GetDischargeStatement(PatientId, DischargeStatementId, PatientVisitId).map(res => res);
+    return this.billingDLService.GetDischargeStatement(PatientId, DischargeStatementId, PatientVisitId);
   }
 
   public GetDischrageStatementSummary(PatientId: number, PatientVisitId: number, DischargeStatementId: number) {
-    return this.billingDLService.GetDischargeStatementSummary(PatientId, PatientVisitId, DischargeStatementId).map(res => res);
+    return this.billingDLService.GetDischargeStatementSummary(PatientId, PatientVisitId, DischargeStatementId);
   }
 
   public GetEstimateBillDetails(patientId: number, patientvisitId: number) {
     return this.billingDLService.GetEstimateBillDetails(patientId, patientvisitId)
-      .map(res => res);
+      ;
   }
   public GetOrganizationDepositLists() {
     return this.billingDLService.GetOrganizationDepositLists()
-      .map(res => res);
+      ;
   }
   public GetPatientDepositsList(patientId: number) {
     return this.billingDLService.GetPatientDepositsList(patientId)
-      .map(res => res);
+      ;
   }
   public PostProvisionalDischarge(provisionalDischarge: ProvisionalDischarge_DTO) {
     return this.billingDLService.PostProvisionalDischarge(provisionalDischarge)
-      .map(res => res);
+      ;
   }
   public GetProvisionalDischargeList() {
     return this.billingDLService.GetProvisionalDischargeList()
-      .map(res => res);
+      ;
   }
   public GetProvisionalDischargeItems(patientId: number, schemeId: number, patientVisitId: number) {
     return this.billingDLService.GetProvisionalDischargeItems(patientId, schemeId, patientVisitId)
-      .map(res => res);
+      ;
   }
   public GetPatientVisitContextForProvisionalPayment(patientId: number, patientVisitId: number) {
     return this.billingDLService.GetPatientVisitContextForProvisionalPayment(patientId, patientVisitId)
-      .map(res => res);
+      ;
   }
   public DiscardProvisionalItems(discardProvisionalItems: DiscardProvisionalItems_DTO) {
     return this.billingDLService.DiscardProvisionalItems(discardProvisionalItems)
-      .map(res => res);
+      ;
   }
 
   public PayProvisionalForProvisionalDischarge(billTxnModel: BillingTransaction) {

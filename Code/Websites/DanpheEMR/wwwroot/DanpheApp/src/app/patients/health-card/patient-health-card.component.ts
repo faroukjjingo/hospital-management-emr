@@ -114,7 +114,7 @@ export class PatientHealthCardComponent implements OnInit {
 
   LoadProfilePic() {
     this.http.get<any>("/api/patient/PatientProfilePicture?patientId=" + this.selectedPat.PatientId)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         console.log(res);
         let fileInfo = res.Results;
@@ -232,7 +232,7 @@ export class PatientHealthCardComponent implements OnInit {
       this.AssignHealthCardInfo();
       let data = JSON.stringify(this.curHealthCard);
       this.http.post<any>("/api/Patient/PatientHealthCard", data)
-        .map(res => res)
+        
         .subscribe(res => {
           if (res.Status == "OK") {
             //this.msgBoxServ.showMessage('Success', ["Successfully Added HealthCard Details."])
@@ -264,7 +264,7 @@ export class PatientHealthCardComponent implements OnInit {
 
   LoadHealthCardStatus() {
     this.http.get<any>("/api/Patient/HealthCardStatus?patientId=" + this.selectedPat.PatientId)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK" && res.Results != null) {
           this.patHealthCardStatus = res.Results;

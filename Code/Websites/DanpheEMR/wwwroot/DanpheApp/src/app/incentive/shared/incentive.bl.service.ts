@@ -15,75 +15,75 @@ export class IncentiveBLService {
   //                        *** GET ***
 
   GetIncentiveApplicableDocterList() {
-    return this.incentiveDL.GetIncentiveApplicableDocterList().map(res => res);
+    return this.incentiveDL.GetIncentiveApplicableDocterList();
   }
 
 
   public GetProfileList() {
     return this.incentiveDL.GetProfileList()
-      // .map(res => { return res });
-      .map(res => res);
+      // ;
+      ;
   }
 
   public GetCategoryList() {
-    return this.incentiveDL.GetCategoryList().map(res => res);
+    return this.incentiveDL.GetCategoryList();
   }
 
   // GetEmpWithProfileMap() {
-  //   return this.incentiveDL.GetEmpWithProfileMap().map(res => res);
+  //   return this.incentiveDL.GetEmpWithProfileMap();
   // }
 
   // GetEmpWithoutProfileMap() {
-  //   return this.incentiveDL.GetEmpWithoutProfileMap().map(res => res);
+  //   return this.incentiveDL.GetEmpWithoutProfileMap();
   // }
 
   // GetProfileListForMapping() {
-  //   return this.incentiveDL.GetProfileListforMapping().map(res => res);
+  //   return this.incentiveDL.GetProfileListforMapping();
   // }
 
   // GetActiveProfileList() {
-  //   return this.incentiveDL.GetActiveProfileList().map(res => res);
+  //   return this.incentiveDL.GetActiveProfileList();
   // }
 
   getItemsforProfile() {
-    return this.incentiveDL.GetItemsforProfile().map(res => res);
+    return this.incentiveDL.GetItemsforProfile();
   }
 
   GetProfileItemsMapping(profileId: number) {
-    return this.incentiveDL.GetProfileItemsMapping(profileId).map(res => res);
+    return this.incentiveDL.GetProfileItemsMapping(profileId);
   }
 
   GetEmployeeIncentiveInfo() {
-    return this.incentiveDL.GetEmployeeIncentiveInfo().map(res => res);
+    return this.incentiveDL.GetEmployeeIncentiveInfo();
   }
 
   GetEmployeeBillItemsList(employeeId) {
-    return this.incentiveDL.GetEmployeeBillItemsList(employeeId).map(res => res);
+    return this.incentiveDL.GetEmployeeBillItemsList(employeeId);
   }
 
   GetItemsForIncentive(priceCategoryId: number = null) {
-    return this.incentiveDL.GetItemsForIncentive(priceCategoryId).map(res => res);
+    return this.incentiveDL.GetItemsForIncentive(priceCategoryId);
   }
 
   GetIncentiveSettingByEmpId(empId: number) {
-    return this.incentiveDL.GetIncentiveSettingByEmpId(empId).map(res => res);
+    return this.incentiveDL.GetIncentiveSettingByEmpId(empId);
   }
 
   GetAllLedgerList() {
-    return this.incentiveDL.GetAllLedgerList().map(res => res);
+    return this.incentiveDL.GetAllLedgerList();
   }
 
   GetLedgerListOfEmployee() {
-    return this.incentiveDL.GetLedgerListOfEmployee().map(res => res);
+    return this.incentiveDL.GetLedgerListOfEmployee();
   }
 
 
   GetEmpProfileMap() {
-    return this.incentiveDL.GetEmpProfileMap().map(res => res);
+    return this.incentiveDL.GetEmpProfileMap();
   }
 
   GetEmpIncentiveInfo() {
-    return this.incentiveDL.GetEmpIncentiveInfo().map(res => res);
+    return this.incentiveDL.GetEmpIncentiveInfo();
   }
 
   public GetBillItemList() {
@@ -97,7 +97,7 @@ export class IncentiveBLService {
   //                        *** POST ***
   public AddProfile(profileObj) {
     const data = _.omit(profileObj, ['ProfileValidator']);
-    return this.incentiveDL.AddProfile(data).map(res => res);
+    return this.incentiveDL.AddProfile(data);
   }
 
   // AddEmpProfileMap(empProfiles) {
@@ -106,7 +106,7 @@ export class IncentiveBLService {
   //     const temp = _.omit(a, ['EMPProfileMapValidator']);
   //     data.push(temp);
   //   });
-  //   return this.incentiveDL.AddEmpProfileMap(data).map(res => res);
+  //   return this.incentiveDL.AddEmpProfileMap(data);
   // }
 
   SaveProfileItemMap(maps) {
@@ -115,34 +115,34 @@ export class IncentiveBLService {
       const temp = _.omit(el, ['ProfileItemMapValidator']);
       data.push(temp);
     });
-    return this.incentiveDL.SaveProfileItemMap(data).map(res => res);
+    return this.incentiveDL.SaveProfileItemMap(data);
   }
 
   SaveEmployeeBillItemsMap(data) {
-    return this.incentiveDL.SaveEmployeeBillItemsMap(data).map(res => res);
+    return this.incentiveDL.SaveEmployeeBillItemsMap(data);
   }
 
   UpdateEmployeeBillItem(data) {
-    return this.incentiveDL.UpdateEmployeeBillItem(data).map(res => res);
+    return this.incentiveDL.UpdateEmployeeBillItem(data);
   }
   UpdateProfileBillItemMap(data) {
-    return this.incentiveDL.UpdateProfileBillItemMap(data).map(res => res);
+    return this.incentiveDL.UpdateProfileBillItemMap(data);
   }
   RemoveSelectedBillItem(data) {
-    return this.incentiveDL.RemoveSelectedBillItem(data).map(res => res);
+    return this.incentiveDL.RemoveSelectedBillItem(data);
   }
   RemoveSelectedBillItemFromProfileMap(data) {
-    return this.incentiveDL.RemoveSelectedBillItemFromProfileMap(data).map(res => res);
+    return this.incentiveDL.RemoveSelectedBillItemFromProfileMap(data);
   }
   SaveItemGroupDistribution(data) {
-    return this.incentiveDL.SaveItemGroupDistribution(data).map(res => res);
+    return this.incentiveDL.SaveItemGroupDistribution(data);
   }
 
   ActivateDeactivateEmployeeSetup(data) {
-    return this.incentiveDL.ActivateDeactivateEmployeeSetup(data).map(res => res);
+    return this.incentiveDL.ActivateDeactivateEmployeeSetup(data);
   }
   ActivateDeactivateProfile(data) {
-    return this.incentiveDL.ActivateDeactivateProfile(data).map(res => res);
+    return this.incentiveDL.ActivateDeactivateProfile(data);
   }
   public UpdateBillTxnItems(modifiedItems: Array<BillingTransactionItem>) {
     let txnItems: Array<any> = modifiedItems.map(bil => {
@@ -193,7 +193,7 @@ export class IncentiveBLService {
       var paymentInfDet = _.omit(paymentInfoDetail, ['PaymentInfoValidator']);
       let paymentInfoDetailData = JSON.stringify(paymentInfDet);
       return this.incentiveDL.PostToIncentiveTransaction(paymentInfoDetailData, data)
-        .map(res => { return res })
+        
     } catch (ex) {
       throw ex;
     }
@@ -202,6 +202,6 @@ export class IncentiveBLService {
   //                        *** PUT ***
   public UpdateProfile(profileObj) {
     const data = _.omit(profileObj, ['ProfileValidator']);
-    return this.incentiveDL.UpdateProfile(data).map(res => res);
+    return this.incentiveDL.UpdateProfile(data);
   }
 }

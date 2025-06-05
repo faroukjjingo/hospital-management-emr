@@ -141,7 +141,7 @@ export class RPT_BIL_PaymentModeWiseReport {
         this.loading = true;
         if (this.fromDate != null && this.toDate != null) {
             this._dlService.Read("/BillingReports/PaymentModeWiseReport?FromDate=" + this.fromDate + "&ToDate=" + this.toDate + "&PaymentMode=" + this.PaymentMode + "&Type=" + this.Type + "&User=" + this.UserId)
-                .map(res => res)
+                
                 .subscribe(res => this.Success(res),
                     err => this.Error(err));
         }

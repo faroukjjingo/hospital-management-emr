@@ -52,7 +52,7 @@ export class GovINSIPDBillingComponent {
 
   LoadInpatientList() {
     this.dlService.Read("/api/GovInsurance/AdmittedPatients")
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           this.allInpatList = res.Results;

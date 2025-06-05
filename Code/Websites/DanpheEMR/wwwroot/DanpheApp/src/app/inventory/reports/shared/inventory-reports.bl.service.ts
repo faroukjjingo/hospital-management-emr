@@ -14,22 +14,22 @@ export class InventoryReportsBLService {
 
   public GetAllVendorList() {
     return this.inventoryDLService.GetAllVendorList()
-      .map(res => { return res });
+      ;
   }
 
   public GetAllItemsList() {
     return this.inventoryDLService.GetAllItemsList()
-      .map(res => { return res });
+      ;
   }
 
   public GetAllStoreList() {
     return this.inventoryDLService.GetAllStoreList()
-      .map(res => { return res });
+      ;
   }
 
   public GetSupplierWiseStockReportList(data) {
     return this.inventoryDLService.GetSupplierWiseStockReportList(data)
-      .map(res => { return res });
+      ;
   }
 
   public ShowStockLevelReportData(ItemName) {
@@ -116,52 +116,52 @@ export class InventoryReportsBLService {
 
   public GetAllFiscalYears() {
     return this.inventoryDLService.GetAllFiscalYears()
-      .map(res => res);
+      ;
   }
   public GetCurrentFiscalYear() {
     return this.inventoryDLService.GetCurrentFiscalYear()
-      .map(res => res);
+      ;
   }
   public showVendorTrasactionDetails(fiscalYear, VendorId) {
-    return this.inventoryDLService.showVendorTrasactionDetails(fiscalYear, VendorId).map(res => res);
+    return this.inventoryDLService.showVendorTrasactionDetails(fiscalYear, VendorId);
   }
   public showVendorTrasactionData(fiscalYear, VendorId) {
-    return this.inventoryDLService.showVendorTrasactionData(fiscalYear, VendorId).map(res => res);
+    return this.inventoryDLService.showVendorTrasactionData(fiscalYear, VendorId);
   }
   public showSubstoreStockReport(StoreId, ItemId) {
-    return this.inventoryDLService.showSubstoreStockReport(StoreId, ItemId).map(res => res);
+    return this.inventoryDLService.showSubstoreStockReport(StoreId, ItemId);
   }
   public LoadInventoryStores() {
     return this.inventoryDLService.LoadInventoryStores()
-      .map(res => res);
+      ;
   }
   public GetItemDetailsByIds(selectedIds, itemId) {
     return this.inventoryDLService.GetItemDetailsByIds(selectedIds, itemId)
-      .map(res => res);
+      ;
   }
   public GetPurchaseSummaryReport(fromDate, toDate, vendorId) {
     return this.inventoryDLService.GetPurchaseSummaryReport(fromDate, toDate, vendorId)
-      .map(res => { return res });
+      ;
   }
 
   public GetItem() {
     return this.inventoryDLService.GetItem()
-      .map(res => { return res });
+      ;
   }
 
   public GetReturnToSupplierReport(obj) {
     return this.inventoryDLService.GetReturnToSupplierReport(obj)
-      .map(res => { return res });
+      ;
   }
   ////Get: Get Expiry Item Report Data
   public GetExpiryItemReport(itemId: number, storeId: number, fromDate, toDate) {
     return this.inventoryDLService.GetExpiryItemReport(itemId, storeId, fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
   public GetSupplierInformationReportList() {
     try {
       return this.inventoryDLService.GetSupplierInformationReportList()
-        .map(res => { return res });
+        ;
     }
     catch (ex) {
       throw ex;
@@ -170,16 +170,16 @@ export class InventoryReportsBLService {
   }
   GetInventoryList() {
     return this.inventoryDLService.GetInventoryList()
-      .map(res => { return res });
+      ;
   }
   GetSubstoreDispatchedAndConsumptionReport(StoreId, ItemId, SubCategoryId, fromDate, toDate) {
-    return this.inventoryDLService.GetSubstoreDispatchedAndConsumptionReport(StoreId, ItemId, SubCategoryId, fromDate, toDate).map(res => { return res });
+    return this.inventoryDLService.GetSubstoreDispatchedAndConsumptionReport(StoreId, ItemId, SubCategoryId, fromDate, toDate);
   }
   public GetExpirableStockReportData(FromDate, ToDate, FiscalYearId, ItemId) {
     return this.inventoryDLService.GetExpirableStockReportData(FromDate, ToDate, FiscalYearId, ItemId);
   }
   GetSubstoreWiseSummaryReport(StoreId, fromDate, toDate, FiscalYearId) {
-    return this.inventoryDLService.GetSubstoreWiseSummaryReport(StoreId, fromDate, toDate, FiscalYearId).map(res => { return res });
+    return this.inventoryDLService.GetSubstoreWiseSummaryReport(StoreId, fromDate, toDate, FiscalYearId);
   }
   public GetAllSubStores() {
     return this.inventoryDLService.GetAllInventoryStores()

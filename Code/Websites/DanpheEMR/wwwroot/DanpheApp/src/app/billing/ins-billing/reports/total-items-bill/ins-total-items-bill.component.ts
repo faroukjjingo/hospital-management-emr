@@ -53,7 +53,7 @@ export class INSTotalItemsBillComponent {
 
   loadDepartments() {
     this.dlService.Read("/Reporting/GetServiceDeptList")
-      .map(res => res).subscribe(res => {
+      .subscribe(res => {
         if (res.Status == "OK") {
           this.serDeptList = res.Results;
           CommonFunctions.SortArrayOfObjects(this.serDeptList, "ServiceDepartmentName");//this sorts the empRoleList by EmployeeRoleName.
@@ -71,7 +71,7 @@ export class INSTotalItemsBillComponent {
       this.dlService.Read("/BillingReports/TotalItemsBill?FromDate=" + this.fromDate + "&ToDate=" + this.toDate
         + "&BillStatus=" + this.CurrentTotalItem.billstatus + "&ServiceDepartmentName=" + this.CurrentTotalItem.servicedepartment +
         "&ItemName=" + this.CurrentTotalItem.itemname + "&IsInsurance=true")
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
    
@@ -152,7 +152,7 @@ export class INSTotalItemsBillComponent {
   //     + this.fromDate + "&ToDate=" + this.toDate
   //     + "&BillStatus=" + this.CurrentTotalItem.billstatus + "&ServiceDepartmentName=" + this.CurrentTotalItem.servicedepartment +
   //     "&ItemName=" + this.CurrentTotalItem.itemname + "&SummaryData=" + jsonStrSummary + "&SummaryHeader=" + summaryHeader + "&IsInsurance=true")
-  //     .map(res => res)
+  //     
   //     .subscribe(data => {
   //       let blob = data;
   //       let a = document.createElement("a");

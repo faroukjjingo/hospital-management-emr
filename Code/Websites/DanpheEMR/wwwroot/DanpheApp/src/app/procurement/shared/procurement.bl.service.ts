@@ -18,12 +18,12 @@ export class ProcurementBLService {
   }
   GetPORequisition(fromDate, toDate) {
     return this.inventoryDLService.GetPORequisition(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
   //GET PO requisition
   GetPurchaseRequestById(RequisitionId: number) {
     return this.inventoryDLService.GetPurchaseRequestById(RequisitionId)
-      .map(res => { return res });
+      ;
   }
   public GetPurchaseOrderList(fromDate, toDate, Status: string) {
     return this.inventoryDLService.GetPurchaseOrderList(fromDate, toDate, Status)
@@ -35,12 +35,12 @@ export class ProcurementBLService {
   //GET: get purchase order details by purchase order ID
   public GetPOItemsByPOId(PurchaseOrderId) {
     return this.inventoryDLService.GetPOItemsByPOId(PurchaseOrderId)
-      .map(res => { return res });
+      ;
   }
 
   getQuotationDetailsToAddPO(quotationId) {
     return this.inventoryDLService.getQuotationDetailsToAddPO(quotationId)
-      .map(res => { return res });
+      ;
   }
 
   public GetAllPOVerifiers() {
@@ -57,21 +57,21 @@ export class ProcurementBLService {
   //GET: External : get all goods receipt list
   public GetGoodsReceiptList(fromDate, toDate) {
     return this.inventoryDLService.GetGoodsReceiptList(fromDate, toDate)
-      .map(res => { return res });
+      ;
   }
   public getGoodsReceiptMasterList() {
     return this.inventoryDLService.getGoodsReceiptMasterList()
-      .map(res => { return res });
+      ;
   }
   //GET: External : get all goods receipt items by goodsReceiptId
   public GetGRItemsByGRId(GoodsReceiptId) {
     return this.inventoryDLService.GetGRItemsByGRId(GoodsReceiptId)
-      .map(res => { return res });
+      ;
   }
   //GET: External : get all goods receipt items by goodsReceiptId
   public GetProcurementGRView(GoodsReceiptId) {
     return this.inventoryDLService.GetProcurementGRView(GoodsReceiptId)
-      .map(res => { return res });
+      ;
   }
   //GET:Get purchase order list by Purchase Order ID which is active or partialy completed
   public GetPurchaseOrderItemsByPOId(purchaseOrderId: number) {
@@ -83,13 +83,13 @@ export class ProcurementBLService {
   //GET: External : get all  fixed asset donation list
   public GetFixedAssetDonationList() {
     return this.inventoryDLService.GetFixedAssetDonationList()
-      .map(res => { return res });
+      ;
   }
 
   //GET: Getting the return items list
   public GetVendorItemReturnList() {
     return this.inventoryDLService.GetVendorItemReturnList()
-      .map(res => { return res })
+      
   }
   //get creditNoteno
   public GetCreditNoteNum() {
@@ -101,21 +101,21 @@ export class ProcurementBLService {
   //GET:FiscalYears
   public GetAllFiscalYears() {
     return this.inventoryDLService.GetAllFiscalYears()
-      .map(res => res);
+      ;
   }
   public GetVendorsDetailsList() {
     return this.inventoryDLService.GetVendorsDetailsList()
-      .map(res => { return res });
+      ;
   }
   public GetEachVendorDetailsList(VendorId) {
     return this.inventoryDLService.GetEachVendorDetailsList(VendorId)
-      .map(res => { return res });
+      ;
   }
   //POST: posting the purchase order cancel
   PostPurchaseOrderCancelDetail(selectedPoId, cancelationRemarks) {
     try {
       return this.inventoryDLService.PostPurchaseOrderCancelDetail(selectedPoId, cancelationRemarks)
-        .map(res => { return res });
+        ;
     } catch (ex) {
       throw ex;
     }
@@ -134,13 +134,13 @@ export class ProcurementBLService {
 
     let data = JSON.stringify(newPO);
     return this.inventoryDLService.PostToPurchaseOrder(data)
-      .map(res => { return res })
+      
   }
   //POST: posting the  goods receipt cancel
   PostGoodsReceiptCancelDetail(selectedGRId, cancelationRemarks) {
     try {
       return this.inventoryDLService.PostGoodsReceiptCancelDetail(selectedGRId, cancelationRemarks)
-        .map(res => { return res });
+        ;
     } catch (ex) {
       throw ex;
     }
@@ -155,7 +155,7 @@ export class ProcurementBLService {
 
     let data = JSON.stringify(returnToVendor);
     return this.inventoryDLService.PostToReturnToVendor(data)
-      .map(res => { return res })
+      
   }
 
 
@@ -173,11 +173,11 @@ export class ProcurementBLService {
 
     let data = JSON.stringify(newPO);
     return this.inventoryDLService.UpdatePurchaseOrder(data)
-      .map(res => { return res })
+      
   }
   UpdatePORequisitionAfterPOCreation(RequisitionId: number) {
     return this.inventoryDLService.UpdatePORequisitionAfterPOCreation(RequisitionId)
-      .map(res => { return res })
+      
   }
   PostToPurchaseOrderDraft(PODraft: PurchaseOrderDraft) {
     var PODraftData = _.omit(PODraft, ['PurchaseOrderDraftValidator']);
@@ -187,7 +187,7 @@ export class ProcurementBLService {
     PODraftData.PurchaseOrderDraftItems = newPoItems;
     let PODraftDetail = JSON.stringify(PODraftData);
     return this.inventoryDLService.PostToPurchaseOrderDraft(PODraftDetail)
-      .map(res => { return res })
+      
   }
   UpdatePurchaseOrderDraft(PODraft: PurchaseOrderDraft) {
     var PODraftData = _.omit(PODraft, ['PurchaseOrderDraftValidator']);
@@ -196,7 +196,7 @@ export class ProcurementBLService {
     });
     PODraftData.PurchaseOrderDraftItems = newPoItems;
     return this.inventoryDLService.UpdatePurchaseOrderDraft(PODraftData)
-      .map(res => { return res })
+      
 
   }
   public GetPurchaseOrderDraftList(status: string) {
@@ -208,7 +208,7 @@ export class ProcurementBLService {
   PostDiscardPurchaseOrderDraft(purchaseOrderDraftId, discardRemarks) {
     try {
       return this.inventoryDLService.PostDiscardPurchaseOrderDraft(purchaseOrderDraftId, discardRemarks)
-        .map(res => { return res });
+        ;
     } catch (ex) {
       throw ex;
     }

@@ -32,93 +32,93 @@ export class EyeExaminationBLService {
   //Get Patient History
   public GetEyeHistoryByPatientId(PatientId: number) {
     return this.clinicalDLService.GetEyeHistoryByPatientId(PatientId)
-      .map(res => res);
+      ;
   }
   public LoadEyeEMR(MasterId) {
     return this.clinicalDLService.LoadEyeEMR(MasterId)
-      .map(res => res);
+      ;
   }
     //eye-refraction
   public PostRefraction(refraction: RefractionModel) {
 
     return this.clinicalDLService.PostRefraction(refraction)
-      .map(res => res);
+      ;
   }
   //Ablation
   public PostAblation(ablation: AblationProfileModel) {
 
     return this.clinicalDLService.PostAblation(ablation)
-      .map(res => res);
+      ;
   }
   //LASERDATA
   public PostLaserData(laserdata: LaserDataEntryModel) {
 
     return this.clinicalDLService.PostLaserData(laserdata)
-      .map(res => res);
+      ;
   }
   //PrePachymetry
   public PostPrePachymetry(prepachymetry: PreOPPachymetryModel) {
 
     return this.clinicalDLService.PostPrePachymetry(prepachymetry)
-      .map(res => res);
+      ;
   }
   //LASIKRST
   public PostLaSikRST(lasikrst: LasikRSTModel) {
 
     return this.clinicalDLService.PostLaSikRST(lasikrst)
-      .map(res => res);
+      ;
   }
   //smileIncision
   public PostSmileSetting(smilesetting: SmileSettingsModel) {
 
     return this.clinicalDLService.PostSmileSetting(smilesetting)
-      .map(res => res);
+      ;
   }
 
   //eye-visumax
   public PostVisumax(visumax: EyeVisuMaxModel) {
 
     return this.clinicalDLService.PostVisumax(visumax)
-      .map(res => res);
+      ;
   }
 
   //eye-SmileIncision
   public PostSmileIncision(smileincision: SmileIncisionsModel) {
 
     return this.clinicalDLService.PostSmileIncision(smileincision)
-      .map(res => res);
+      ;
   }
 
   //eye-ORA
   public PostORA(ora: ORAModel) {
 
     return this.clinicalDLService.PostORA(ora)
-      .map(res => res);
+      ;
   }
 
   //eye-Wavefront
   public PostWavefront(wavefront: WavefrontModel) {
 
     return this.clinicalDLService.PostWavefront(wavefront)
-      .map(res => res);
+      ;
   }
 
   //eye-Pachymetry
   public PostPachymetry(pachymetry: Pachymetry) {
 
     return this.clinicalDLService.PostPachymetry(pachymetry)
-      .map(res => res);
+      ;
   }
   //eye-visumax
   public PostMasterEye(EyeMaster: EyeModel) {
 
     return this.clinicalDLService.PostMasterEye(EyeMaster)
-      .map(res => res);
+      ;
   }
   //update refraction
   public UpdateMasterEye(EyeMaster:EyeModel) {
     return this.clinicalDLService.PutMasterEye(EyeMaster)
-      .map(res => res);
+      ;
   }
 
 
@@ -155,7 +155,7 @@ export class EyeExaminationBLService {
 
       //let finalIPResult = input;
       return this.clinicalDLService.PostScannedEyeImages(formToPost)
-        .map(res => res);
+        ;
 
     } catch (exception) {
       throw exception;

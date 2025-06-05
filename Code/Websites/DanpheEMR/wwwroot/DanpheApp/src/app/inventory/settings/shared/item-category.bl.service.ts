@@ -17,11 +17,11 @@ export class ItemCategoryBLService {
     //Get
     public GetItemCategoryList() {
         return this.itemcategoryDLService.GetItemCategoryList()
-            .map(res => { return res });
+            ;
     }
     public GetItemCategory() {
         return this.itemcategoryDLService.GetItemCategory()
-            .map(res => { return res });
+            ;
     }
   
 
@@ -30,7 +30,7 @@ export class ItemCategoryBLService {
         //omiting the appointmentvalidator during post because it causes cyclic error during serialization in server side.
         var temp = _.omit(CurrentItemCategory, ['ItemCategoryValidator']);
         return this.itemcategoryDLService.PostItemCategory(temp)
-            .map(res => { return res });
+            ;
     }
 
     //Put
@@ -42,7 +42,7 @@ export class ItemCategoryBLService {
 
         var temp = _.omit(itemcategory, ['ItemCategoryValidator']);
         return this.itemcategoryDLService.PutItemCategory(temp)
-            .map(res => { return res });
+            ;
     }
 
 }

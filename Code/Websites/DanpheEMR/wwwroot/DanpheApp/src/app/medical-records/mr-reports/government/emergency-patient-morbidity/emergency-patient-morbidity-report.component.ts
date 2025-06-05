@@ -40,7 +40,7 @@ export class EmergencyPatientMorbidityReportComponent {
   public LoadOutpatientMorbidityList() {
 
     this.dlService.Read(`/Reporting/EmergencyPatientMorbidityReport/${this.fromDate}/${this.toDate}`)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.allDataList = res.Results;

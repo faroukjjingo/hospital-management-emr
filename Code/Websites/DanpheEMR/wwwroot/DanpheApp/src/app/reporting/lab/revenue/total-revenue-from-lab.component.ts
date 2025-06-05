@@ -44,7 +44,7 @@ export class RPT_LAB_TotalRevenueFromLabComponent {
 
       this.dlService.Read("/Reporting/TotalRevenueFromLab?FromDate="
         + this.currenttotalrevenue.fromDate + "&ToDate=" + this.currenttotalrevenue.toDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           err => this.Error(err));
     } else {

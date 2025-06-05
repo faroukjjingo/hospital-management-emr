@@ -135,7 +135,7 @@ export class SupplierWiseStockReportComponent {
       { DisplayName: "DateRange", Value: this.dateRange },
     ]
     this.invReportsBlService.GetSupplierWiseStockReportList(this.supplierWiseStockObj)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }

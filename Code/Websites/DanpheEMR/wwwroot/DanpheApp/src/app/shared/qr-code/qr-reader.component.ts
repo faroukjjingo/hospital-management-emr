@@ -41,7 +41,7 @@ export class QrReaderComponent {
     if (patCodeFormatted) {
       if (this.department == 'billing') {
         this.dlService.Read("/api/Patient/PatientByCode?patientCode=" + patCodeFormatted)
-          .map(res => res)
+          
           .subscribe((res: DanpheHTTPResponse) => {
             if (res.Status == "OK" && res.Results && res.Results.PatientId) {
               this.invalidPatientCode = false;

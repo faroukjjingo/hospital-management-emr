@@ -14,34 +14,34 @@ export class ProblemsBLService {
     //active-medical
     public GetPatientActiveMedicalList(patientId: number) {
         return this.clinicalDLService.GetPatientActiveMedicalList(patientId)
-            .map(res => res);
+            ;
     }
 
     //past-medical
     public GetPatientPastMedicalList(patientId: number) {
         return this.clinicalDLService.GetPatientPastMedicalList(patientId)
-            .map(res => res);
+            ;
     }
     //  public GetICDList() {
     //      return this.clinicalDLService.GetMasterICDList()
-    //          .map(res => res);
+    //          ;
     //  }
     //active-medical
     public PostActiveMedical(currentActiveMedical: ActiveMedical) {
         var temp = _.omit(currentActiveMedical, ['ActiveMedicalValidator']);
         return this.clinicalDLService.PostActiveMedical(temp)
-            .map(res => res);
+            ;
     }
 
     //past-medical
     public PostPastMedical(pastMedical: PastMedical) {
         var temp = _.omit(pastMedical, ['PastMedicalValidator']);
         return this.clinicalDLService.PostPastMedical(temp)
-            .map(res => res);
+            ;
     }
     public Resolved(activeMedical: ActiveMedical) {
         return this.clinicalDLService.ResolveActiveMedicalProblem(activeMedical)
-            .map(res => res);
+            ;
     }
 
     //past-medical
@@ -55,7 +55,7 @@ export class ProblemsBLService {
         activeMedical.Note = pastMedical.Note;
         var temp = _.omit(activeMedical, ['ActiveMedicalValidator']);
         return this.clinicalDLService.PostActiveMedical(temp)
-            .map(res => res);
+            ;
     }
 
 
@@ -65,7 +65,7 @@ export class ProblemsBLService {
         let data = JSON.stringify(temp);
         // let reqType = 'activemedical';
         return this.clinicalDLService.PutActiveMedicalProblem(data)
-            .map(res => res);
+            ;
     }
 
     //past-medical
@@ -77,6 +77,6 @@ export class ProblemsBLService {
         let data = JSON.stringify(temp);
         // let reqType = 'pastmedical';
         return this.clinicalDLService.PutClinicalPastMedical(data)
-            .map(res => res);
+            ;
     }
 }

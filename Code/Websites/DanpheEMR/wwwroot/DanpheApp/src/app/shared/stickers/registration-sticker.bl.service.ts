@@ -10,6 +10,6 @@ export class StickerBLService {
     }
     public GetRegistrationStickerSettingsAndData(PatientVisitId: number) {
         return this.stickerDLService.GetRegistrationStickerSettingsAndData(PatientVisitId)
-            .map(res => { return res });
+            ;
     }
 }

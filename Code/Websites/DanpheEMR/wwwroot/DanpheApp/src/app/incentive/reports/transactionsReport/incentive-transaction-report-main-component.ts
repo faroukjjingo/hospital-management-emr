@@ -83,7 +83,7 @@ export class RPT_BIL_IncentiveTransactionReportMainComponent {
 
   LoadDocterList() {
     this.incentiveBLService.GetIncentiveApplicableDocterList()
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.allDocterList = res.Results;

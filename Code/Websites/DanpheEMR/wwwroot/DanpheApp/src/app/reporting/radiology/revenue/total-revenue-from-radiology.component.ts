@@ -47,7 +47,7 @@ export class RPT_RAD_TotalRevenueFromRadiologyComponent {
 
       this.dlService.Read("/Reporting/RevenueGenerated?FromDate="
         + this.CurrentRadiologyRevenue.fromDate + "&ToDate=" + this.CurrentRadiologyRevenue.toDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {

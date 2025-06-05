@@ -50,7 +50,7 @@ export class INCTV_BillTxnItemListComponent {
     this.toDate = $event ? $event.toDate : this.toDate;
 
     this.dlService.Read(`/api/Incentive/TransactionItems?fromDate=${this.fromDate}&toDate=${this.toDate}`)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           this.allBillTxnItemsList = res.Results;
@@ -144,7 +144,7 @@ export class INCTV_BillTxnItemListComponent {
   public allEmpList: Array<any> = [];
   LoadAllDocList() {
     // this.dlService.Read("/BillingReports/GetReferralList")
-    //   .map(res => res)
+    //   
     //   .subscribe((res: DanpheHTTPResponse) => {
     //     if (res.Status == "OK") {
     //       let doclist: Array<any> = res.Results;
@@ -161,7 +161,7 @@ export class INCTV_BillTxnItemListComponent {
     //   });
 
     this.incentiveBLService.GetIncentiveApplicableDocterList()
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           let doclist: Array<any> = res.Results;
@@ -182,7 +182,7 @@ export class INCTV_BillTxnItemListComponent {
 
   public GetEmpIncentiveInfo() {
     this.incentiveBLService.GetEmpIncentiveInfo()
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           this.EmpIncentiveInfo = res.Results;
@@ -202,7 +202,7 @@ export class INCTV_BillTxnItemListComponent {
   public ExportAllIncentiveDate() {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcel_INCTV_InvoiceItemLevel?FromDate="
       + this.fromDate + "&ToDate=" + this.toDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

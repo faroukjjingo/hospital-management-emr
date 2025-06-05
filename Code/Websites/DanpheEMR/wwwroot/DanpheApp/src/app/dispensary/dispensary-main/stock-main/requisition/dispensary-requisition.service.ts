@@ -16,20 +16,20 @@ export class DispensaryRequisitionService {
   constructor(public dispensaryRequisitionEndpoint: DispensaryRequisitionEndpoint) { }
 
   GetAllRequisitionList(fromDate: string, toDate: string) {
-    return this.dispensaryRequisitionEndpoint.GetAllRequisitionList(fromDate, toDate).map(res => res);
+    return this.dispensaryRequisitionEndpoint.GetAllRequisitionList(fromDate, toDate);
   }
   GetAllRequisitionListByDispensaryId(dispensaryId: number, fromDate: string, toDate: string) {
-    return this.dispensaryRequisitionEndpoint.GetAllRequisitionListByDispensaryId(dispensaryId, fromDate, toDate).map(res => res);
+    return this.dispensaryRequisitionEndpoint.GetAllRequisitionListByDispensaryId(dispensaryId, fromDate, toDate);
   }
   GetItemsForRequisition(isInsurance: boolean = false) {
     return this.dispensaryRequisitionEndpoint.GetItemsForRequisition(isInsurance)
-      .map(res => { return res });
+      ;
   }
   GetRequisitionView(requisitionId) {
-    return this.dispensaryRequisitionEndpoint.GetRequisitionView(requisitionId).map(res => res);
+    return this.dispensaryRequisitionEndpoint.GetRequisitionView(requisitionId);
   }
   GetRequisitionDispatchToReceive(requisitionId: number) {
-    return this.dispensaryRequisitionEndpoint.GetRequisitionDispatchToReceive(requisitionId).map(res => res);
+    return this.dispensaryRequisitionEndpoint.GetRequisitionDispatchToReceive(requisitionId);
   }
   AddRequisition(requisition: PHRMStoreRequisition) {
     let newRequ: any = _.omit(requisition, ['RequisitionValidator']);
@@ -42,20 +42,20 @@ export class DispensaryRequisitionService {
     newRequ.RequisitionItems = newRequItems;
     let data = JSON.stringify(newRequ);
     return this.dispensaryRequisitionEndpoint.AddRequisition(data)
-      .map(res => { return res })
+      
   }
 
   ReceiveDispatchedItems(dispatchId: number, receivedRemarks: string) {
     let data = JSON.stringify(receivedRemarks);
     return this.dispensaryRequisitionEndpoint.ReceiveDispatchedItems(dispatchId, data)
-      .map(res => { return res })
+      
   }
 
   ApproveRequisition(requisitionId: number) {
-    return this.dispensaryRequisitionEndpoint.ApproveRequisition(requisitionId).map(res => { return res })
+    return this.dispensaryRequisitionEndpoint.ApproveRequisition(requisitionId)
   }
   CancelRequisitionItems(cancelRequisitionItemDto: any) {
     let data = JSON.stringify(cancelRequisitionItemDto)
-    return this.dispensaryRequisitionEndpoint.CancelRequisitionItems(data).map(res => { return res })
+    return this.dispensaryRequisitionEndpoint.CancelRequisitionItems(data)
   }
 }

@@ -47,7 +47,7 @@ export class RPT_BIL_DoctorwiseIncomeSummaryComponent {
 
     LoadDoctorList() {
         this.dlService.Read("/BillingReports/GetDoctorList")
-            .map(res => res)
+            
             .subscribe(res => {
                 if (res.Status == "OK") {
                   this.doctorList = res.Results;
@@ -67,7 +67,7 @@ export class RPT_BIL_DoctorwiseIncomeSummaryComponent {
             this.toDate = this.currentDrIncome.toDate;
             this.performerId = this.currentDrIncome.performerId;
             this.dlService.Read("/BillingReports/DoctorwiseIncomeSummaryOPIP?FromDate=" + this.fromDate + "&ToDate=" + this.toDate + "&PerformerId=" + this.performerId)
-                .map(res => res)
+                
                 .subscribe(res => this.Success(res),
                     err => this.Error(err));
         }
@@ -142,7 +142,7 @@ export class RPT_BIL_DoctorwiseIncomeSummaryComponent {
     // ExportToExcel() {
     //     this.dlService.ReadExcel("/ReportingNew/ExportToExcelDoctorwiseIncomeSummary?FromDate="
     //         + this.fromDate + "&ToDate=" + this.toDate)
-    //         .map(res => res)
+    //         
     //         .subscribe(data => {
     //             let blob = data;
     //             let a = document.createElement("a");

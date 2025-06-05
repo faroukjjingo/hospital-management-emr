@@ -1,6 +1,6 @@
 import { Component, Input, ChangeDetectorRef, Output, EventEmitter } from '@angular/core';
 import { LabTest } from "../../shared/lab-test.model";
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { LabReportTemplateModel } from '../../shared/lab-report-template.model';
 import { LabSettingsBLService } from '../shared/lab-settings.bl.service';
 import { MessageboxService } from '../../../shared/messagebox/messagebox.service';

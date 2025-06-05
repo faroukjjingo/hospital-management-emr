@@ -75,7 +75,7 @@ export class PatientProfilePicComponent {
         let patFileInfo = JSON.stringify(omited);
 
         this.http.post<any>("/api/Patient/PatientProfilePicture", patFileInfo)
-            .map(res => res)
+            
             .subscribe((res: DanpheHTTPResponse) => {
                 if (res.Status == "OK") {
                     this.patientFile.FileBase64String = res.Results.FileBase64String;
@@ -90,7 +90,7 @@ export class PatientProfilePicComponent {
 
     LoadProfilePic() {
         this.http.get<any>("/api/patient/PatientProfilePicture?patientId=" + this.currPatient.PatientId)
-            .map(res => res)
+            
             .subscribe((res: DanpheHTTPResponse) => {
                 console.log(res);
 

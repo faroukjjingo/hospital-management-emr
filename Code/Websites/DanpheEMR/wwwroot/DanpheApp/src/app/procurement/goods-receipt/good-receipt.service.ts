@@ -21,7 +21,7 @@ export class GoodReceiptService {
 
     public GetGoodReceiptList() {
         return this.goodReceiptEndPoint.GetGoodReceiptList()
-            .map(res => { return res });
+            ;
     }
 
     public AddGoodReceipt(CurrentReceipt: GoodsReceipt) {
@@ -34,23 +34,23 @@ export class GoodReceiptService {
 
     public UpdateGoodReceipt(CurrentReceipt: GoodsReceipt) {
         return this.goodReceiptEndPoint.UpdateGoodReceipt(CurrentReceipt)
-            .map(res => { return res });
+            ;
     }
 
     public GetGoodReceipt(id: number) {
         return this.goodReceiptEndPoint.GetGoodReceipt(id)
-            .map(res => { return res });
+            ;
     }
 
     public GetVendorList() {
         return this.goodReceiptEndPoint.GetVendorList()
-            .map(res => { return res })
+            
             .catch((e: any) => Observable.throw(this.errorHandler(e)));
     }
     //get Other Charges Details
     public getINVOtherChargesDetails() {
         return this.goodReceiptEndPoint.getINVOtherChargesDetails()
-            .map(res => { return res })
+            
             .catch((e: any) => Observable.throw(this.errorHandler(e)));
     }
 

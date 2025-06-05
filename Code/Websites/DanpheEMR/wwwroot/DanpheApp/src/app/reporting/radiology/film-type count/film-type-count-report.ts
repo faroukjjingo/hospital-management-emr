@@ -58,7 +58,7 @@ export class RPT_RAD_FilmTypeCountReportComponent {
             this.NepaliDateInGridSettings = new NepaliDateInGridParams();
             this.dlService.Read("/Reporting/FilmTypeCountReport?FromDate="
                 + this.CurrentFilmCount.fromDate + "&ToDate=" + this.CurrentFilmCount.toDate)
-                .map(res => res)
+                
                 .subscribe(res => this.Success(res),
                     res => this.Error(res));
         } else {
@@ -70,7 +70,7 @@ export class RPT_RAD_FilmTypeCountReportComponent {
         this.dlService.ReadExcel("/ReportingNew/ExportToExcelDailyAppointment?FromDate="
             + this.fromDate + "&ToDate=" + this.toDate
         )
-            .map(res => res)
+            
             .subscribe(data => {
                 let blob = data;
                 let a = document.createElement("a");

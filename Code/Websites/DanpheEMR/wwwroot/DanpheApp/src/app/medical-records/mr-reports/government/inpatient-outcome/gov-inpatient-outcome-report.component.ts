@@ -68,7 +68,7 @@ export class GovInpatientOutcomeReportComponent {
     if (this.currentInpatientOutcome.fromDate != null && this.currentInpatientOutcome.toDate != null) {
       this.dlService.Read("/GovernmentReporting/GetInpatientOutcome?FromDate="
         + this.currentInpatientOutcome.fromDate + "&ToDate=" + this.currentInpatientOutcome.toDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           err => this.Error(err));
     } else {

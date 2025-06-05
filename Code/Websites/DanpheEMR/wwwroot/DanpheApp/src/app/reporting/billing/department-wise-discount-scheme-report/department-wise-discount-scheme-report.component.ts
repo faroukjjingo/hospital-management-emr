@@ -76,7 +76,7 @@ export class RPT_BIL_DepartmentWiseDiscountSchemeReportComponent {
     let payment = (this.PaymentMode != null && this.PaymentMode != 'All') ? this.PaymentMode : "";
     this.dlService.Read("/BillingReports/Billing_DepartmentWiseDiscountSchemeReport?FromDate="
       + this.fromDate + "&ToDate=" + this.toDate + "&MembershipTypeId=" + membershipTypeId + "&ServiceDepartmentId=" + serviceDepartmentId + "&PaymentMode=" + payment)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }
@@ -142,7 +142,7 @@ export class RPT_BIL_DepartmentWiseDiscountSchemeReportComponent {
 
   LoadItemLevel(billingTransactionId: number, membershipTypeId: number, serviceDepartmentId: number) {
     this.dlService.Read("/BillingReports/Billing_ItemLevelDepartmentWiseDiscountSchemeReport?BillingTransactionId=" + billingTransactionId + "&MembershipTypeId=" + membershipTypeId + "&ServiceDepartmentId=" + serviceDepartmentId)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           let data = res.Results;
@@ -242,7 +242,7 @@ export class RPT_BIL_DepartmentWiseDiscountSchemeReportComponent {
 
   private GetAllDepartmentList() {
     this.dlService.Read("/BillingReports/GetAllDepartmentList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.ServiceDepartmentList = res.Results;

@@ -14,7 +14,7 @@ export class PharmacyPOService {
   }
 
   GetItemsForPO() {
-    return this.pharmacyPOEndpoint.GetItemsForPO().map(res => res);;
+    return this.pharmacyPOEndpoint.GetItemsForPO();;
   }
 
 }

@@ -17,11 +17,11 @@ export class PackagingTypeBLService {
     //Get
     public GetPackagingTypeList() {
         return this.packagingtypeDLService.GetPackagingTypeList()
-            .map(res => { return res });
+            ;
     }
     public GetPackagingType() {
         return this.packagingtypeDLService.GetPackagingType()
-            .map(res => { return res });
+            ;
     }
 
 
@@ -30,7 +30,7 @@ export class PackagingTypeBLService {
         //omiting the appointmentvalidator during post because it causes cyclic error during serialization in server side.
         var temp = _.omit(CurrentPackagingType, ['PackagingTypeValidator']);
         return this.packagingtypeDLService.PostPackagingType(temp)
-            .map(res => { return res });
+            ;
     }
 
     //Put
@@ -42,7 +42,7 @@ export class PackagingTypeBLService {
 
         var temp = _.omit(vendor, ['PackagingTypeValidator']);
         return this.packagingtypeDLService.PutPackagingType(temp)
-            .map(res => { return res });
+            ;
     }
 
 }

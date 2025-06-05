@@ -146,7 +146,7 @@ export class InventorySummaryComponent implements OnInit, OnDestroy {
         this.inventoryBLService.ShowInventorySummary(this.FromDate, this.ToDate, this.fiscalYearId, this.storeId).finally(() => {
             this.loading = false;
         })
-            .map(res => res)
+            
             .subscribe(
                 res => this.Success(res),
                 res => this.Error(res)

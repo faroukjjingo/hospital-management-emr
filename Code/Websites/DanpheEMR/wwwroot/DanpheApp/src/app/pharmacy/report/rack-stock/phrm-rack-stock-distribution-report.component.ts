@@ -135,7 +135,7 @@ export class PHRMRackStockDistributionReportComponent implements OnInit {
     OnGridExport($event: GridEmitModel) {
         if (this.selectedRacks) {
             this._dlService.ReadExcel(`/api/PharmacyReport/ExportToExcelPHRMRackStockDistributionReport?RackIds=${this.rackIdsString}&LocationId=${this.selectedLocationId}`)
-                .map(res => res)
+                
                 .subscribe(data => {
                     let blob = data;
                     let a = document.createElement("a");

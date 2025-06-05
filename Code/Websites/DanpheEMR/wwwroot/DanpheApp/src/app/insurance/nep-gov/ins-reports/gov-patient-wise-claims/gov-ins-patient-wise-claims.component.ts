@@ -68,7 +68,7 @@ export class GOVINSPatientWiseClaimsComponent {
   public loadClaimsList() {
     this.loading = true;
     this.dlService.Read("/api/GovInsurance/PatientClaimCodes?patientId=" + this.selPatient.PatientId)
-      .map(res => res)
+      
       .finally(() => { this.loading = false; })
       .subscribe(res => {
         if (res.Status == "OK" && res.Results) {
@@ -135,7 +135,7 @@ export class GOVINSPatientWiseClaimsComponent {
     }
     this.loading = true;
     this.dlService.Read("/api/GovInsurance/PatientsByClaimCode?claimCode=" + this.selClaimCode)
-      .map(res => res)
+      
       .finally(() => { this.loading = false; })
       .subscribe(res => {
         if (res.Status == "OK" && res.Results) {

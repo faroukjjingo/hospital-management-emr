@@ -39,7 +39,7 @@ export class RPT_BIL_PackageSalesReportComponent {
     if (this.currentPackageSales.FromDate != null && this.currentPackageSales.ToDate != null) {
       this.dlService.Read("/BillingReports/PackageSalesDetail?FromDate="
         + this.currentPackageSales.FromDate + "&ToDate=" + this.currentPackageSales.ToDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {
@@ -94,7 +94,7 @@ export class RPT_BIL_PackageSalesReportComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelPackageSalesReport?FromDate="
       + this.currentPackageSales.FromDate + "&ToDate=" + this.currentPackageSales.ToDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

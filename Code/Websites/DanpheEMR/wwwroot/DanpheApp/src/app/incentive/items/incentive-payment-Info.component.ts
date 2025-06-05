@@ -100,7 +100,7 @@ export class INCTV_BIL_IncentivePaymentInfoComponent {
 
   //LoadDocterList() {
   //this.dlService.Read("/BillingReports/GetDoctorList")
-  //  .map(res => res)
+  //  
   //  .subscribe(res => {
   //    if (res.Status == "OK") {
   //      this.allDocterList = res.Results;
@@ -138,7 +138,7 @@ export class INCTV_BIL_IncentivePaymentInfoComponent {
       //let srvDept = this.ServDeptName.replace(/&/g, '%26');//this is URL-Encoded value for character  '&'    --see: URL Encoding in Google for details.
       if (this.employeeId && this.employeeId != 0) {
         this.dlService.Read("/BillingReports/INCTV_DocterItemSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&employeeId=" + this.employeeId)
-          .map(res => res)
+          
           .subscribe(res => {
             if (res.Status == "OK") {
               this.selectedFromDate = this.FromDate;

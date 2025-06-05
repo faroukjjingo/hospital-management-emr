@@ -63,7 +63,7 @@ export class RankWiseDischargeListComponent {
       { DisplayName: "Membership:", Value: this.memberships == undefined || null ? 'All' : this.MembershipTypeName.replaceAll(',', ', ') },
     ]
 
-    this.dlService.Read(`/BillingReports/RankMembershipWiseDischargePatientReport?FromDate=${this.FromDate} &ToDate=${this.ToDate} &Membership=${this.memberships} &Rank=${this.ranks}`).map(res => res).subscribe(res => {
+    this.dlService.Read(`/BillingReports/RankMembershipWiseDischargePatientReport?FromDate=${this.FromDate} &ToDate=${this.ToDate} &Membership=${this.memberships} &Rank=${this.ranks}`).subscribe(res => {
       if (res.Status === 'OK') {
         this.RankMembershipWiseDischargePatientReportData = res.Results;
       }

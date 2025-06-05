@@ -69,12 +69,12 @@ public GetAppointmentDetailsReport(from, to, appointmentType) {
 
   public GetAllFiscalYears() {
     return this.billingDLService.GetAllFiscalYears()
-      .map(res => { return res });
+      ;
   }
 
   public GetExistingVaccRegNumData(fiscId, regNum) {
     return this.vaccinationDLService.GetExistingVaccRegNumData(fiscId, regNum)
-      .map(res => { return res });
+      ;
   }
 
 
@@ -110,14 +110,14 @@ public GetAppointmentDetailsReport(from, to, appointmentType) {
 
   public GetMunicipality(id: number) {
     return this.vaccinationDLService.GetMunicipality(id)
-      .map(res => { return res })
+      
   }
 
   //sud:2-Oct'21--To get Patient+Visit Information by given VisitId.
   //Needed for Followup as well as Sticker
   public GetPatientAndVisitInfo(visitId: number) {
     return this.vaccinationDLService.GetPatientAndVisitInfo(visitId)
-      .map(res => { return res })
+      
   }
 
   public PostFollowupVisit(fwUpVisit: Visit) {

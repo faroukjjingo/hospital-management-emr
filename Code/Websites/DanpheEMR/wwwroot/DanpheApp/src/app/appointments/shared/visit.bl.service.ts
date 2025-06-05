@@ -30,61 +30,61 @@ export class VisitBLService {
   //gets all the visit of a patient
   public GetPatientVisits(patientId: number) {
     return this.visitDLService.GetPatientVisitList(patientId)
-      .map(res => res);
+      ;
   }
 
   public GetPatientVisitList(patientId: number) {
     return this.visitDLService.GetPatientVisitList(patientId)
-      .map(res => res);
+      ;
   }
 
   public GetPatientVisits_Today(patientId: number) {
     return this.visitDLService.GetPatientVisitList_Today(patientId)
-      .map(res => res);
+      ;
   }
 
   // public GetPatientVisitEarlierList(patientId: number, followup: boolean) {
   //   return this.visitDLService.GetPatientVisitEarlierList(patientId, followup)
-  //     .map(res => res);
+  //     ;
   // }
 
   // public GetVisitList(claimCode: number, patId: number) {
   //   return this.visitDLService.GetVisitList(claimCode, patId)
-  //     .map(res => res);
+  //     ;
   // }
 
   public GetPatientById(patientId: number) {
     return this.patientDLService.GetPatientById(patientId)
-      .map(res => res);
+      ;
   }
   // public GetAdditionalBillingItems() {
   //   return this.visitDLService.GetAdditionalBillingItems()
-  //     .map(res => res);
+  //     ;
   // }
   //post new visit
   // public AddVisit(currentVisit: Visit) {
   //   currentVisit.VisitStatus = ENUM_VisitStatus.initiated;// "initiated";
   //   var tempVisitModel = _.omit(currentVisit, ['VisitValidator']);
   //   return this.visitDLService.PostVisit(tempVisitModel)
-  //     .map(res => res);
+  //     ;
   // }
   //get visit list according to status
   // public GetVisitsByStatus(status: string, maxlimitdays: number, searchTxt) {
   //   //var status = "initiated";
   //   return this.visitDLService.GetVisitsByStatus(status, maxlimitdays, searchTxt)
-  //     .map(res => res);
+  //     ;
   // }
 
   //get visit list
   public GetVisits(maxlimitdays: number, searchTxt, IsHospitalNoSearch, IsIdCardNoSearch) {
     //var status = "initiated";
     return this.visitDLService.GetVisits(maxlimitdays, searchTxt, IsHospitalNoSearch, IsIdCardNoSearch)
-      .map(res => res);
+      ;
   }
 
   public GetDoctorOpdPrices() {
     return this.visitDLService.GetDoctorOpdPrices()
-      .map(res => res);
+      ;
   }
   //mapping to BillItemRequistion model and posting to BillingRequisitionItem Table
   //requested by is the employeeid of the frontdesk user.
@@ -132,15 +132,15 @@ export class VisitBLService {
 
   public GetDoctorList(departmentId: number) {
     return this.appointmentDLService.GetDoctorFromDepartmentId(departmentId)
-      .map(res => res);
+      ;
   }
   public GetDepartmentList() {
     return this.visitDLService.GetDepartmentList()
-      .map(res => res);
+      ;
   }
   public GetDepartmentByEmployeeId(employeeId: number) {
     return this.visitDLService.GetDepartmentByEmployeeId(employeeId)
-      .map(res => res);
+      ;
   }
 
   public ContinueNextVisit(visit: Visit, referredProvider: Employee, continuationType: string) {
@@ -168,28 +168,28 @@ export class VisitBLService {
     visit.CurrentCounterId = this.securityService.getLoggedInCounter().CounterId;
     var tempVisitModel = _.omit(visit, ['VisitValidator', 'Patient']);
     return this.visitDLService.PostTransferVisit(tempVisitModel)
-      .map(res => res)
+      
   }
 
   //Below Added by Nagesh
   //get doctors list using department Id
   public GenerateDoctorList(departmentId: number) {
     return this.visitDLService.GetDoctorFromDepartmentId(departmentId)
-      .map(res => res);
+      ;
   }
   // getting the CountrySubDivision from dropdown
   public GetCountrySubDivision(countryId: number) {
     return this.patientDLService.GetCountrySubDivision(countryId)
-      .map(res => { return res })
+      
   }
   public GetCountries(countryId: number) {
     return this.patientDLService.GetCountries()
-      .map(res => { return res })
+      
   }
   //getting membership deatils by membershiptype id
   public GetMembershipDeatilsByMembershipTyepId(membershipTypeId) {
     return this.visitDLService.GetMembershipDeatilsByMembershipTyepId(membershipTypeId)
-      .map(res => { return res });
+      ;
   }
 
   //It's no need -Nagesh
@@ -197,7 +197,7 @@ export class VisitBLService {
   //public ShowProviderAvailability(selProviderId: number, visitDate: string) {
   //    if ((visitDate != "" && visitDate != null) && (selProviderId != 0 && selProviderId != null)) {
   //        return this.visitDLService.GetProviderAvailability(selProviderId, visitDate)
-  //            .map(res => res);
+  //            ;
   //    }
   //    else {
   //        alert("select correct date and/or provider.");
@@ -207,7 +207,7 @@ export class VisitBLService {
   // //getting total amoutn opd by doctorId
   // public GetTotalAmountByProviderId(providerId) {
   //   return this.visitDLService.GetTotalAmountByProviderId(providerId)
-  //     .map(res => { return res });
+  //     ;
 
   // }
   //Post Visit data to Database with Patient, BillTransaction, BillTransactionItems and Patient details
@@ -254,19 +254,19 @@ export class VisitBLService {
     //currentVisit.QuickAppointmentValidator = clonedObject.QuickAppointmentValidator;
 
     return this.visitDLService.PostVisitToDB(visDataJson)
-      .map(res => res);
+      ;
   }
 
 
   //Get Matching Patient Details by FirstName,LastName,PhoneNumber for showing registered matching patient on Visit Creation time
   public GetExistedMatchingPatientList(FirstName, LastName, PhoneNumber, Age, Gender, IsInsurance = false, IMISCode = null) {
     return this.patientDLService.GetExistedMatchingPatientList(FirstName, LastName, PhoneNumber, Age, Gender, IsInsurance, IMISCode)
-      .map(res => { return res });
+      ;
   }
 
   public GetApptForDeptOnSelectedDate(deptId, doctorId, selectedDate, patientId) {
     return this.visitDLService.GetApptForDeptOnSelectedDate(deptId, doctorId, selectedDate, patientId)
-      .map(res => { return res });
+      ;
   }
 
   //ashim: 17Aug'2018
@@ -295,7 +295,7 @@ export class VisitBLService {
 
 
     return this.billingDLService.PostReturnReceipt(input)
-      .map(res => res);
+      ;
   }
   // public GetHealthCardBillItem() {
   //   return this.billingDLService.GetHealthCardBillItem().map(res => {
@@ -305,20 +305,20 @@ export class VisitBLService {
 
   public GetBillTxnByRequisitionId(requisitionId: number, patientId: number) {
     return this.billingDLService.GetBillTxnByRequisitionId(requisitionId, patientId, "OPD")
-      .map(res => res);
+      ;
   }
 
   public GetMemberShipTypes() {
     return this.patientDLService.GetMembershipTypes()
-      .map(res => res);
+      ;
   }
   public GetPatHealthCardStatus(patId: number) {
     return this.visitDLService.GetPatHealthCardStatus(patId)
-      .map(res => res);
+      ;
   }
   public GetPatientBillingContext(patientId: number) {
     return this.billingDLService.GetPatientBillingContext(patientId)
-      .map(res => res);
+      ;
   }
 
   public PostFreeReferralVisit(visit: Visit) {
@@ -361,7 +361,7 @@ export class VisitBLService {
   // getting department list
   public GetDepartment() {
     return this.appointmentDLService.GetDepartment()
-      .map(res => { return res })
+      
 
   }
 
@@ -442,21 +442,21 @@ export class VisitBLService {
     fwupVisit.Visit.VisitValidator = clonedObject.Visit.VisitValidator;
 
     return this.visitDLService.PostPaidFollowupVisit(visDataJson)
-      .map(res => res);
+      ;
 
   }
 
   public GetMunicipality(id: number) {
     return this.patientDLService.GetMunicipality(id)
-      .map(res => { return res })
+      
   }
 
   public updateVisitStatusInTelemedicine(url: string, visitId: string, visitStatus: string) {
-    return this.appointmentDLService.updateVisitStatusInTelemedicine(url, visitId, visitStatus).map(res => { return res });
+    return this.appointmentDLService.updateVisitStatusInTelemedicine(url, visitId, visitStatus);
   }
 
   public updatePaymentStatusInTelMed(url: string, visitId: string) {
-    return this.appointmentDLService.updatePaymentStatus(url, visitId).map(res => { return res });
+    return this.appointmentDLService.updatePaymentStatus(url, visitId);
   }
 
   public GetAPIPatientDetail(url: string, IDCardNumber: string) {

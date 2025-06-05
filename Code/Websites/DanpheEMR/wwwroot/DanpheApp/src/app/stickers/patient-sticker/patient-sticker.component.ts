@@ -113,7 +113,7 @@ export class PatientStickerComponent {
 
   GetPatientStickerDetails(PatientId: number) {
     this.http.get<any>('/api/Stickers/GetPatientStickerDetails?PatientId=' + PatientId, this.options)
-      .map(res => res)
+      
       .subscribe(res => this.CallBackStickerOnly(res),
         res => this.Error(res));
   }
@@ -251,7 +251,7 @@ export class PatientStickerComponent {
     this.loading = true;
     this.showLoading = true;
     this.http.post<any>("/api/Billing/saveHTMLfile?PrinterName=" + PrinterName + "&FilePath=" + filePath, printableHTML, this.options)
-      .map(res => res).subscribe(res => {
+      .subscribe(res => {
         if (res.Status === ENUM_DanpheHTTPResponseText.OK) {
           this.timerFunction();
         }

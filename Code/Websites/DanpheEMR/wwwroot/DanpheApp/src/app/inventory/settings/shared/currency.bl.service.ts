@@ -17,7 +17,7 @@ export class CurrencyBLService {
   
     public GetCurrency() {
         return this.currencyDLService.GetCurrencyCode()
-            .map(res => { return res });
+            ;
     }
 
 
@@ -26,7 +26,7 @@ export class CurrencyBLService {
         //omiting the CurrencyValidator during post because it causes cyclic error during serialization in server side.
         var temp = _.omit(CurrentCurrency, ['CurrencyValidator']);
         return this.currencyDLService.PostCurrency(temp)
-            .map(res => { return res });
+            ;
     }
 
     //Put
@@ -38,7 +38,7 @@ export class CurrencyBLService {
 
         var temp = _.omit(currency, ['CurrencyValidator']);
         return this.currencyDLService.PutCurrency(temp)
-            .map(res => { return res });
+            ;
     }
 
 }

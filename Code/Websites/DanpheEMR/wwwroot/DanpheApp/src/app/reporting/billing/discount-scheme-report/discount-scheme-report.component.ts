@@ -53,7 +53,7 @@ export class RPT_BIL_DiscountSchemeReportComponent {
     let SchemeId = this.DiscountScheme ? this.DiscountScheme.SchemeId : 0;
     this.dlService.Read("/BillingReports/Billing_SchemeWiseDiscountReport?FromDate="
       + this.fromDate + "&ToDate=" + this.toDate + "&SchemeId=" + SchemeId)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }

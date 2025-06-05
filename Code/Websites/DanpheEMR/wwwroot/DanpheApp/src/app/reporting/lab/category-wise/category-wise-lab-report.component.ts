@@ -44,7 +44,7 @@ export class RPT_LAB_CategoryWiseLabReportComponent {
       this.dlService.Read("/Reporting/CategoryWiseLabReport?FromDate="
         + this.fromDate + "&ToDate=" + this.toDate+
         "&orderStatus="+this.orderStatus.statusList)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           err => this.Error(err));
     } else {
@@ -76,7 +76,7 @@ export class RPT_LAB_CategoryWiseLabReportComponent {
         this.dlService.ReadExcel("/ReportingNew/ExportToExcelCategoryWiseLabReport?FromDate="
             + this.fromDate + "&ToDate=" + this.toDate + "&SummaryHeader=" + summaryHeader
            )
-            .map(res => res)
+            
             .subscribe(data => {
                 let blob = data;
                 let a = document.createElement("a");

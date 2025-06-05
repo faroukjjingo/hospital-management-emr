@@ -3,7 +3,7 @@ import { ChangeDetectorRef, Component, Input, Renderer2 } from "@angular/core";
 import { Router } from '@angular/router';
 import * as moment from 'moment/moment';
 import { Subscription } from "rxjs";
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { CoreService } from "../../../../core/shared/core.service";
 import { ENUM_PrintingType, PrinterSettingsModel } from "../../../../settings-new/printers/printer-settings.model";
 import { GeneralFieldLabels } from '../../../../shared/DTOs/general-field-label.dto';
@@ -121,7 +121,7 @@ export class GovInsStickerComponent {
   GetVisitforStickerPrint(PatientVisitId) {
     try {
       this.http.get<any>('/api/GovInsurance/VisitInfoForStickerPrint?visitId=' + PatientVisitId, this.options)
-        .map(res => res)
+        
         .subscribe(res => {
           if (res.Status = "OK") {
             this.CallBackStickerOnly(res);
@@ -212,7 +212,7 @@ Address: `+ this.insStickerDetails.Address;
     this.loading = true;
     this.showLoading = true;
     this.http.post<any>("/api/GovInsurance/SaveHTMLFile?PrinterName=" + printFileName + "&FilePath=" + filePath, printableHTML, this.options)
-      .map(res => res).subscribe(res => {
+      .subscribe(res => {
         if (res.Status = "OK") {
           this.timerFunction();
         }

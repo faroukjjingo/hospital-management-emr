@@ -39,7 +39,7 @@ export class UserProfileComponent {
   LoadUserProfile() {
     var empId = this.securityService.GetLoggedInUser().EmployeeId;
     this.http.get<any>("/api/Employee/Profile?empId=" + empId, this.options)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == 'OK') {
           this.OnLoadUserProfileSuccess(res);
@@ -109,7 +109,7 @@ export class UserProfileComponent {
   }
   private SetLandingPage(data) {
     this.http.post<any>("/api/Employee/LandingPage", data, this.options)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == 'OK') {
           this.msgBoxService.showMessage("Success", ['Successfully changed landing page']);

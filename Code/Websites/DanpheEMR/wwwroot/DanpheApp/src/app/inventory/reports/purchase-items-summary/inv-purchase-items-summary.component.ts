@@ -103,7 +103,7 @@ export class INVPurchaseItemsSummeryReport {
       this.selectedItem = null;
       this.ItemId = null;
     })
-      .map(res => res)
+      
       .subscribe(
         res => this.Success(res),
         res => this.Error(res)

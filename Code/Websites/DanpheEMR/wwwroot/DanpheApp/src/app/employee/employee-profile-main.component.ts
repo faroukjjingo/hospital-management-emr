@@ -32,7 +32,7 @@ export class EmployeeProfileMainComponent {
 
         var empId = this.securityService.GetLoggedInUser().EmployeeId;
         this.http.get<any>("/api/Employee/Profile?empId=" + empId, this.options)
-            .map(res => res)
+            
             .subscribe(res => {
                 if (res.Status == 'OK') {
                     this.OnLoadUserProfileSuccess(res);
@@ -78,7 +78,7 @@ export class EmployeeProfileMainComponent {
       input.append("uploads", profileImage, fileName)
 
       this.http.put<any>("/api/Employee?empId=" + empId, input)
-        .map(res => res)
+        
         .subscribe(res => {
           if (res.Status == 'OK') {
             this.userProfileInfo.ImageName = res.Results;

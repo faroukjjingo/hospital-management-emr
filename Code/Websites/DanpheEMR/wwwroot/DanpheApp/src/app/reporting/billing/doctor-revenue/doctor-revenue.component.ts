@@ -44,7 +44,7 @@ export class RPT_BIL_DoctorRevenueComponent {
     if (this.currentdoctorrevenuereport.fromDate != null && this.currentdoctorrevenuereport.toDate != null) {
       this.dlService.Read("/BillingReports/DoctorRevenue?FromDate="
         + this.currentdoctorrevenuereport.fromDate + "&ToDate=" + this.currentdoctorrevenuereport.toDate + "&PerformerName=" + this.currentdoctorrevenuereport.PerformerName)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     }
@@ -77,7 +77,7 @@ export class RPT_BIL_DoctorRevenueComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelDoctorRevenue?FromDate="
       + this.currentdoctorrevenuereport.fromDate + "&ToDate=" + this.currentdoctorrevenuereport.toDate + "&PerformerName=" + this.currentdoctorrevenuereport.PerformerName)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");
@@ -96,7 +96,7 @@ export class RPT_BIL_DoctorRevenueComponent {
 
   loadDoctorsList() {
     this.dlService.Read("/BillingReports/GetDoctorList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.doctorList = res.Results;

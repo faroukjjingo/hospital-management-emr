@@ -95,7 +95,7 @@ export class EditIncentiveTxnItemComponent implements OnInit {
       //this.http.post<any>('/api/Incentive?reqType=addEmpProfileMap', strData, this.options);
       let url = "/api/Incentive/FractionItems";
       let data = JSON.stringify(frcItemsToSave);
-      this.dlService.Add(data, url).map(res => res).subscribe(res => {
+      this.dlService.Add(data, url).subscribe(res => {
         if (res.Status == "OK") {
           this.onPopupClose.emit({ action: "save", data: null });
 

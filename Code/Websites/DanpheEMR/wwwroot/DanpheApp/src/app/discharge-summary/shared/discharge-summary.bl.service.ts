@@ -25,73 +25,73 @@ export class DischargeSummaryBLService {
 
   public GetDischargeType() {
     return this.dischargeSummaryDLService.GetDischargeType()
-      .map(res => res);
+      ;
   }
   public GetDischargeConditions() {
     return this.dischargeSummaryDLService.GetDischargeConditions()
-      .map(res => res);
+      ;
   }
   public GetDeliveryType() {
     return this.dischargeSummaryDLService.GetDeliveryType()
-      .map(res => res);
+      ;
   }
   public GetBabyBirthCondition() {
     return this.dischargeSummaryDLService.GetBabyBirthCondition()
-      .map(res => res);
+      ;
   }
   public GetCurrentFiscalYear() {
     return this.dischargeSummaryDLService.GetCurrentFiscalYear()
-      .map(res => res);
+      ;
   }
 
   public GetCertificate(dischargeSummaryId: number, PatientId: number) {
     return this.dischargeSummaryDLService.GetCertificate(dischargeSummaryId, PatientId)
-      .map(res => res);
+      ;
   }
   public GetDeathType() {
     return this.dischargeSummaryDLService.GetDeathType()
-      .map(res => res);
+      ;
   }
   public GetProviderList() {
     return this.dischargeSummaryDLService.GetProviderList()
-      .map(res => { return res });
+      ;
   }
   //get list of employee from Anasthetists dept
   public GetAnasthetistsEmpList() {
     return this.dischargeSummaryDLService.GetAnasthetistsEmpList()
-      .map(res => { return res });
+      ;
   }
   public GetLabReportByVisitId(patientVisitId: number) {
     return this.labsDLService.GetReportByPatientVisitId(patientVisitId)
-      .map(res => res);
+      ;
   }
 
   public GetAllTests() {
     return this.labsDLService.GetAllLabTests()
-      .map(res => res);
+      ;
   }
 
   public GetICDList() {
     return this.dischargeSummaryDLService.GetICDList()
-      .map(res => { return res });
+      ;
   }
   //gets only the requisitions made on give visits: added for temporary purpose (to display in discharge-summary, remove later if not required)  sud: 9Aug'17
   public GetLabRequestsByPatientVisit(patientId: number, patientVisitId: number) {
     return this.labsDLService.GetRequisitionsByPatientVisitId(patientId, patientVisitId)
-      .map(res => res);
+      ;
   }
 
   public GetMedicationFrequency() {
     return this.dischargeSummaryDLService.GetMedicationFrequency()
-      .map(res => { return res });
+      ;
   }
   public GetImagingReportsReportsByVisitId(patientVisitId: number) {
     return this.imagingDLService.GetPatientVisitReports(patientVisitId)
-      .map(res => res);
+      ;
   }
   public GetDischargeSummary(patientVisitId: number) {
     return this.dischargeSummaryDLService.GetDischargeSummary(patientVisitId)
-      .map(res => res);
+      ;
   }
   public PostDischargeSummary(dischargeSummary: DischargeSummary) {
     var tempVisitModel = _.omit(dischargeSummary, ['DischargeSummaryValidator']);
@@ -108,7 +108,7 @@ export class DischargeSummaryBLService {
     tempVisitModel.DischargeSummaryMedications = tempMedicines;
     tempVisitModel.DischargeSummaryConsultants = tempConsultants;
     return this.dischargeSummaryDLService.PostDischargeSummary(tempVisitModel)
-      .map(res => res)
+      
   }
   public UpdateDischargeSummary(dischargeSummary: DischargeSummary) {
     //to fix serializaiton problem in server side
@@ -128,7 +128,7 @@ export class DischargeSummaryBLService {
     //}
     tempVisitModel.DischargeSummaryMedications = tempMedicines;
     return this.dischargeSummaryDLService.PutDischargeSummary(tempVisitModel)
-      .map(res => { return res });
+      ;
   }
 
   public GetCurrencyUnit() {
@@ -140,11 +140,11 @@ export class DischargeSummaryBLService {
   }
   public PostCertificate(patientCertificate: PatientCertificate) {
     return this.dischargeSummaryDLService.PostCertificate(patientCertificate)
-      .map(res => res)
+      
   }
   public UpdateCertificate(patientCertificate: PatientCertificate) {
     return this.dischargeSummaryDLService.UpdateCertificate(patientCertificate)
-      .map(res => res)
+      
   }
   public GetDischargeSummaryTemplates(TemplateTypeName: string) {
     return this.dischargeSummaryDLService.GetDischargeSummaryTemplates(TemplateTypeName)

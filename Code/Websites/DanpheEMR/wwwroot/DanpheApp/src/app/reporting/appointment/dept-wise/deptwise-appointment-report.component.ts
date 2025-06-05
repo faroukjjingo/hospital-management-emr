@@ -61,7 +61,7 @@ export class RPT_APPT_DeptWiseAppointmentReportComponent {
 
       this.dlService.Read("/Reporting/DepartmentWiseAppointmentReport?FromDate="
         + this.currentdepartmentappointment.fromDate + "&ToDate=" + this.currentdepartmentappointment.toDate + "&DepartmentId=" + deptId + "&gender=" + this.selGenderName)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {
@@ -105,7 +105,7 @@ export class RPT_APPT_DeptWiseAppointmentReportComponent {
 
   public LoadDeptList() {
     // this.dlService.Read("/BillingReports/LoadDeptListFromFN")
-    //     .map(res => res)
+    //     
     //     .subscribe(res => {
     //         if (res.Status == "OK") {
     //           this.servDeptsList = res.Results;

@@ -23,7 +23,7 @@ export class EmployeeBLService {
         
         var temp = _.omit(currentPassModel, ['ChangePasswordValidator']);
         return this.employeeDLService.PutNewPassword(temp)
-            .map(res => { return res });
+            ;
     }
 
    

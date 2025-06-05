@@ -90,7 +90,7 @@ export class RPT_BIL_DoctorSummaryMainComponent {
 
   LoadDoctorList() {
     this.dlService.Read("/BillingReports/GetDoctorList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.doctorList = res.Results;

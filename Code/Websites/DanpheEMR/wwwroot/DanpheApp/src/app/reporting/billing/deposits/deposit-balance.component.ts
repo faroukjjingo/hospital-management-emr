@@ -40,7 +40,7 @@ export class RPT_BIL_DepositBalanceComponent {
 
   Load() {
     this.dlService.Read("/BillingReports/DepositBalance")
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }
@@ -61,7 +61,7 @@ export class RPT_BIL_DepositBalanceComponent {
   //and in that event we are calling the server excel export....
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelDepositBalance")
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

@@ -124,7 +124,7 @@ export class RPT_BIL_UserCollectionReportComponent {
     this.dlService.Read("/BillingReports/DailySalesReport?FromDate="
       + this.currentdailysales.fromDate + "&ToDate=" + this.currentdailysales.toDate
       + "&CounterId=" + this.currentdailysales.CounterId + "&CreatedBy=" + this.currentdailysales.EmployeeId)
-      .map(res => res)
+      
       .finally(() => { this.loading = false; this.isReportDataLoaded = true; })//re-enable button after response comes back. Also Show the summary and other sections after that.
       .subscribe(res => this.Success(res),
         res => this.Error(res));
@@ -182,7 +182,7 @@ export class RPT_BIL_UserCollectionReportComponent {
       + this.currentdailysales.fromDate + "&ToDate=" + this.currentdailysales.toDate
       + "&CounterId=" + this.currentdailysales.CounterId + "&CreatedBy=" + this.currentdailysales.CreatedBy
       + "&SummaryData=" + jsonStrSummary + "&SummaryHeader=" + summaryHeader)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

@@ -19,7 +19,7 @@ export class EmergencyDashboardComponent {
     public LoadERDashboard() {
         if (this.selectedDate) {
             this.dlService.Read("/Reporting/ERDashboard")
-                .map(res => res)
+                
                 .subscribe(res => {
                     if (res.Status == "OK") {
                         let dashboardStats = JSON.parse(res.Results.JsonData);        

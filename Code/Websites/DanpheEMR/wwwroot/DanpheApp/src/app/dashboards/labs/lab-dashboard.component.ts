@@ -231,7 +231,7 @@ export class LabDashboardComponent {
 
     LoadCovidTestDetails() {
         this.dlService.Read("/Reporting/CovidDetailsForLab?testName=" + this.testname)
-            .map(res => res)
+            
             .subscribe(res => {
                 if (res.Status == "OK") {
                     this.covidDetails = res.Results[0];

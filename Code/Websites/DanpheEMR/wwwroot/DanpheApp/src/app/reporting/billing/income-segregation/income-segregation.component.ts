@@ -74,7 +74,7 @@ export class RPT_BIL_IncomeSegregationComponent {
     if (this.fromDate != null && this.toDate != null) {
       this.dlService.Read("/BillingReports/IncomeSegregationStaticReport?FromDate="
         + this.fromDate + "&ToDate=" + this.toDate + "&billingType=" + this.selBillingTypeName)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })
         .subscribe(res => this.Success(res),
           res => this.Error(res));
@@ -185,7 +185,7 @@ export class RPT_BIL_IncomeSegregationComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelIncomeSegregation?FromDate="
       + this.fromDate + "&ToDate=" + this.toDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

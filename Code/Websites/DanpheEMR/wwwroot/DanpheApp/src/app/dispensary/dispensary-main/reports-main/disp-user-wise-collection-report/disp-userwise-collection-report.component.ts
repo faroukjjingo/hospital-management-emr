@@ -151,7 +151,7 @@ export class DispUserwiseCollectionReportComponent {
       + this.phrmReports.FromDate + "&ToDate=" + this.phrmReports.ToDate
       + "&CounterId=" + this.phrmReports.CounterId + "&CreatedBy=" + this.phrmReports.CreatedBy
       + "&SummaryData=" + jsonStrSummary + "&SummaryHeader=" + summaryHeader)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

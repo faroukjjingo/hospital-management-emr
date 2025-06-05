@@ -44,7 +44,7 @@ export class OrderService {
         //call server function only if allLabTests is null/undefined or empty
         if (!this.allLabtests || this.allLabtests.length == 0) {
             this.http.get<any>("/api/Lab/LabTests", this.options)
-                .map(res => { return res })
+                
                 .subscribe((res: DanpheHTTPResponse) => {
                     if (res.Status == "OK") {
                         //this.allLabTests = res.Results;
@@ -62,7 +62,7 @@ export class OrderService {
         //call server function only if allLabTests is null/undefined or empty
         if (!this.allImagingItems || this.allImagingItems.length == 0) {
             this.http.get<any>("/api/Radiology/ImagingItems", this.options)
-                .map(res => { return res })
+                
                 .subscribe((res: DanpheHTTPResponse) => {
                     if (res.Status == "OK") {
                         this.allImagingItems = res.Results;
@@ -79,7 +79,7 @@ export class OrderService {
         if (!this.allMedicationItems || this.allMedicationItems.length == 0) {
 
             this.http.get<any>('/api/PharmacySettings/Items', this.options)
-                .map(res => res)
+                
                 .subscribe((res: DanpheHTTPResponse) => {
                     if (res.Status == "OK") {
                         this.allMedicationItems = res.Results;
@@ -94,7 +94,7 @@ export class OrderService {
         if (!this.allGenericItems || this.allGenericItems.length == 0) {
 
             this.http.get<any>('/api/PharmacySettings/Generics', this.options)
-                .map(res => res)
+                
                 .subscribe((res: DanpheHTTPResponse) => {
                     if (res.Status == "OK") {
                         this.allGenericItems = res.Results;
@@ -107,7 +107,7 @@ export class OrderService {
         if (!this.allOtherItems || this.allOtherItems.length == 0) {
 
             this.http.get<any>('/api/Orders/BillingItems', this.options)
-                .map(res => res)
+                
                 .subscribe((res: DanpheHTTPResponse) => {
                     if (res.Status == "OK") {
                         this.allOtherItems = res.Results;

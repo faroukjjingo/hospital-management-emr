@@ -1,6 +1,6 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectorRef } from "@angular/core";
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { EmergencyStickerVM } from './emergency-sticker.model';
 import * as moment from 'moment/moment';
 import { MessageboxService } from '../../shared/messagebox/messagebox.service';
@@ -119,7 +119,7 @@ export class EmergencyStickerComponent {
 
   GetVisitforStickerPrint(PatientVisitId) {
     this.http.get<any>('/api/Visit/PatientVisitStickerInfo?' + 'visitId=' + PatientVisitId)
-      .map(res => res)
+      
       .subscribe(res => this.CallBackStickerOnly(res),
         res => this.Error(res));
   }
@@ -200,7 +200,7 @@ export class EmergencyStickerComponent {
     this.loading = true;
     this.showLoading = true;
     this.http.post<any>("/api/Billing/saveHTMLfile?PrinterName=" + PrinterName + "&FilePath=" + filePath, printableHTML)
-      .map(res => res).subscribe(res => {
+      .subscribe(res => {
         if (res.Status === ENUM_DanpheHTTPResponseText.OK) {
           this.timerFunction();
         }

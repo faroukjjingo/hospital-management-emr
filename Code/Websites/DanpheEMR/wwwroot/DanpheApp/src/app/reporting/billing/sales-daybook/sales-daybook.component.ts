@@ -71,7 +71,7 @@ export class RPT_BIL_SalesDaybookComponent {
 
       this.dlService.Read("/BillingReports/SalesDaybook?FromDate="
         + this.currentsalesdaybook.fromDate + "&ToDate=" + this.currentsalesdaybook.toDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {
@@ -132,7 +132,7 @@ export class RPT_BIL_SalesDaybookComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelSalesDayBook?FromDate="
       + this.currentsalesdaybook.fromDate + "&ToDate=" + this.currentsalesdaybook.toDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

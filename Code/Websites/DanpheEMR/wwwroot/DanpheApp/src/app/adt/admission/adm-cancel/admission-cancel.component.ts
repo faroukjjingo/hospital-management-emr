@@ -63,7 +63,7 @@ export class AdmissionCancelComponent {
 
   LoadCancelPatientInfo(patientId: number, patientVisitId: number) {
     this.dlService.Read("/api/Admission/AdmissionInfo?patientId=" + this.patientId + "&ipVisitId=" + this.ipVisitId)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK" && res.Results) {
           this.admissionInfo = new AdmissionInfoVM();

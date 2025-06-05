@@ -93,7 +93,7 @@ export class ReturnToVendorComponent implements OnInit {
     this.filteredReturnToVendorReport = null;    
 
     this.inventoryBLService.ShowReturnToVendor(this.CurrentVendor.VendorId)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }

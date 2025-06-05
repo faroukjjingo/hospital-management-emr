@@ -49,7 +49,7 @@ export class PHRMSupplierInformationReportComponent {
     //and in that event we are calling the server excel export....
     OnGridExport($event: GridEmitModel) {
         this.dlService.ReadExcel("/api/PharmacyReport/ExportToExcelPHRMSupplierInfoReport")
-            .map(res => res)
+            
             .subscribe(data => {
                 let blob = data;
                 let a = document.createElement("a");

@@ -5,7 +5,7 @@ import { MessageboxService } from '../../shared/messagebox/messagebox.service';
 import { CommonFunctions } from "../../shared/common.functions";
 import { CoreService } from "../../core/shared/core.service";
 import { NepaliCalendarService } from '../../shared/calendar/np/nepali-calendar.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Subscription } from 'rxjs/Subscription';
 import { IPWristBandViewModel } from "./ip-wrist-band-info.model";
 import { ADT_BLService } from "../shared/adt.bl.service";
@@ -83,7 +83,7 @@ export class IPWristBandPrintComponent {
 
     GetWristBandInfo() {
         this.http.get<any>('/api/Admission/WristBandInfo?' + 'patientVisitId=' + this.patientVisitId, this.options)
-            .map(res => res)
+            
             .subscribe(res => {
                 if (res.Status = "OK" && res.Results) {
                     this.CallBackGetWristbandInfo(res);

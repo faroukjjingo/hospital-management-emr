@@ -33,7 +33,7 @@ export class InventoryValuationComponent {
 
     ShowValuation() {
         this.inventoryBLService.ShowInvValuation()
-            .map(res => res)
+            
             .subscribe(
                 res => this.Success(res),
                 res => this.Error(res)

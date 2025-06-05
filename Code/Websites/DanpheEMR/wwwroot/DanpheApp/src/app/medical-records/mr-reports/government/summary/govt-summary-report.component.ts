@@ -55,7 +55,7 @@ export class GovSummaryReportComponent {
 
   Load() {
     this.dlService.Read("/GovernmentReporting/GetSummaryReport?FromDate="
-      + this.fromDate + "&ToDate=" + this.toDate).map(res => res)
+      + this.fromDate + "&ToDate=" + this.toDate)
       .subscribe(res => {
         this.Success(res),
           res => this.Error(res)

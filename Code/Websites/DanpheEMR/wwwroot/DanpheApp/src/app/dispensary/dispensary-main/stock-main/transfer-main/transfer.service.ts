@@ -7,7 +7,7 @@ import { StockTransferModel } from './transfer.model';
 export class TransferService {
   constructor(public transferEndpoint: TransferEndpointService) { }
   GetAllStores() {
-    return this.transferEndpoint.GetAllStores().map(res => res);
+    return this.transferEndpoint.GetAllStores();
   }
   GetDispensariesStock(DispensaryId: number) {
     return this.transferEndpoint.GetDispensariesStock(DispensaryId).map(res => { return res; });
@@ -23,7 +23,7 @@ export class TransferService {
         tempArray.push(temp);
       })
       return this.transferEndpoint.PostStockTransfer(tempArray)
-        .map(res => { return res });
+        ;
     }
     catch (ex) { throw ex; }
   }

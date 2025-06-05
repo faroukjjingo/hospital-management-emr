@@ -32,60 +32,60 @@ export class PrescriptionSlipBLService {
   public PostAcceptance(Acceptance: AcceptanceModel) {
 
     return this.clinicalDLService.PostAcceptance(Acceptance)
-      .map(res => res);
+      ;
   }
   public PostHistory(History: HistoryModel) {
 
     return this.clinicalDLService.PostHistory(History)
-      .map(res => res);
+      ;
   }
   public PostDilate(Dilate: DilateModel) {
 
     return this.clinicalDLService.PostDilate(Dilate)
-      .map(res => res);
+      ;
   }
   public PostIOP(IOP: IOPModel) {
 
     return this.clinicalDLService.PostIOP(IOP)
-      .map(res => res);
+      ;
   }
   public PostPlup(Plup: PlupModel) {
 
     return this.clinicalDLService.PostPlup(Plup)
-      .map(res => res);
+      ;
   }
   public PostRetinoscopy(Plup: RetinoscopyModel) {
 
     return this.clinicalDLService.PostRetinoscopy(Plup)
-      .map(res => res);
+      ;
   }
   public PostSchrime(Plup: SchrimeModel) {
 
     return this.clinicalDLService.PostSchrime(Plup)
-      .map(res => res);
+      ;
   }
   public PostVaUnaided(vaunaided: VaUnaidedModel) {
 
     return this.clinicalDLService.PostVaUnaided(vaunaided)
-      .map(res => res);
+      ;
     }
     public PostTBUT(TBUT: TBUTModel) {
 
     return this.clinicalDLService.PostTBUT(TBUT)
-      .map(res => res);
+      ;
   }
   public PostMasterPrescriptionSlip(PrescriptionSlip: PrescriptionSlipModel) {
     return this.clinicalDLService.PostMasterPrescriptionSlip(PrescriptionSlip)
-      .map(res => res);
+      ;
   }
 
   public GetPrescriptionHistoryByPatientId(PatientId: number) {
     return this.clinicalDLService.GetPrescriptionHistoryByPatientId(PatientId)
-      .map(res => res);
+      ;
   }
 
   public LoadPrescriptionDetailbyMasterId(MasterId) {
     return this.clinicalDLService.LoadPrescriptionDetailbyMasterId(MasterId)
-      .map(res => res);
+      ;
   }
 }

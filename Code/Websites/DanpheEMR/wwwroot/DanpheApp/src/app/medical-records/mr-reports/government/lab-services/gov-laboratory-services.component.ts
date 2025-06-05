@@ -114,7 +114,7 @@ export class GovLaboratoryServicesReportComponent {
       if (this.currentLaboratoryServices.fromDate != null && this.currentLaboratoryServices.toDate != null) {
         this.dlService.Read("/GovernmentReporting/GetLaboratoryServices?FromDate="
           + this.currentLaboratoryServices.fromDate + "&ToDate=" + this.currentLaboratoryServices.toDate)
-          .map(res => res)
+          
           .subscribe(res => this.Success(res),
             err => this.Error(err));
       }

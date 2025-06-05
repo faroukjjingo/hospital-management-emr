@@ -64,7 +64,7 @@ export class RPT_BIL_ReturnBillReportComponent {
     if (this.currentReturnBill.fromDate != null && this.currentReturnBill.toDate != null) {
       this.dlService.Read("/BillingReports/ReturnBillReport?FromDate="
         + this.currentReturnBill.fromDate + "&ToDate=" + this.currentReturnBill.toDate)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })
         .subscribe(res => this.Success(res),
           res => this.Error(res));
@@ -133,7 +133,7 @@ export class RPT_BIL_ReturnBillReportComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelReturnBills?FromDate="
       + this.currentReturnBill.fromDate + "&ToDate=" + this.currentReturnBill.toDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");
@@ -182,7 +182,7 @@ export class RPT_BIL_ReturnBillReportComponent {
   public LoadReturnBillDetail(billReturnId:number){
     if (billReturnId) {
       this.dlService.Read("/BillingReports/ReturnBillReportViewDetail?BillReturnId="+billReturnId)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })
         .subscribe(res => this.GotReturnBillData(res),
           res => this.Error(res));

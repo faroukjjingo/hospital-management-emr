@@ -40,7 +40,7 @@ export class GoodReceiptEvaluation {
 //  this.GREvaluationData= null;
 
     this.inventoryBLService.ShowGREvaluationReport(this.CurrentGREvaluationReport)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res)
       );

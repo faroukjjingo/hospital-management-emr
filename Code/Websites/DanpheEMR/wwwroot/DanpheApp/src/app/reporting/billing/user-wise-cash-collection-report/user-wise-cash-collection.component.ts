@@ -83,7 +83,7 @@ export class RPT_BIL_UserWiseCashCollectionComponent {
             this.toDate = this.userObjModel.toDate;
             this.userId = this.userObjModel.userId;
             this.dlService.Read("/BillingReports/UserWiseCashCollectionReport?FromDate=" + this.fromDate + "&ToDate=" + this.toDate + "&UserId=" + this.userId)
-                .map(res => res)
+                
                 .subscribe(res => this.Success(res),
                     err => this.Error(err));
         }
@@ -159,7 +159,7 @@ export class RPT_BIL_UserWiseCashCollectionComponent {
     // ExportToExcel() {
     //     this.dlService.ReadExcel("/ReportingNew/ExportToExcelDoctorwiseIncomeSummary?FromDate="
     //         + this.fromDate + "&ToDate=" + this.toDate)
-    //         .map(res => res)
+    //         
     //         .subscribe(data => {
     //             let blob = data;
     //             let a = document.createElement("a");

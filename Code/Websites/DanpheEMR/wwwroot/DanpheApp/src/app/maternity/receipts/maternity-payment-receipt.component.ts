@@ -186,7 +186,7 @@ export class MaternityPaymentReceiptComponent {
     this.loading = true;
     this.showLoading = true;
     this.http.post<any>("/api/Billing/saveHTMLfile?PrinterName=" + PrinterName + "&FilePath=" + filePath, printableHTML, this.options)
-      .map(res => res).subscribe(res => {
+      .subscribe(res => {
         if (res.Status = "OK") {
           this.timerFunction();
         }

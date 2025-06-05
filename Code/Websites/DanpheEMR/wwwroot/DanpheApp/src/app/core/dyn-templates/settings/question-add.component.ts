@@ -83,7 +83,7 @@ export class QuestionAddComponent {
                 //console.log("service message: question added successfully !")
                 let url = "/api/DynTemplates?reqType=addQuestion";
                 let data = JSON.stringify(newQtn);
-                this.dlService.Add(data, url).map(res => res).subscribe(res => {
+                this.dlService.Add(data, url).subscribe(res => {
                     if (res.Status == "OK") {
                         newQtn.QuestionId = res.Results.QuestionId;//questionid comes as return value of add qtn.
                         this.qtnContainer.ChildQuestions.push(newQtn);

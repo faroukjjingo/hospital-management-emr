@@ -169,7 +169,7 @@ export class PHRMExpiryReportComponent implements OnInit {
   ////and in that event we are calling the server excel export....
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/api/PharmacyReport/ExportToExcelPHRMExpiryReport?ItemId=" + this.ItemId + "&FromDate=" + this.fromDate + "&ToDate=" + this.toDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

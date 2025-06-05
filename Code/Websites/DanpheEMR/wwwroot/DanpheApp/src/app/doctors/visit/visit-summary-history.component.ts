@@ -38,7 +38,7 @@ export class VisitSummaryHistoryComponent {
 
     public GetPatientVisitList() {
         let url = "/api/Visit/VisitsSignedByDoctor?patientId=" + this.selectedPatient.PatientId;
-        this.dlService.Read(url).map(res => res).subscribe(res => {
+        this.dlService.Read(url).subscribe(res => {
             if (res.Status == "OK" && res.Results.length) {
                 this.visitList = res.Results;
                 this.CheckPendingRecord();

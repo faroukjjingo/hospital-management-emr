@@ -126,7 +126,7 @@ export class PHRMCreditInOutPatientReportComponent {
     OnGridExport($event: GridEmitModel) {
       this.dlService.ReadExcel("/api/PharmacyReport/ExportToExcelPHRMCreditInOutPatientReport?FromDate="
         + this.phrmReports.FromDate + "&ToDate=" + this.phrmReports.ToDate + "&IsInOutPat=" + this.IsInOutPat + "&patientName=" + this.patientName)
-            .map(res => res)
+            
             .subscribe(data => {
                 let blob = data;
                 let a = document.createElement("a");

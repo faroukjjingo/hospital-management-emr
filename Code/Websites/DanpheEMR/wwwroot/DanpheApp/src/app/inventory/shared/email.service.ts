@@ -22,7 +22,7 @@ export class EmailService {
 
         let data = JSON.stringify(content);
         return this.emailEndPoint.SendEmail(content)
-            .map(res => { return res })
+            
     }
 
 }

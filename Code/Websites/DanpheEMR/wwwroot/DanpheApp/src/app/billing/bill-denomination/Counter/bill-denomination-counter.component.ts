@@ -168,7 +168,7 @@ export class BillingDenominationCounterComponent {
   }
   GetHandoverAmount(): void { //to get HandoverTransaction amount
     this.dLService.Read("/BillingReports/BIL_TXN_GetHandoverCalculationDateWise?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status === ENUM_DanpheHTTPResponseText.OK) {
           let data = JSON.parse(res.Results.JsonData);
@@ -302,7 +302,7 @@ export class BillingDenominationCounterComponent {
   LoadCounterDayCollection(): void {
     this.dLService.Read("/Reporting/BILLDsbCntrUsrCollection?fromDate="
       + this.FromDate + "&toDate=" + this.ToDate)
-      .map(res => res)
+      
       .subscribe(res => {
 
         if (res.Results) {

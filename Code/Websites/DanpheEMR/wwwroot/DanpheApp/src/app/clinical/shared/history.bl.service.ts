@@ -20,59 +20,59 @@ export class HistoryBLService {
     //get list of family history using patientId
     public GetFamilyHistoryList(patientId: number) {
         return this.clinicalDLService.GetFamilyHistoryList(patientId)
-            .map(res => res);
+            ;
     }
     //social-history.component
     //get list of social history using patientId
     public GetSocialHistoryList(patientId: number) {
         return this.clinicalDLService.GetSocialHistoryList(patientId)
-            .map(res => res);
+            ;
     }
     public GetReferralSourceList(patientId: number) {
         return this.clinicalDLService.GetReferralSourceList(patientId)
-            .map(res => res);
+            ;
     }
     //surgical-history.component
     //get list of surgical history using patientId.
     public GetSurgicalHistoryList(patientId: number) {
         return this.clinicalDLService.GetSurgicalHistoryList(patientId)
-            .map(res => res)
+            
     }
     //get uploaded scanned images
     public GetUploadedPatientImages(patientId: number) {
         return this.clinicalDLService.GetUploadedPatientImages(patientId)
-            .map(res => res)
+            
     }
     // public GetICDList() {
     //     return this.clinicalDLService.GetMasterICDList()
-    //         .map(res => res);
+    //         ;
     // }
     //family-history.component
     //post family history
     public PostFamilyHistory(currentFamilyHistory: FamilyHistory) {
         var temp = _.omit(currentFamilyHistory, ['FamilyHistoryValidator']);
         return this.clinicalDLService.PostFamilyHistory(temp)
-            .map(res => res);
+            ;
     }
     //social-history.component
     //post social history
     public PostSocialHistory(currentSocialHistory: SocialHistory) {
         var temp = _.omit(currentSocialHistory, ['SocialHistoryValidator']);
         return this.clinicalDLService.PostSocialHistory(temp)
-            .map(res => res);
+            ;
     }
     //post referral source 
     public PostReferralSource(currentReferralSource: ReferralSource) {
         var temp = _.omit(currentReferralSource, ['ReferralSourceValidator']);
         return this.clinicalDLService.PostReferralSource(temp)
-            .map(res => res);
+            ;
     }
     //surgical-history.component
     //post surgical history
     public PostSurgicalHistory(currentSurgicalHistory: SurgicalHistory) {
         var temp = _.omit(currentSurgicalHistory, ['SurgicalHistoryValidator']);
         return this.clinicalDLService.PostSurgicalHistory(temp)
-            .map(res => res);
+            ;
     }
 
     //family-history.component
@@ -85,7 +85,7 @@ export class HistoryBLService {
         let data = JSON.stringify(temp);
         // let reqType = 'familyhistory';
         return this.clinicalDLService.PutClinicalFamilyHistory(data)
-            .map(res => res);
+            ;
     }
 
     //social-history.component
@@ -97,7 +97,7 @@ export class HistoryBLService {
         let data = JSON.stringify(temp);
         // let reqType = 'socialhistory';
         return this.clinicalDLService.PutClinicalSocialHistory(data)
-            .map(res => res);
+            ;
     }
     //PutReferralSource
     public PutReferralSource(currentReferralSource: ReferralSource) {
@@ -107,7 +107,7 @@ export class HistoryBLService {
         let data = JSON.stringify(temp);
         // let reqType = 'referralsource';
         return this.clinicalDLService.PutClinicalreferralsource(data)
-            .map(res => res);
+            ;
     }
 
     //surgical-history.component
@@ -120,7 +120,7 @@ export class HistoryBLService {
         let data = JSON.stringify(temp);
         // let reqType = 'surgicalhistory';
         return this.clinicalDLService.PutClinicalSurgicalHistory(data)
-            .map(res => res);
+            ;
     }
     public AddPatientImages(filesToUpload, patReport: PatientImagesModel) {
         try {
@@ -155,7 +155,7 @@ export class HistoryBLService {
 
             //let finalIPResult = input;
             return this.clinicalDLService.PostPatientImages(formToPost)
-                .map(res => res);
+                ;
 
         } catch (exception) {
             throw exception;
@@ -163,15 +163,15 @@ export class HistoryBLService {
     }
     public deactivateUploadedImage(patImageId: number) {
         return this.clinicalDLService.deactivateUploadedImage(patImageId)
-            .map(res => res);
+            ;
     }
     public GetSubjectivePrescriptionNotes(patientVisitId: number, notesId: number) {
         return this.clinicalDLService.GetSubjectivePrescriptionNotes(patientVisitId, notesId)
-            .map(res => res);
+            ;
     }
     public SaveNote(currentNotes: ClinicalSubjectivePrescriptionNotes) {
         return this.clinicalDLService.SaveNote(currentNotes)
-            .map(res => res);
+            ;
 
     }
 }

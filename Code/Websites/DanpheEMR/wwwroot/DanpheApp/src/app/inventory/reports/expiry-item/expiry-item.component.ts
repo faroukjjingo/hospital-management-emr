@@ -49,7 +49,7 @@ export class ExpiryItemComponent {
   }
   public ShowStoreList() {
     this.inventoryReportsBLService.LoadInventoryStores()
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           var storeList = res.Results;

@@ -18,21 +18,21 @@ export class ActivateInventoryService {
 
 
   GetAllInventoryList() {
-    return this.activateInventoryEndpoint.GetAllInventoryList().map(res => res);
+    return this.activateInventoryEndpoint.GetAllInventoryList();
   }
   ActivateInventory(InventoryId) {
     return this.activateInventoryEndpoint.ActivateInventory(InventoryId)
-      .map(res => { return res });
+      ;
 
   }
   DeactivateInventory() {
     return this.activateInventoryEndpoint.DeactivateInventory()
-      .map(res => { return res });
+      ;
   }
 
   getActiveInventory() {
     return this.activateInventoryEndpoint.getActiveInventory()
-      .map(res => { return res });
+      ;
   }
 
 }

@@ -46,7 +46,7 @@ export class RPT_RAD_CategoryWiseImagingReportComponent {
 
       this.dlService.Read("/Reporting/CategoryWiseImagingReport?FromDate="
         + this.CurrentCategoryImaging.fromDate + "&ToDate=" + this.CurrentCategoryImaging.toDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           err => this.Error(err));
     } else {

@@ -63,7 +63,7 @@ export class RPT_BIL_ItemSummaryReportComponent {
     if (this.IsDateValid) {
       //let srvDept = this.ServDeptName.replace(/&/g, '%26');//this is URL-Encoded value for character  '&'    --see: URL Encoding in Google for details.
       this.dlService.Read("/BillingReports/RPT_Bil_ItemSummaryReport?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })
         .subscribe(res => {
           if (res.Status == "OK") {

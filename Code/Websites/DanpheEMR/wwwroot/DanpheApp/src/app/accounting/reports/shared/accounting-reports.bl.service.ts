@@ -16,9 +16,7 @@ export class AccountingReportsBLService {
     public GetBalanceSheetReportData(selectedDate, fiscalYearId) {
         try {
             return this.accountReportDlService.GetBalanceSheetReportData(selectedDate, fiscalYearId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (exception) {
             throw exception;
         }
@@ -99,9 +97,7 @@ export class AccountingReportsBLService {
     public GetCashFlowReportData(fromDt, toDt, fiscalYearId) {
         try {
             return this.accountReportDlService.GetCashFlowReportData(fromDt, toDt, fiscalYearId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (exception) {
             throw exception;
         }
@@ -120,9 +116,7 @@ export class AccountingReportsBLService {
     public GetDaywiseVoucherDetailsbyDayVoucherNo(dayVoucherNumber: number, voucherId: number, sectionId) {
         try {
             return this.accountReportDlService.GetDaywiseVoucherDetailsbyDayVoucherNo(dayVoucherNumber, voucherId, sectionId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -192,6 +186,6 @@ export class AccountingReportsBLService {
     }
     public GetAccountHeadDetailReport() {
         return this.accountReportDlService.GetAccountHeadDetailReport()
-            .map(res => { return res });
+            ;
     }
 }

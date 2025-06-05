@@ -16,27 +16,27 @@ export class MedicationBLService {
 
     public GetMedicationMasters() {
         return this.clinicalDLService.GetMasterMedicineList()
-            .map(res => res);
+            ;
     }
 
     //home-medication
     //get list of home medication using PatientId
     public GetHomeMedicationList(patientId: number) {
         return this.clinicalDLService.GetHomeMedicationList(patientId)
-            .map(res => res);
+            ;
     }
     //medication-prescription
     //get list of MedicationPrescription using PatientId.
     public GetMedicationList(patientId: number) {
         return this.clinicalDLService.GetMedicationList(patientId)
-            .map(res => res);
+            ;
     }
     //home-medication
     //post new home medication
     public PostHomeMedication(currentHomeMedication: HomeMedication) {
         var temp = _.omit(currentHomeMedication, ['HomeMedicationValidator']);
         return this.clinicalDLService.PostHomeMedication(temp)
-            .map(res => res);
+            ;
     }
     //medication-prescription
     //post new medication prescription
@@ -70,7 +70,7 @@ export class MedicationBLService {
             });
         }
         return this.clinicalDLService.PostPrescription(med)
-            .map(res => res);
+            ;
     }
     //home-medicaiton
     //update home medication
@@ -81,7 +81,7 @@ export class MedicationBLService {
         let data = JSON.stringify(temp);
         // let reqType = 'homemedication';
         return this.clinicalDLService.PutClinicalHomeMedication(data)
-            .map(res => res);
+            ;
     }
     //medication-prescription
     //update medicaiton-prescription
@@ -92,7 +92,7 @@ export class MedicationBLService {
         let data = JSON.stringify(temp);
         // let reqType = 'medicationprescription';
         return this.clinicalDLService.PutClinicalMedicationPrescription(data)
-            .map(res => res);
+            ;
     }
 }
 

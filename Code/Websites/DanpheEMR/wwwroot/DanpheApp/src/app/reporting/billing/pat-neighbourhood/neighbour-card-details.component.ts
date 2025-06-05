@@ -37,7 +37,7 @@ export class RPT_BIL_PatNeighbourCardReportComponent {
     if (this.currentneighbourcard.FromDate != null && this.currentneighbourcard.ToDate != null) {
       this.dlService.Read("/BillingReports/PatientNeighbourhoodCardDetail?FromDate="
         + this.currentneighbourcard.FromDate + "&ToDate=" + this.currentneighbourcard.ToDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {
@@ -71,7 +71,7 @@ export class RPT_BIL_PatNeighbourCardReportComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelPatientNeighbourhoodCardDetails?FromDate="
       + this.currentneighbourcard.FromDate + "&ToDate=" + this.currentneighbourcard.ToDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

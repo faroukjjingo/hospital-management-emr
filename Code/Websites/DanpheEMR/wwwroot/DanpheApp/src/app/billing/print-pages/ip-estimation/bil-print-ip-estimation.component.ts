@@ -500,7 +500,7 @@ export class BIL_Print_IP_Estimation {
 
   LoadPatientBillingSummary(patientId: number, patientVisitId: number) {
     this.dlService.Read("/api/IpBilling/InpatientPendingBillItems?patientId=" + this.patientId + "&ipVisitId=" + this.ipVisitId)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status === ENUM_DanpheHTTPResponseText.OK && res.Results) {
           // this.admissionInfo = res.Results.AdmissionInfo;

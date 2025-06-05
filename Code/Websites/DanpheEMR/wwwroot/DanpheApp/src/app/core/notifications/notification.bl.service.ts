@@ -13,25 +13,25 @@ export class NotificationBLService {
     //Get Notification 
     public GetNotification() {
         return this.notificationdlserv.GetNotification()
-            .map(res => { return res });
+            ;
     }
     public GetNotificationVisitDetail(notificationId:number) {
         return this.notificationdlserv.GetNotificationVisitDetail(notificationId)
-            .map(res => { return res });
+            ;
     }
 
     ///updating Notification
     public MarkNotificationAsRead(messageList: Array<NotificationViewModel>) {
         let messageString = JSON.stringify(messageList);
         return this.notificationdlserv.PutNotificationIsRead(messageString)
-            .map(res => { return res });
+            ;
     }
 
     ///updating Notification
     public MarkNotificationAsArchived(messageList: Array<NotificationViewModel>) {
         let messageString = JSON.stringify(messageList);
         return this.notificationdlserv.PutNotificationIsArchived(messageString)
-            .map(res => { return res });
+            ;
     }
 
 

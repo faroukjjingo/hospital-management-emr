@@ -67,7 +67,7 @@ export class RPT_BIL_PatientBillHistoryComponent {
     if (this.selFromDate != null && this.selToDate != null) {
       this.dlService.Read("/BillingReports/PatientBillHistory?FromDate=" + this.selFromDate
         + "&ToDate=" + this.selToDate + "&PatientCode=" + this.selPatientCode)
-        .map(res => res)
+        
         .subscribe(res => this.AssignBillHistoryData(res),
           err => this.Error(err));
     }

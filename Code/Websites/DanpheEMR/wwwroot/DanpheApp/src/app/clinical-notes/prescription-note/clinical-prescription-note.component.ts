@@ -77,7 +77,7 @@ export class ClinicalPrescriptionNoteComponent {
   }
 
   LoadAllOrderItems() {
-    this.http.get<any>('/api/Orders/OrderItems', this.options).map(res => res)
+    this.http.get<any>('/api/Orders/OrderItems', this.options)
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           this.allOrdItems = res.Results.filter(d => d.PreferenceType.toLowerCase() != 'medication');

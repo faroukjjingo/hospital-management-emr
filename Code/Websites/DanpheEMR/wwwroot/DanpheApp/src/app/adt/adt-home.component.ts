@@ -56,7 +56,7 @@ export class AdtHomeComponent {
 
     LoadBedInfo(): void {
         this.http.get<any>("/api/Helpdesk/BedsInfo"
-            , this.options).map(res => res)
+            , this.options)
             .subscribe(res => {
                 if (res.Status == "OK") {
                     let data = JSON.parse(res.Results.JsonData);
@@ -69,7 +69,7 @@ export class AdtHomeComponent {
     }
     // get bed feature summary
     LoadBedFeature(): void {
-        this.http.get<any>("/api/Helpdesk/BedOccupancyOfWards").map(res => res).subscribe(res => {
+        this.http.get<any>("/api/Helpdesk/BedOccupancyOfWards").subscribe(res => {
             if (res.Status == "OK") {
 
                 this.bedFeature = res.Results;
@@ -82,7 +82,7 @@ export class AdtHomeComponent {
     }
     LoadBedPatientFeature(): void {
 
-        this.http.get<any>("/api/Helpdesk/BedPatientInfos_Old").map(res => res).subscribe(res => {
+        this.http.get<any>("/api/Helpdesk/BedPatientInfos_Old").subscribe(res => {
             if (res.Status == "OK") {
 
                 this.bedPatientFeature = res.Results;

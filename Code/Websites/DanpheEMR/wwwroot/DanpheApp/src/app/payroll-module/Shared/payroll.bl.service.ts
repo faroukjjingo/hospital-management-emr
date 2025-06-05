@@ -42,7 +42,7 @@ export class PayrollBLService {
     public GetHolidaylist() {
         try {
             return this.payrollDLService.GetHolidaylist()
-                .map(res => { return res });
+                ;
         }
         catch (ex) {
       throw ex;
@@ -75,7 +75,7 @@ export class PayrollBLService {
   public GetEmployeeLeaveDetails(year,currEmp){
     try {
       return this.payrollDLService.GetEmployeeLeaveDetails(year,currEmp)
-        .map(res => { return res });
+        ;
     }
     catch (ex) {
       throw ex;

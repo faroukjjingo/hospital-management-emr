@@ -144,7 +144,7 @@ export class PHRMPaymentModeWiseReportComponent {
         this.loading = true;
         if (this.fromDate != null && this.toDate != null) {
             this._dlService.Read("/api/PharmacyReport/PHRM_PaymentModeWiseReport?FromDate=" + this.fromDate + "&ToDate=" + this.toDate + "&PaymentMode=" + this.PaymentMode + "&Type=" + this.Type + "&User=" + this.UserId + "&StoreId=" + this.StoreId)
-                .map(res => res)
+                
                 .subscribe(res => this.Success(res),
                     err => this.Error(err));
         }

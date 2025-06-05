@@ -74,7 +74,7 @@ export class HomeMedicationAddComponent {
     LoadAllMedications(): void {
         //only for temporary purpose, call it using pharmacydl service.
     
-        this.http.get<any>('/api/PharmacySettings/Items', this.options).map(res => res)
+        this.http.get<any>('/api/PharmacySettings/Items', this.options)
             .subscribe(res => {
                 if (res.Status == "OK") {
                     this.allMedicineList = [];//empty the medicationlist after server call.

@@ -1,7 +1,7 @@
 import { Component, ChangeDetectorRef, Input, EventEmitter, Output } from "@angular/core";
 import { RouterOutlet, RouterModule, Router } from '@angular/router';
 import 'rxjs/Rx';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { PatientService } from "../../../patients/shared/patient.service";
 import { MessageboxService } from "../../../shared/messagebox/messagebox.service";
 import { LabsBLService } from "../../shared/labs.bl.service";

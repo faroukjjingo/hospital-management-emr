@@ -43,7 +43,7 @@ export class QuotationBLService {
     //GET requested quotation list
     GetRequestedQuotationList() {
         return this.inventoryDLService.GetRequestedQuotationList()
-            .map(res => { return res });
+            ;
     }
 
     //Get Quotaion details
@@ -95,7 +95,7 @@ export class QuotationBLService {
         //  formToPost.append("quotationDetails", quotationDetails);
 
         return this.inventoryDLService.PostQuotationDetails(quoDetails)
-            .map(res => { return res })
+            
     }
 
     public AddQuotationFiles(filesToUpload, reqQuotation: QuotationUpLoadFileModel) {
@@ -122,7 +122,7 @@ export class QuotationBLService {
             formToPost.append("quotationFileDetails", quotationFileDetails);
 
             return this.inventoryDLService.PostQuotationFiles(formToPost)
-                .map(res => res);
+                ;
 
         } catch (exception) {
             throw exception;
@@ -148,7 +148,7 @@ export class QuotationBLService {
 
         let data = JSON.stringify(newPO);
         return this.inventoryDLService.PostToReqForQuotation(data)
-            .map(res => { return res })
+            
     }
 
     //PUT:update Selected Quotation and RequestedQuotation
@@ -158,7 +158,7 @@ export class QuotationBLService {
 
         let data = JSON.stringify(omit);
         return this.inventoryDLService.UpdateVendorForPO(data)
-            .map(res => { return res });
+            ;
 
     }
 }

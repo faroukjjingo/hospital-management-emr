@@ -123,7 +123,7 @@ export class FixedAssetsMovementComponent {
       { DisplayName: "DateRange:", Value: this.dateRange }
     ]
     this.fixedBLService.ShowFixedAssetsMovement(this.assetReportObj)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }

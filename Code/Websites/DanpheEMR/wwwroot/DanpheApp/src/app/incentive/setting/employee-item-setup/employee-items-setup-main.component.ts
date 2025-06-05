@@ -113,7 +113,7 @@ export class EmployeeItemsSetupMainComponent {
 
   public LoadDocterList() {
     this.incentiveBLService.GetIncentiveApplicableDocterList()
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.allDoctorList = res.Results;
@@ -205,7 +205,7 @@ export class EmployeeItemsSetupMainComponent {
   //   //let summaryHeader = "Calculation Summary";
 
   //   this.dlService.ReadExcel("/ReportingNew/ExportToExcel_INCTV_AllEmpItemsSettings")
-  //     .map(res => res)
+  //     
   //     .subscribe(data => {
   //       let blob = data;
   //       let a = document.createElement("a");

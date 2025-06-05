@@ -6,7 +6,7 @@ import { CommonFunctions } from '../../shared/common.functions';
 import * as moment from 'moment';
 import { CoreService } from '../../core/shared/core.service';
 import { NepaliCalendarService } from '../../shared/calendar/np/nepali-calendar.service';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Subscription } from 'rxjs';
 
 @Component({
@@ -77,7 +77,7 @@ export class BillStickerComponent {
     }
     public GetVisitDetail(txnId: number) {
         this.http.get<any>('/api/Billing/GetVisitInfoforStickerPrint?billingTransactionId=' + txnId, this.options)
-            .map(res => res)
+            
             .subscribe(res => this.CallBackStickerOnly(res),
                 res => this.Error(res));
     }
@@ -182,7 +182,7 @@ export class BillStickerComponent {
         this.loading = true;
         this.showLoading = true;
         this.http.post<any>("/api/Billing/saveHTMLfile?PrinterName=" + PrinterName + "&FilePath=" + filePath, printableHTML, this.options)
-            .map(res => res).subscribe(res => {
+            .subscribe(res => {
                 if (res.Status = "OK") {
                     this.timerFunction();
                 }

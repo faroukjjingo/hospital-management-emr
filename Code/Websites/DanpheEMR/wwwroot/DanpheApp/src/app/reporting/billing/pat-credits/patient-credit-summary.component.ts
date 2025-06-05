@@ -43,7 +43,7 @@ export class RPT_BIL_PatientCreditSummaryComponent {
   Load()
   //{
   //    this.dlService.Read("/BillingReports/PatientCreditBillSummary")
-  //        .map(res => res)
+  //        
   //        .subscribe(res => this.Success(res),
   //        res => this.Error(res));
   //}
@@ -51,7 +51,7 @@ export class RPT_BIL_PatientCreditSummaryComponent {
     if (this.patientCreditSummary.fromDate != null && this.patientCreditSummary.toDate != null) {
       this.dlService.Read("/BillingReports/PatientCreditBillSummary?FromDate="
         + this.patientCreditSummary.fromDate + "&ToDate=" + this.patientCreditSummary.toDate)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })
         .subscribe(res => this.Success(res),
           res => this.Error(res));

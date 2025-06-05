@@ -45,13 +45,13 @@ export class AccountingSyncBaseComponent<TItem> {
     }
     public GetItems() {
         this.accSyncDLService.Read("/api/AccountingSync?reqType=inventory")
-            .map(res => res)
+            
             .subscribe(res => this.GetSuccess(res),
             res => this.Error(res));
     }
     public GetVoucherList() {
         this.accSyncDLService.Read("/api/Accounting/Vouchers")
-            .map(res => res)
+            
             .subscribe(res => {
                 if (res.Results == "OK") {
                     if (res.Results.length) {

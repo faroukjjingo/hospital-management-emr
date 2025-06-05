@@ -31,7 +31,7 @@ export class DashboardHomeComponent {
   }
   LoadDsbStatistics() {
     this.dlService.Read("/Reporting/HomeDashboardStats")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK" && res.Results.JsonData) {
           let parsedData = JSON.parse(res.Results.JsonData);
@@ -52,7 +52,7 @@ export class DashboardHomeComponent {
 
   LoadPatientMap() {
     this.dlService.Read("/Reporting/PatientZoneMap")
-      .map(res => res)
+      
       .subscribe(res => {
         //console.log("---start: PatientZoneMap-----");
         //console.log(res);
@@ -77,7 +77,7 @@ export class DashboardHomeComponent {
 
   LoadDepartmentAppts() {
     this.dlService.Read("/Reporting/DepartmentAppointmentsTotal")
-      .map(res => res)
+      
       .subscribe(res => {
         //sud:25sept'19--below line was giving issue because it doesn't get JsonData everytime.
         if (res.Results && res.Results.JsonData) {

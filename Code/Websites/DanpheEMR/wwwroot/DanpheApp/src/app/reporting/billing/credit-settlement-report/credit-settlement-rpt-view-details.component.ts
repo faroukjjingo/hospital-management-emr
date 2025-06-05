@@ -54,7 +54,7 @@ import { ReportingService } from "../../shared/reporting-service";
 
       public Load(){
         this.dlService.Read("/BillingReports/CreditSettlementViewDetail?FromDate=" + this.fromDate + "&ToDate=" + this.toDate + "&PatientId="+this.SettlementDetail.PatientId)
-            .map(res => res)
+            
             .subscribe(res => this.Success(res),
             res => this.Error(res));
 

@@ -38,7 +38,7 @@ export class RPT_BIL_DialysisPatientDetailsComponent {
     if (this.current.FromDate != null && this.current.ToDate != null) {
       this.dlService.Read("/BillingReports/DialysisPatientDetail?FromDate="
         + this.current.FromDate + "&ToDate=" + this.current.ToDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {
@@ -73,7 +73,7 @@ export class RPT_BIL_DialysisPatientDetailsComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelPatientNeighbourhoodCardDetails?FromDate="
       + this.current.FromDate + "&ToDate=" + this.current.ToDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

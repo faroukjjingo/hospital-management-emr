@@ -54,7 +54,7 @@ export class DoctorRevenueComponent {
         if (this.IsValidCheck(undefined, undefined)) {
             this.dlService.Read("/Reporting/DoctorSummary?FromDate="
                 + this.fromDate + "&ToDate=" + this.toDate + "&ProviderId=" + this.currentUser)
-                .map(res => res)
+                
                 .subscribe(res => {
                     if (res.Status == "OK") {
                         this.docSummaryDetail = res.Results;

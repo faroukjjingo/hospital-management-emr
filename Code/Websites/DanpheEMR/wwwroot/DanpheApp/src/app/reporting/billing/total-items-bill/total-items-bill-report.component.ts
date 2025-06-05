@@ -96,7 +96,7 @@ export class RPT_BIL_TotalItemsBillComponent {
         this.dlService.Read("/BillingReports/TotalItemsBill?FromDate=" + this.fromDate + "&ToDate=" + this.toDate
             + "&billingType=" + this.selBillingTypeName + "&ServiceDepartmentName=" + this.CurrentTotalItem.servicedepartment +
             "&ItemName=" + formattedItemName)
-            .map(res => res)
+            
             .finally(() => { this.loading = false })//re-enable button after response comes back.
             .subscribe(res => this.Success(res),
                 res => this.Error(res));
@@ -123,7 +123,7 @@ export class RPT_BIL_TotalItemsBillComponent {
             + this.fromDate + "&ToDate=" + this.toDate
             + "&BillStatus=" + this.CurrentTotalItem.billstatus + "&ServiceDepartmentName=" + this.CurrentTotalItem.servicedepartment +
             "&ItemName=" + this.CurrentTotalItem.itemname + "&SummaryData=" + jsonStrSummary + "&SummaryHeader=" + summaryHeader)
-            .map(res => res)
+            
             .subscribe(data => {
                 let blob = data;
                 let a = document.createElement("a");
@@ -209,7 +209,7 @@ export class RPT_BIL_TotalItemsBillComponent {
 
     loadDepartments() {
         this.dlService.Read("/BillingReports/GetServiceDeptList")
-            .map(res => res).subscribe(res => {
+            .subscribe(res => {
                 if (res.Status == "OK") {
                     this.serDeptList = res.Results;
                     CommonFunctions.SortArrayOfObjects(this.serDeptList, "ServiceDepartmentName");//this sorts the empRoleList by EmployeeRoleName.

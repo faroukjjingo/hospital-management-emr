@@ -1,6 +1,6 @@
 
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse, HttpResponseBase } from '@angular/common/http';
 import 'rxjs/add/observable/throw';
 import { LoadingScreenService } from './danphe-loading-screen.services';

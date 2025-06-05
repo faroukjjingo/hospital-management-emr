@@ -102,7 +102,7 @@ export class RPT_BIL_EHSBillReportComponent {
         var selUserId = this.selUser ? this.selUser.EmployeeId : null;
         this.dlService.Read("/BillingReports/EHSBillReport?FromDate=" + this.fromDate + "&ToDate=" + this.toDate
             + "&ServiceDepartmentName=" + this.selectedServDept + "&ItemName=" + this.selectedItem + "&PerformerId=" + PerformerId + "&PrescriberId=" + PrescriberId + "&UserId=" + selUserId)
-            .map(res => res)
+            
             .finally(() => { this.loading = false })//re-enable button after response comes back.
             .subscribe(res => this.Success(res),
                 res => this.Error(res));
@@ -224,7 +224,7 @@ export class RPT_BIL_EHSBillReportComponent {
 
     loadDepartments() {
         this.dlService.Read("/BillingReports/GetServiceDeptList")
-            .map(res => res).subscribe(res => {
+            .subscribe(res => {
                 if (res.Status == "OK") {
                     this.serDeptList = res.Results;
                     CommonFunctions.SortArrayOfObjects(this.serDeptList, "ServiceDepartmentName");//this sorts the serDeptList by ServiceDepartmentName.
@@ -252,7 +252,7 @@ export class RPT_BIL_EHSBillReportComponent {
 
     public LoadAllBillingItems() {
         this.billingBlService.GetBillItemList()
-            .map(res => res).subscribe(res => {
+            .subscribe(res => {
                 if (res.Status == "OK") {
                     this.BillItemList = res.Results;
                     CommonFunctions.SortArrayOfObjects(this.BillItemList, "ItemName");

@@ -52,7 +52,7 @@ export class MedicationPrescriptionComponent {
 //            //only for temporary purpose, call it using pharmacydl service.
 //            let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 //            let options = new RequestOptions({ headers: headers });
-//            this.http.get<any>('/api/PharmacySettings/Items', options).map(res => res)
+//            this.http.get<any>('/api/PharmacySettings/Items', options)
 //                .subscribe(res => {
 //                    if (res.Status == "OK") {
 //                        this.ordServ.medicationList = [];//empty the medicationlist after server call.
@@ -104,7 +104,7 @@ export class MedicationPrescriptionComponent {
 //            let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 //            let options = new RequestOptions({ headers: headers });
 //            this.http.get<any>('/api/Pharmacy?reqType=employeePreference&employeeId=' + employeeId, options)
-//                .map(res => res)
+//                
 //                .subscribe(res => {
 //                    if (res.Status == 'OK') {
 //                        if (res.Results && res.Results.length) {
@@ -299,7 +299,7 @@ export class MedicationPrescriptionComponent {
 //        //only for temporary purpose, call it using pharmacydl service.
 //        let headers = new Headers({ 'Content-Type': 'application/x-www-form-urlencoded' });
 //        let options = new RequestOptions({ headers: headers });
-//        this.http.get<any>('/api/PharmacySettings/Generics', options).map(res => res)
+//        this.http.get<any>('/api/PharmacySettings/Generics', options)
 //            .subscribe(res => {
 //                if (res.Status == "OK") {
 

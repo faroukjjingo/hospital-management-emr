@@ -16,64 +16,64 @@ export class IOAllergyVitalsBLService {
     //get list of allergy using patientId
     public GetPatientAllergyList(patientId: number) {
         return this.clinicalDLService.GetPatientAllergyList(patientId)
-            .map(res => res);
+            ;
     }
     public GetReactionList() {
         return this.clinicalDLService.GetMasterReactionList()
-            .map(res => res);
+            ;
     }
     public GetMedicineList() {
         return this.clinicalDLService.GetMasterMedicineList()
-            .map(res => res);
+            ;
     }
     //input-output
     //get list of IO using PatientId
     public GetPatientInputOutputList(patientVisitId: number, fromDate: string, toDate: string) {
         return this.clinicalDLService.GetPatientInputOutputList(patientVisitId, fromDate, toDate)
-            .map(res => res);
+            ;
     }
     //vitals
     //get list of vitals using patient Id
     public GetPatientVitalsList(patientVisitId: number) {
         return this.clinicalDLService.GetPatientVitalsList(patientVisitId)
-            .map(res => res);
+            ;
     }
     //get list of signature using provider Id
     public GetProviderLongSignature(providerId: number) {
         return this.clinicalDLService.GetProviderLongSignature(providerId)
-            .map(res => res);
+            ;
     }
 
     public GetPhrmGenericList() {
         return this.clinicalDLService.GetPhrmGenericList()
-            .map(res => { return res });
+            ;
     }
 
     //notes
     // public GetPatientClinicalDetailsForNotes(patientVisitId: number, patientId: number) {
     //     return this.clinicalDLService.GetPatientClinicalDetailsForNotes(patientVisitId, patientId)
-    //         .map(res => res);
+    //         ;
     // }
     //allergy
     //post allergy
     public PostAllergy(currentAllergy: Allergy) {
         var temp = _.omit(currentAllergy, ['AllergyValidator']);
         return this.clinicalDLService.PostAllergy(temp)
-            .map(res => res);
+            ;
     }
     //input-output
     //post IO
     public PostInputOutput(currentInputOutput: InputOutput) {
         var temp = _.omit(currentInputOutput, ['InputOutputValidator']);
         return this.clinicalDLService.PostInputOutput(temp)
-            .map(res => res);
+            ;
     }
     //notes
     //post notes
     // public AddNotes(currentNotes: NotesModel, addType: string) {
     //     let notes = _.omit(currentNotes, ['PatientVisit']);
     //     return this.clinicalDLService.PostNotes(notes)
-    //         .map(res => res);
+    //         ;
     // }
 
     //input-output
@@ -134,7 +134,7 @@ export class IOAllergyVitalsBLService {
         // we make the json string
 
         return this.clinicalDLService.PostVitals(data)
-            .map(res => res);
+            ;
     }
     //vitals
     //update vitals
@@ -150,7 +150,7 @@ export class IOAllergyVitalsBLService {
         obj.VitalsValidator = vitalValidator;
         // let reqType = 'vitals';
         return this.clinicalDLService.PutClinicalVitals(data)
-            .map(res => res);
+            ;
 
     }
     //allergy
@@ -161,7 +161,7 @@ export class IOAllergyVitalsBLService {
         let data = JSON.stringify(temp);
         // let reqType = 'allergy';
         return this.clinicalDLService.PutClinicalAllergy(data)
-            .map(res => res);
+            ;
     }
 
     //input-output
@@ -173,25 +173,25 @@ export class IOAllergyVitalsBLService {
         let data = JSON.stringify(temp);
         // let reqType = 'inputoutput';
         return this.clinicalDLService.PutClinicalInputOutput(data)
-            .map(res => res);
+            ;
     }
     public PostBloodSugar(currentInputOutput: BloodSugarMonitoring) {
         let temp = _.omit(currentInputOutput, ['BloodSugarValidator', 'PatientInfo', 'EnteredBy']);
         return this.clinicalDLService.PostBloodSugar(temp)
-            .map(res => res);
+            ;
     }
 
     public GetPatientAdmissionInfo(patientVisitId: number) {
         return this.clinicalDLService.GetPatientAdmissionInfo(patientVisitId)
-            .map(res => res);
+            ;
     }
     public GetPatientBloodSugarList(patientVisitId: number) {
         return this.clinicalDLService.GetPatientBloodSugarList(patientVisitId)
-            .map(res => res);
+            ;
     }
     public GetClinicalIntakeOutputParameterList() {
         return this.clinicalDLService.GetClinicalIntakeOutputParameterList()
-            .map(res => { return res });
+            ;
     }
     //notes
     //update notes
@@ -201,7 +201,7 @@ export class IOAllergyVitalsBLService {
     //     let data = JSON.stringify(notes);
     //     let reqType = 'notes';
     //     return this.clinicalDLService.PutClinical(data, reqType)
-    //         .map(res => res);
+    //         ;
 
     // }
 }

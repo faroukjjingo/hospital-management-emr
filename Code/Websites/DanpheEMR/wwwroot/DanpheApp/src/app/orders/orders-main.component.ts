@@ -162,7 +162,7 @@ export class OrderMainComponent {
 
   LoadAllOrderItems() {
     if (this.currPatVisitContext && this.currPatVisitContext.PriceCategoryId) {
-      this.http.get<any>('/api/Orders/OrderItems?priceCategoryId=' + this.currPatVisitContext.PriceCategoryId, this.options).map(res => res)
+      this.http.get<any>('/api/Orders/OrderItems?priceCategoryId=' + this.currPatVisitContext.PriceCategoryId, this.options)
         .subscribe((res: DanpheHTTPResponse) => {
           if (res.Status === ENUM_DanpheHTTPResponses.OK) {
             this.allOrdItems = res.Results;
@@ -206,7 +206,7 @@ export class OrderMainComponent {
 
   LoadAllPreferences() {
 
-    this.http.get<any>('/api/Orders/EmployeePreferences', this.options).map(res => res)
+    this.http.get<any>('/api/Orders/EmployeePreferences', this.options)
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           this.empAllPreferences = res.Results;
@@ -343,7 +343,7 @@ export class OrderMainComponent {
 
   RemoveFromPreference_New(item) {
     this.http.put<any>("/api/Orders/EmployeePreference/?itemId=" + item.ItemId + "&preferenceType=" + item.PreferenceType, this.options)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           let itmIndex = this.empAllPreferences.findIndex(itm => itm.Type == item.Type && itm.ItemId == item.ItemId);
@@ -362,7 +362,7 @@ export class OrderMainComponent {
     //chek if we can pass only data and not itemid.
     let data = JSON.stringify(item.ItemId);
     this.http.post<any>("/api/Orders/EmployeePreference?itemId=" + item.ItemId + "&preferenceType=" + item.PreferenceType, data, this.options)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           //let itmIndex = this.empAllPreferences.findIndex(itm => itm.Type == item.Type && itm.ItemId == item.ItemId);

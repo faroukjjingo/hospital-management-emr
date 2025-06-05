@@ -28,7 +28,7 @@ export class ItemMgmtDetailComponent  {
 
   ShowItemMgmtDetail() {
       this.inventoryBLService. ShowItemmgmtReport()
-          .map(res => res)
+          
           .subscribe(
               res => this.Success(res),
               res => this.Error(res)

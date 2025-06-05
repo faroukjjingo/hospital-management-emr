@@ -129,7 +129,7 @@ setFilterParamters(): void{
         + this.currentdailyappointment.fromDate + "&ToDate=" + this.currentdailyappointment.toDate
         + "&Rank=" + this.ranks + "&Membership=" + this.memberships
         + "&AppointmentType=" + this.currentdailyappointment.AppointmentType)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })//re-enable the show-report button.
         .subscribe(res => this.Success(res),
           res => this.Error(res)
@@ -161,7 +161,7 @@ setFilterParamters(): void{
       + this.currentdailyappointment.fromDate + "&ToDate=" + this.currentdailyappointment.toDate
       + "&Rank=" + this.ranks + "&Membership=" + this.memberships 
       + "&AppointmentType=" + this.currentdailyappointment.AppointmentType)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

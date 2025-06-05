@@ -93,7 +93,7 @@ export class RPT_BIL_DiscountReportComponent {
       this.dlService.Read("/BillingReports/DiscountReport?FromDate="
         + this.currentDiscount.fromDate + "&ToDate=" + this.currentDiscount.toDate
         + "&CounterId=" + this.currentDiscount.CounterId + "&CreatedBy=" + this.UserId)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })
         .subscribe(res => this.Success(res),
           res => this.Error(res));
@@ -155,7 +155,7 @@ export class RPT_BIL_DiscountReportComponent {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelDiscountReport?FromDate="
       + this.currentDiscount.fromDate + "&ToDate=" + this.currentDiscount.toDate
       + "&CounterId=" + this.currentDiscount.CounterId + "&CreatedBy=" + this.currentDiscount.CreatedBy)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

@@ -74,7 +74,7 @@ export class DailyItemDispatchComponent {
 
   ShowDailyItemDispatch() {
     this.inventoryBLService.ShowDailyItemDispatch(this.CurrentItemDispatch.FromDate, this.CurrentItemDispatch.ToDate, this.CurrentItemDispatch.StoreId)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }

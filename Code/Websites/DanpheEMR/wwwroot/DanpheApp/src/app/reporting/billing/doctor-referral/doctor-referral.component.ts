@@ -35,7 +35,7 @@ export class RPT_BIL_DoctorReferralComponent {
     if (this.currentdoctorreferral.fromDate != null && this.currentdoctorreferral.toDate != null) {
       this.dlService.Read("/BillingReports/DoctorReferral?FromDate="
         + this.currentdoctorreferral.fromDate + "&ToDate=" + this.currentdoctorreferral.toDate + "&ProviderName=" + this.currentdoctorreferral.ProviderName)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {
@@ -90,7 +90,7 @@ export class RPT_BIL_DoctorReferralComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelDoctorReferral?FromDate="
       + this.currentdoctorreferral.fromDate + "&ToDate=" + this.currentdoctorreferral.toDate + "&ProviderName=" + this.currentdoctorreferral.ProviderName)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");
@@ -106,7 +106,7 @@ export class RPT_BIL_DoctorReferralComponent {
 
   loadDoctorsList() {
     this.dlService.Read("/BillingReports/GetDoctorList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.doctorList = res.Results;

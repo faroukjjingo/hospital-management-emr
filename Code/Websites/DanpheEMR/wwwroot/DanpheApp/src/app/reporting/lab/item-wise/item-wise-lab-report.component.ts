@@ -36,7 +36,7 @@ export class RPT_LAB_ItemWiseLabReportComponent {
     if (this.currentitemwise.fromDate != null && this.currentitemwise.toDate != null) {
       this.dlService.Read("/Reporting/ItemWiseFromLab?FromDate="
         + this.currentitemwise.fromDate + "&ToDate=" + this.currentitemwise.toDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           err => this.Error(err));
     } else {

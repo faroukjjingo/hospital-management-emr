@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
@@ -36,14 +36,14 @@ export class SearchService {
     if(term.length==0 || term.length> this.getSerachCharLength()){
       switch(apiurl){
         case APIsByType.VisitList:{
-          return this.http.get<any>(apiurl+this.status +"&dayslimit="+this.maxdayslimit+"&search="+term).map(res => res);   
+          return this.http.get<any>(apiurl+this.status +"&dayslimit="+this.maxdayslimit+"&search="+term);   
           break;
         }
         case APIsByType.BillingPatient:{
-          return this.http.get<any>(apiurl +"&admitStatus="+this.patientType+"&search="+term).map(res => res); 
+          return this.http.get<any>(apiurl +"&admitStatus="+this.patientType+"&search="+term); 
         }
         default:{
-          return this.http.get<any>(apiurl + term).map(res => res);
+          return this.http.get<any>(apiurl + term);
           break;
         }
 

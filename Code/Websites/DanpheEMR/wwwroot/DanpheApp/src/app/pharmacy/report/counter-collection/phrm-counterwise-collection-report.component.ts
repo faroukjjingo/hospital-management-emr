@@ -63,7 +63,7 @@ export class PHRMCounterwiseCollectionReportComponent {
  OnGridExport($event: GridEmitModel) {
         this.dlService.ReadExcel("/api/PharmacyReport/ExportToExcelPHRMCounterwiseCollectionReport?FromDate="
             + this.phrmReports.FromDate + "&ToDate=" + this.phrmReports.ToDate)
-            .map(res => res)
+            
             .subscribe(data => {
                 let blob = data;
                 let a = document.createElement("a");

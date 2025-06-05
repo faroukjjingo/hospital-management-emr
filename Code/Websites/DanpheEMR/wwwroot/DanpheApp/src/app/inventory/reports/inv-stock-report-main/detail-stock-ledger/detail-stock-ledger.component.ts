@@ -72,7 +72,7 @@ export class DetailStockLedgerComponent {
         ];
         this.loading = true;
         this.inventoryBLService.ShowDetailStockLedger(this.invReport, this.selectedStoreId)
-            .map(res => res)
+            
             .subscribe(res => this.Success(res),
                 res => this.Error(res));
     }

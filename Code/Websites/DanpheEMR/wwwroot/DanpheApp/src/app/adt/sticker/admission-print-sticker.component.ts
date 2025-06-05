@@ -3,7 +3,7 @@ import { ChangeDetectorRef, Component, EventEmitter, Input, Output } from "@angu
 import { Router } from '@angular/router';
 
 import * as moment from 'moment/moment';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Subscription } from 'rxjs/Subscription';
 import { CoreService } from "../../core/shared/core.service";
 import { ENUM_PrintingType, PrinterSettingsModel } from "../../settings-new/printers/printer-settings.model";
@@ -133,7 +133,7 @@ export class AdmissionPrintStickerComponent {
 
     GetADTStickerDetail() {
         this.http.get<any>('/api/Admission/AdmissionSticker?' + 'patientVisitId=' + this.patientVisitId, this.options)
-            .map(res => res)
+            
             .subscribe(res => {
                 if (res.Status === ENUM_DanpheHTTPResponseText.OK) {
                     this.showSticker = true;
@@ -320,7 +320,7 @@ Address: `+ this.stickerDetail.Address;
         this.loading = true;
         this.showLoading = true;
         this.http.post<any>("/api/Billing/saveHTMLfile?PrinterName=" + PrinterName + "&FilePath=" + filePath, printableHTML, this.options)
-            .map(res => res).subscribe(res => {
+            .subscribe(res => {
                 if (res.Status === ENUM_DanpheHTTPResponseText.OK) {
                     this.timerFunction();
                 }

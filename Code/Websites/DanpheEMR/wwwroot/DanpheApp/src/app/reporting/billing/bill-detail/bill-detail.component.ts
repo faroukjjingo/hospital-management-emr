@@ -128,7 +128,7 @@ export class BillDetailComponent {
     //   + this.fromDate + "&ToDate=" + this.toDate
     //   + "&BillStatus=" + this.CurrentBillDetail.billstatus + "&ServiceDepartmentName=" + this.CurrentBillDetail.servicedepartment +
     //   "&ItemName=" + this.CurrentBillDetail.itemname + "&SummaryData=" + jsonStrSummary + "&SummaryHeader=" + summaryHeader)
-    //   .map(res => res)
+    //   
     //   .subscribe(data => {
     //     let blob = data;
     //     let a = document.createElement("a");
@@ -203,7 +203,7 @@ export class BillDetailComponent {
 
   loadDepartments(): void {
     this.dlService.Read("/BillingReports/GetServiceDeptList")
-      .map(res => res).subscribe(res => {
+      .subscribe(res => {
         if (res.Status == "OK") {
           this.serDeptList = res.Results;
           CommonFunctions.SortArrayOfObjects(this.serDeptList, "ServiceDepartmentName");
@@ -277,7 +277,7 @@ export class BillDetailComponent {
   }
   public GetRank(): void {
     this.dlService.GetRank()
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == 'OK') {
           this.RankList = res.Results;

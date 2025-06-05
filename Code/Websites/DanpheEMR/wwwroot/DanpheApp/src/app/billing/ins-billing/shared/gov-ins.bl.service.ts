@@ -35,7 +35,7 @@ export class GovInsuranceBLService {
 
   public GetAllPatientsForInsurance(searchText:string) {
     return this.govInsDLService.GetAllPatientsForInsurance(searchText)
-      .map(res => res);
+      ;
   }
 
   //public GetPatientsByKey(searchKey) {

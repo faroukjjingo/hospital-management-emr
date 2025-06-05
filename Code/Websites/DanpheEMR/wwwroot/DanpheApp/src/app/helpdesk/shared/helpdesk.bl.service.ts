@@ -8,30 +8,30 @@ export class HelpDeskBLService {
   }
   public LoadBedInfo() { 
     return this.helpdeskDLService.GetBedinfo()
-      .map(res => res);
+      ;
   }
   public LoadEmployeeInfo() {
     return this.helpdeskDLService.GetEmployeeinfo()
-      .map(res => res);
+      ;
   }
   public LoadWardInfo() {
     return this.helpdeskDLService.GetWardinfo()
-      .map(res => res);
+      ;
   }
 
 
 
   LoadBedPatientInfo() {
-    return this.helpdeskDLService.GetBedPatientInfo().map(res => res);
+    return this.helpdeskDLService.GetBedPatientInfo();
   }
   //sud:16Sep'21
   GetBedOccupancyOfWards() {
-    return this.helpdeskDLService.GetBedOccupancyOfWards().map(res => res);
+    return this.helpdeskDLService.GetBedOccupancyOfWards();
   }
 
   //sud:16Sep'21
   GetAllBedsWithPatInfo() {
-    return this.helpdeskDLService.GetAllBedsWithPatInfo().map(res => res);
+    return this.helpdeskDLService.GetAllBedsWithPatInfo();
   }
   public GetAppointmentData(deptId:number,doctorId:number,pendingOnly:boolean){
     return this.helpdeskDLService.GetAppointmentData(deptId,doctorId,pendingOnly).map((res) =>{

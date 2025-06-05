@@ -31,7 +31,7 @@ export class EmergencyBLService {
 
   public GetAllExistingPatients() {
     return this.emergencyDLService.GetPatients()
-      .map(res => { return res })
+      
   }
 
   GetAllLamaERPatients(caseId: number) {
@@ -68,44 +68,44 @@ export class EmergencyBLService {
   }
   public GetDoctorsList() {
     return this.emergencyDLService.GetDoctorsList()
-      .map(res => res);
+      ;
   }
   // getting the CountrySubDivision from dropdown
   public GetCountrySubDivision(countryId: number) {
     return this.emergencyDLService.GetCountrySubDivision(countryId)
-      .map(res => { return res });
+      ;
   }
   public GetDischargeSummaryDetail(patientId: number, visitId: number) {
     return this.emergencyDLService.GetDischargeSummaryDetail(patientId, visitId)
-      .map(res => { return res });
+      ;
   }
 
   GetMatchingPatientInER(firstName, lastName, dateOfBirth, phoneNumber) {
     return this.emergencyDLService.GetMatchingPatientInER(firstName, lastName, dateOfBirth, phoneNumber)
-      .map(res => { return res });
+      ;
   }
 
   public GetPatientById(patientId: number) {
     return this.patientDLService.GetPatientById(patientId)
-      .map(res => { return res })
+      
   }
 
 
   PostERPatient(ERPatient: EmergencyPatientModel, existingPatient: boolean) {
     let patient = _.omit(ERPatient, ['ERPatientValidator', 'PatientScheme.PatientSchemeValidator']);
     return this.emergencyDLService.PostERPatient(patient, existingPatient)
-      .map(res => { return res });
+      ;
   }
 
   PostERDischargeSummary(ERDischargeSum: EmergencyDischargeSummary) {
     return this.emergencyDLService.PostERDischargeSummary(ERDischargeSum)
-      .map(res => { return res });
+      ;
   }
 
 
   UpdateERDischargeSummary(ERDischargeSum: EmergencyDischargeSummary) {
     return this.emergencyDLService.UpdateERDischargeSummary(ERDischargeSum)
-      .map(res => { return res });
+      ;
   }
 
   UpdateERPatient(ERPatient: EmergencyPatientModel) {
@@ -115,7 +115,7 @@ export class EmergencyBLService {
     patient.PatientScheme = pat;
     let data = JSON.stringify(patient);
     return this.emergencyDLService.UpdateERPatient(patient)
-      .map(res => { return res });
+      ;
   }
 
   PutTriageCode(ERPatient: EmergencyPatientModel) {
@@ -125,34 +125,34 @@ export class EmergencyBLService {
     patient.PatientScheme = pat;
     let data = JSON.stringify(patient);
     return this.emergencyDLService.PutTriageCode(patient)
-      .map(res => { return res });
+      ;
   }
   UpdateAssignedToDoctor(ERPatient: EmergencyPatientModel) {
     let patient = _.omit(ERPatient, ['ERPatientValidator']);
     patient.PatientScheme = _.omit(patient.PatientScheme, ['PatientSchemeValidator']);
     let data = JSON.stringify(patient);
     return this.emergencyDLService.UpdateAssignedToDoctor(patient)
-      .map(res => { return res });
+      ;
   }
   PutLamaOfERPatient(ERPatient: EmergencyPatientModel, action: string) {
     let patient = _.omit(ERPatient, ['ERPatientValidator']);
     patient.PatientScheme = _.omit(patient.PatientScheme, ['PatientSchemeValidator']);
     let data = JSON.stringify(patient);
     return this.emergencyDLService.UpdateLamaOfERPatient(data, action)
-      .map(res => { return res });
+      ;
   }
   UndoTriageOfERPatient(ERPatient: EmergencyPatientModel) {
     let patient = _.omit(ERPatient, ['ERPatientValidator']);
     let data = JSON.stringify(patient);
     return this.emergencyDLService.UndoTriageOfERPatient(patient)
-      .map(res => { return res });
+      ;
   }
 
   //To Update Tables to cancel the LabTest Request for Inpatient
   CancelInpatientCurrentLabTest(currentInpatientLabTest: InPatientLabTest) {
     let data = JSON.stringify(currentInpatientLabTest);
     return this.emergencyDLService.CancelInpatientCurrentLabTest(data)
-      .map(res => { return res });
+      ;
   }
 
   public CancelRadRequest(item: BillingTransactionItem) {
@@ -220,6 +220,6 @@ export class EmergencyBLService {
 
   public GetPatientsWithVisitsInfo(searchTxt) {
     return this.patientDLService.GetPatientsWithVisitsInfo(searchTxt)
-      .map(res => res);
+      ;
   }
 }

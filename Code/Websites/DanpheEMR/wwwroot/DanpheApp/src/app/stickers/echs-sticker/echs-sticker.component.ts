@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ChangeDetectorRef, ViewChild, ElementRef } from "@angular/core";
 import { Router } from '@angular/router';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { EchsStickerViewModel } from '../echs-sticker/echs-sticker.model';
 import * as moment from 'moment/moment';
 import { MessageboxService } from '../../shared/messagebox/messagebox.service';
@@ -154,7 +154,7 @@ export class EchsStickerComponent {
   public membershipTypeName: string;
   GetVisitforStickerPrint(PatientVisitId) {
     this.http.get<any>('/api/Visit/PatientVisitStickerInfo?' + 'visitId=' + PatientVisitId, this.options)
-      .map(res => res)
+      
       .subscribe(res => this.CallBackStickerOnly(res),
         res => this.Error(res));
   }
@@ -290,7 +290,7 @@ export class EchsStickerComponent {
     this.loading = true;
     this.showLoading = true;
     this.http.post<any>("/api/Billing/saveHTMLfile?PrinterName=" + PrinterName + "&FilePath=" + filePath, printableHTML, this.options)
-      .map(res => res).subscribe(res => {
+      .subscribe(res => {
         if (res.Status === ENUM_DanpheHTTPResponseText.OK) {
           this.timerFunction();
         }

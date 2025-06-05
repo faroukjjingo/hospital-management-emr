@@ -62,7 +62,7 @@ export class RPT_BIL_PatientCensusReportComponent {
 
   LoadDoctorList() {
     this.dlService.Read("/BillingReports/GetDoctorList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.doctorList = res.Results;
@@ -72,7 +72,7 @@ export class RPT_BIL_PatientCensusReportComponent {
 
   LoadDepartmentList() {
     this.dlService.Read("/BillingReports/GetDepartmentList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.departmentList = res.Results;
@@ -91,7 +91,7 @@ export class RPT_BIL_PatientCensusReportComponent {
       this.performerId = this.currentPatCensusReport.performerId;
       this.departmentId = this.currentPatCensusReport.departmentId;
       this.dlService.Read("/BillingReports/PatientCensusReport?FromDate=" + this.fromDate + "&ToDate=" + this.toDate + "&PerformerId=" + this.performerId + "&DepartmentId=" + this.departmentId)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })
         .subscribe(res => this.Success(res),
           err => this.Error(err));
@@ -198,7 +198,7 @@ export class RPT_BIL_PatientCensusReportComponent {
   //   let summaryData = JSON.stringify(this.depositsummary);
   //   this.dlService.ReadExcel("/ReportingNew/ExportToExcelPatientCensus?FromDate=" + this.fromDate + "&ToDate=" + this.toDate
   //     + "&providerId=" + this.providerId)
-  //     .map(res => res)
+  //     
   //     .subscribe(data => {
   //       let blob = data;
   //       let a = document.createElement("a");

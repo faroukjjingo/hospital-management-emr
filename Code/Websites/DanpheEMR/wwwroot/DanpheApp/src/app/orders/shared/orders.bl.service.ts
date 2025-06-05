@@ -30,11 +30,11 @@ export class OrdersBLService {
 
     public PostItemsToBilling(res: Array<BillItemRequisition>){
         return this.billingDLService.PostBillingItemRequisition(res)
-            .map(res => res);
+            ;
     }
 
     public PostPharmacyPrescription(prescription: PHRMPrescription) {
-        return this.ordersDLService.PostPharmacyPrescription(prescription).map(res => res);
+        return this.ordersDLService.PostPharmacyPrescription(prescription);
     }
 
     ////This method Post all dept related BillingOrders
@@ -59,12 +59,12 @@ export class OrdersBLService {
     //    let dptRequestIndexes = [];
     //    let currIndex = 0;
     //    if (labItms && labItms.length > 0) {
-    //        deptHttpRequests.push(this.labsDLService.PostToRequisition(labItms).map(res => res));
+    //        deptHttpRequests.push(this.labsDLService.PostToRequisition(labItms));
     //        dptRequestIndexes.push({ dptName: "lab", index: currIndex });
     //        currIndex++;
     //    }
     //    if (imgItems && imgItems.length > 0) {
-    //        deptHttpRequests.push(this.imagingDLService.PostRequestItems(imgItems).map(res => res));
+    //        deptHttpRequests.push(this.imagingDLService.PostRequestItems(imgItems));
     //        dptRequestIndexes.push({ dptName: "radiology", index: currIndex });
     //        currIndex++;
     //    }

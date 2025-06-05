@@ -377,7 +377,7 @@ export class AssessmentPlanComponent {
 
   //    let data = JSON.stringify(this.allIcdAndOrders);
   //    this.http.post<any>("/api/Clinical?reqType=clinical-diagnosis", data, this.options)
-  //        .map(res => res)
+  //        
   //        .subscribe(res => {
   //            if (res.Status == "OK") {
   //                this.msgBoxServ.showMessage("success", ["Clinical Diagnosis successfully Added"]);

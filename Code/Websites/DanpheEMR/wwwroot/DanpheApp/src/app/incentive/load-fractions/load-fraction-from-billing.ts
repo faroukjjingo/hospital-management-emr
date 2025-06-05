@@ -26,7 +26,7 @@ export class INCTV_LoadFractionFromBilling {
     let url = `/api/Incentive/Transactions?fromDate=${this.fromDate}&toDate=${this.toDate}`;
     let data = null;
     this.loading = true;
-    this.dlService.Add(data, url).map(res => res).subscribe(res => {
+    this.dlService.Add(data, url).subscribe(res => {
       console.log(res);
       if (res.Status == "OK") {
         this.loading = false;

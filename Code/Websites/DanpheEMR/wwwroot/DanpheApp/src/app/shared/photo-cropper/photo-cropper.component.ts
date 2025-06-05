@@ -1,6 +1,6 @@
 import { Component, ViewChild, Output, EventEmitter, Input } from "@angular/core"
 import { Subject } from 'rxjs/Subject';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { WebcamImage } from 'ngx-webcam';
 @Component({
   selector: "danphe-photo-cropper",

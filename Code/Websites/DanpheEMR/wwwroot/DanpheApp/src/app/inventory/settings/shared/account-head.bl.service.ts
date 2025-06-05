@@ -19,11 +19,11 @@ export class AccountHeadBLService {
     //Get
     public GetAccountHeadList() {
         return this.accountheadDLService.GetAccountHeadList()
-            .map(res => { return res });
+            ;
     }
     public GetAccountHead() {
         return this.accountheadDLService.GetAccountHead()
-            .map(res => { return res });
+            ;
     }
 
 
@@ -32,7 +32,7 @@ export class AccountHeadBLService {
         //omiting the appointmentvalidator during post because it causes cyclic error during serialization in server side.
         var temp = _.omit(CurrentAccountHead, ['AccountHeadValidator']);
         return this.accountheadDLService.PostAccountHead(temp)
-            .map(res => { return res });
+            ;
     }
 
     //Put
@@ -44,7 +44,7 @@ export class AccountHeadBLService {
 
         var temp = _.omit(accounthead, ['AccountHeadValidator']);
         return this.accountheadDLService.PutAccountHead(temp)
-            .map(res => { return res });
+            ;
     }
 
 }

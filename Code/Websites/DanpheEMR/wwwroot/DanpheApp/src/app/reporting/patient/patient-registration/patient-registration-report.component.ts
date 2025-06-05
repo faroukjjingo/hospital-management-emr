@@ -82,7 +82,7 @@ export class RPT_PAT_PatientRegistrationReportComponent {
       this.dlService.Read("/Reporting/PatientRegistrationReport?FromDate="
         + this.currentPatRegreport.fromDate + "&ToDate=" + this.currentPatRegreport.toDate
         + "&Gender=" + this.Status + "&Country=" + this.currentPatRegreport.Country)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {

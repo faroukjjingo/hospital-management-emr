@@ -29,7 +29,7 @@ export class PatientVisitHistoryComponent {
     LoadPatientVisitList(): void {
         let patientId = this.visitService.getGlobal().PatientId;
         this.visitDLService.GetPatientVisitList(patientId)
-            .map(res => res)
+            
             .subscribe(res => {
                 if (res.Status == "OK")
                     this.visits = this.GetFormattedVisits(res.Results);

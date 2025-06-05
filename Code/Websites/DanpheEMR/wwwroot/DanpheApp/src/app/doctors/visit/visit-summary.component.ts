@@ -66,7 +66,7 @@ export class VisitSummaryComponent {
     GetQtnTemplateFromServer() {
         let url = "/api/DynTemplates?reqType=getSurveyTemplate&templateCode=ClinicalPsychiatry"
 
-        this.dlService.Read(url).map(res => res).subscribe(res => {
+        this.dlService.Read(url).subscribe(res => {
             let templateData: Template = res.Results;
             this.template = templateData;
             this.isTemplateLoaded = true;
@@ -76,7 +76,7 @@ export class VisitSummaryComponent {
 
     public GetPatientVisitList() {
         let url = "/api/Visit?reqType=patVisitList&patientId=" + this.selectedPatient.PatientId;
-        this.dlService.Read(url).map(res => res).subscribe(res => {
+        this.dlService.Read(url).subscribe(res => {
             if (res.Status == "OK" && res.Results.length) {
                 this.visitList = res.Results;
                 if (this.currentVisitId) {
@@ -91,7 +91,7 @@ export class VisitSummaryComponent {
 
     public GetPatientData(visitId: number) {
         let url = "/api/ClnPsychiatry?reqType=getPatientData&visitId=" + visitId;
-        this.dlService.Read(url).map(res => res).subscribe(res => {
+        this.dlService.Read(url).subscribe(res => {
             if (res.Status == "OK" && res.Results) {
                 if (!this.loadInQnairLevel) {
                     this.existingAnswers = this.dynTempService.MapWithSelectedAnswer(this.template.TemplateId, res.Results);
@@ -164,7 +164,7 @@ export class VisitSummaryComponent {
         //    let dsmList = DSM_V_Code.GetAllDSMCodes();
         let url = "/api/Master?reqType=dsm-codes"
         let dsmCodes = [];
-        this.dlService.Read(url).map(res => res).subscribe(res => {
+        this.dlService.Read(url).subscribe(res => {
 
             if (res.Status == "OK") {
                 dsmCodes = res.Results;
@@ -227,7 +227,7 @@ export class VisitSummaryComponent {
 
     public PostPatientData(patDataJson) {
         let url = "/api/ClnPsychiatry?reqType=addPatientData";
-        this.dlService.Add(patDataJson, url).map(res => res).subscribe(res => {
+        this.dlService.Add(patDataJson, url).subscribe(res => {
             if (res.Status == "OK" && res.Results.length) {
                 this.msgBoxServ.showMessage("success", ["Data added succesfully"]);
                 this.CallBackAddUpdate(res.Results);
@@ -236,7 +236,7 @@ export class VisitSummaryComponent {
     }
     public UpdatePatientData(patDataJson) {
         let url = "/api/ClnPsychiatry?reqType=updatePatientData";
-        this.dlService.Update(patDataJson, url).map(res => res).subscribe(res => {
+        this.dlService.Update(patDataJson, url).subscribe(res => {
             if (res.Status == "OK") {
                 this.msgBoxServ.showMessage("success", ["Data updated succesfully"]);
                 this.CallBackAddUpdate(res.Results);
@@ -252,7 +252,7 @@ export class VisitSummaryComponent {
     }
     public UpdateIsSignedStatus() {
         let url = "/api/Visit/UpdateSignedStatus?visitId=" + this.currentVisitId;
-        this.dlService.Update(null, url).map(res => res).subscribe(res => {
+        this.dlService.Update(null, url).subscribe(res => {
             if (res.Status == "OK") {
                 this.msgBoxServ.showMessage("success", ["Data submitted succesfully"]);
                 this.router.navigate(['/ClnPsychiatry/summary']);

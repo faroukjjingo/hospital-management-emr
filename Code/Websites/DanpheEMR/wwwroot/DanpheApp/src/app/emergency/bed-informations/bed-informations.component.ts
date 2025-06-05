@@ -36,7 +36,7 @@ export class BedInformationsComponent {
 
     // get bed feature summary
     LoadBedFeature(): void {
-        this.http.get<any>("/api/Helpdesk/BedOccupancyOfWards").map(res => res).subscribe(res => {
+        this.http.get<any>("/api/Helpdesk/BedOccupancyOfWards").subscribe(res => {
             if (res.Status == "OK") {
                 this.bedFeature = res.Results;
                 this.totaloccupid = CommonFunctions.getGrandTotalData(this.bedFeature);

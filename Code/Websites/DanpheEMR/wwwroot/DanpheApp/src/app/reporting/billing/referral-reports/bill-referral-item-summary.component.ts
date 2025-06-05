@@ -52,7 +52,7 @@ export class RPT_BIL_ReferralItemComponent {
   LoadDocDeptItemSummary() {
     //let srvDept = this.ServDeptName.replace(/&/g, '%26');//this is URL-Encoded value for character  '&'    --see: URL Encoding in Google for details.
     this.dlService.Read("/BillingReports/Bill_ReferralItemSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&PrescriberId=" + this.prescriberId)
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           let data = JSON.parse(res.Results.JsonData);

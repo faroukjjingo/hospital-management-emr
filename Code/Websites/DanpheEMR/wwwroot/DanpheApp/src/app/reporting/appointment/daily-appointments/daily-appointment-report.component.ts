@@ -58,7 +58,7 @@ export class RPT_APPT_DailyAppointmentReportComponent {
       this.dlService.Read("/Reporting/DailyAppointmentReport?FromDate="
         + this.currentdailyappointment.fromDate + "&ToDate=" + this.currentdailyappointment.toDate
         + "&Doctor_Name=" + this.currentdailyappointment.Doctor_Name + "&AppointmentType=" + this.currentdailyappointment.AppointmentType)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })//re-enable the show-report button.
         .subscribe(res => this.Success(res),
           res => this.Error(res)
@@ -108,7 +108,7 @@ export class RPT_APPT_DailyAppointmentReportComponent {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelDailyAppointment?FromDate="
       + this.currentdailyappointment.fromDate + "&ToDate=" + this.currentdailyappointment.toDate
       + "&Doctor_Name=" + this.currentdailyappointment.Doctor_Name + "&AppointmentType=" + this.currentdailyappointment.AppointmentType)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");
@@ -126,7 +126,7 @@ export class RPT_APPT_DailyAppointmentReportComponent {
 
   loadDoctorsList() {
     this.dlService.Read("/Reporting/GetDoctorList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.doctorList = res.Results;

@@ -28,7 +28,7 @@ export class ComparisonPOGR {
 
     ShowValuation() {
         this.inventoryBLService.ShowComporisonReports()
-            .map(res => res)
+            
             .subscribe(
                 res => this.Success(res),
                 res => this.Error(res)

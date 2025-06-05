@@ -36,7 +36,7 @@ export class DispensaryService {
       return Observable.of({ Status: "OK", Results: this.dispensaryList });
     else
       return this.dispensaryEndpoint.GetAllDispensaryList()
-        .map(res => res)
+        
         .do(res => {
           if (res.Status == "OK")
             this.dispensaryList = res.Results
@@ -44,13 +44,13 @@ export class DispensaryService {
         });
   }
   GetAllPharmacyStores() {
-    return this.dispensaryEndpoint.GetAllPharmacyStores().map(res => res);
+    return this.dispensaryEndpoint.GetAllPharmacyStores();
   }
   AddDispensary(dispensary: PHRMStoreModel) {
     var temp = _.omit(dispensary, ['StoreValidator']);
     temp = JSON.stringify(temp);
     return this.dispensaryEndpoint.AddDispensary(temp)
-      .map(res => { return res })
+      
       .do(res => {
         if (res.Status == "OK")
           this.dispensaryList.push(res.Results)
@@ -61,7 +61,7 @@ export class DispensaryService {
     var temp = _.omit(dispensary, ['StoreValidator']);
     temp = JSON.stringify(temp);
     return this.dispensaryEndpoint.UpdateDispensary(temp)
-      .map(res => { return res })
+      
       .do(res => {
         if (res.Status == "OK") {
           this.callBackAfterUpdateFunc(res.Results as PHRMStoreModel);
@@ -71,7 +71,7 @@ export class DispensaryService {
   }
   ActivateDeactivateDispensary(dispensaryId: number) {
     return this.dispensaryEndpoint.ActivateDeactivateDispensary(dispensaryId)
-      .map(res => { return res })
+      
       .do(res => {
         if (res.Status == "OK") {
           var savedDisp = this.dispensaryList.find(d => d.StoreId == dispensaryId)
@@ -82,15 +82,15 @@ export class DispensaryService {
   }
   getActiveDispensary() {
     return this.dispensaryEndpoint.getActiveDispensary()
-      .map(res => { return res });
+      ;
   }
   DeactivateDispensary() {
     return this.dispensaryEndpoint.DeactivateDispensary()
-      .map(res => { return res });
+      ;
   }
   ActivateDispensary(dispensaryId: number, dispensaryName: string) {
     return this.dispensaryEndpoint.ActivateDispensary(dispensaryId, dispensaryName)
-      .map(res => { return res });
+      ;
   }
   /**
    * @param dispensaryId: the id of the dispensary 

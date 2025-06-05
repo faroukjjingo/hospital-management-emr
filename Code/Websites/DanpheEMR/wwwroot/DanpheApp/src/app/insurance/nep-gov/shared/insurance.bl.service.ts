@@ -33,20 +33,20 @@ export class GovInsuranceBlService {
 
   GetLatestVisitClaimCode(patientId) {
     return this.insuranceDLService.GetLatestVisitClaimCode(patientId)
-      .map(res => { return res });
+      ;
   }
   //Get Matching Patient Details by FirstName,LastName,PhoneNumber for showing registered matching patient on Registration Creation time
   public GetExistedMatchingPatientList(FirstName, LastName, PhoneNumber, Age, Gender, IsInsurance = false, IMISCode = null) {
     return this.insuranceDLService.GetExistedMatchingPatientList(FirstName, LastName, PhoneNumber, Age, Gender, IsInsurance, IMISCode)
-      .map(res => { return res });
+      ;
   }
   public GetPatientsListByNshiNumber(Ins_NshiNumber: string) {
     return this.insuranceDLService.GetPatientsListByNshiNumber(Ins_NshiNumber)
-      .map(res => { return res });
+      ;
   }
   public GetInsuranceProviderList() {
     return this.insuranceDLService.GetInsuranceProviderList()
-      .map(res => res);
+      ;
   }
   public PostGovInsPatient(govInsPatientVm: GovInsurancePatientVM) {
     let newPatObject = _.omit(govInsPatientVm, ["GovInsPatientValidator"]);
@@ -61,7 +61,7 @@ export class GovInsuranceBlService {
     insHistory.InsuranceProviderId = insuranceProviderId;
     let insBalString = JSON.stringify(insHistory);
     return this.insuranceDLService.UpdateInsuranceBalance(insBalString)
-      .map(res => res);
+      ;
   }
 
   public UpdateGovInsPatient(govInsPatientVm: GovInsurancePatientVM) {
@@ -96,7 +96,7 @@ export class GovInsuranceBlService {
   }
   public GetPatientById(patientId: number) {
     return this.insuranceDLService.GetPatientById(patientId)
-      .map(res => res);
+      ;
   }
 
   //new visit
@@ -111,7 +111,7 @@ export class GovInsuranceBlService {
 
   public GetDoctorOpdPrices() {
     return this.insuranceDLService.GetDoctorOpdPrices()
-      .map(res => res);
+      ;
   }
   //sud: 19June'19--For Department OPD
   public GetDepartmentOpdItems() {
@@ -130,13 +130,13 @@ export class GovInsuranceBlService {
   //aniket: 30Mar'21 Discharge patient Info
   public GetAdditionalInfoForDischarge(patientVisitId: number, billingTxnId: number) {
     return this.insuranceDLService.GetAdditionalInfoForDischarge(patientVisitId, billingTxnId)
-      .map(res => res);
+      ;
   }
 
   // getting department list 
   public GetDepartment() {
     return this.insuranceDLService.GetDepartment()
-      .map(res => { return res })
+      
 
   }
   public GetVisitDoctors() {
@@ -148,11 +148,11 @@ export class GovInsuranceBlService {
 
   public GetPatientVisitList(patientId: number) {
     return this.insuranceDLService.GetPatientVisitList(patientId)
-      .map(res => res);
+      ;
   }
   public GetOpdTicketInvoiceInfo(patientId: number, patientVisitId: number) {
     return this.insuranceDLService.GetOpdTicketInvoiceInfo(patientId, patientVisitId)
-      .map(res => res);
+      ;
   }
 
   // public GetHealthCardBillItem() {
@@ -162,11 +162,11 @@ export class GovInsuranceBlService {
   // }
   public GetPatHealthCardStatus(patId: number) {
     return this.insuranceDLService.GetPatHealthCardStatus(patId)
-      .map(res => res);
+      ;
   }
   public GetPatientBillingContext(patientId: number) {
     return this.insuranceDLService.GetPatientBillingContext(patientId)
-      .map(res => res);
+      ;
   }
 
   public GetOrganizationList() {
@@ -178,17 +178,17 @@ export class GovInsuranceBlService {
 
   public GetVisitList(claimCode: number, patId: number) {
     return this.insuranceDLService.GetVisitList(claimCode, patId)
-      .map(res => res);
+      ;
   }
 
   public GetPatientVisits_Today(patientId: number) {
     return this.insuranceDLService.GetPatientVisitList_Today(patientId)
-      .map(res => res);
+      ;
   }
   // getting the CountrySubDivision from dropdown
   public GetCountrySubDivision(countryId: number) {
     return this.insuranceDLService.GetCountrySubDivision(countryId)
-      .map(res => { return res })
+      
 
   }
   public GetInPatientDetailForPartialBilling(patId: number, patVisitId: number) {
@@ -211,17 +211,17 @@ export class GovInsuranceBlService {
   }
   public GetActiveEmployeesList() {
     return this.insuranceDLService.GetActiveEmployeesList()
-      .map(res => res);
+      ;
   }
 
   public GetDoctorsList() {
     return this.insuranceDLService.GetDoctorsList()
-      .map(res => res);
+      ;
   }
   //get the list of patient visit provider wise
   public GetPatientVisitsProviderWise(patientId: number) {
     return this.insuranceDLService.GetPatientVisitsProviderWise(patientId)
-      .map(res => res);
+      ;
   }
   public GetDataOfInPatient(patId: number, visitId: number) {
     return this.insuranceDLService.GetDataOfInPatient(patId, visitId)
@@ -244,7 +244,7 @@ export class GovInsuranceBlService {
   // Load the Deposit amount of the Patient 
   public GetDepositFromPatient(patientId: number) {
     return this.insuranceDLService.GetDepositFromPatient(patientId)
-      //.map(res => res);
+      //;
       .map((responseData) => {
         return responseData;
       })
@@ -252,13 +252,13 @@ export class GovInsuranceBlService {
   //check for dependencies before removing this. 
   public GetProviderList() {
     return this.insuranceDLService.GetProviderList()
-      .map(res => res);
+      ;
   }
 
   public DischargePatientWithZeroItem(obj: any) {
     let data = JSON.stringify(obj);
     return this.insuranceDLService.DischargePatientWithZeroItem(data)
-      .map(res => res);
+      ;
   }
 
   //Group Discount on Billingtransaction:: Yubraj 29th Nov '18
@@ -278,7 +278,7 @@ export class GovInsuranceBlService {
     let itmToSend = _.omit(billTxnItem, ['ItemList', 'BillingTransactionItemValidator', 'Patient', 'ServiceDepartment'])
 
     return this.insuranceDLService.UpdateBillItem_PriceQtyDiscNDoctor(itmToSend)
-      .map(res => res);
+      ;
   }
   public CancelMultipleTxnItems(bilTxnItems: Array<BillingTransactionItem>) {
     let billTransItemTemp = bilTxnItems.map(function (item) {
@@ -295,7 +295,7 @@ export class GovInsuranceBlService {
     });
 
     return this.insuranceDLService.CancelMultipleBillTxnItems(billTransItemTemp)
-      .map(res => res);
+      ;
   }
   //POST:
   //Post Visit data to Database with Patient, BillTransaction, BillTransactionItems and Patient details
@@ -329,7 +329,7 @@ export class GovInsuranceBlService {
     //currentVisit.QuickAppointmentValidator = clonedObject.QuickAppointmentValidator;
 
     return this.insuranceDLService.PostVisitToDB(visDataJson)
-      .map(res => res);
+      ;
   }
   //this function is used in return visit billing during transfer visit case.
   public PostReturnTransaction(billingTransaction: BillingTransaction, returnRemarks: string) {
@@ -355,7 +355,7 @@ export class GovInsuranceBlService {
     input.append("billInvReturnModel", data);
 
     return this.insuranceDLService.PostReturnReceipt(input)
-      .map(res => res);
+      ;
   }
   public PostFreeFollowupVisit(fwUpVisit: Visit, parentVisitId: number) {
 
@@ -413,7 +413,7 @@ export class GovInsuranceBlService {
     fwupVisit.Visit.VisitValidator = clonedObject.Visit.VisitValidator;
 
     return this.insuranceDLService.PostPaidFollowupVisit(visDataJson)
-      .map(res => res);
+      ;
 
   }
   public PostDepartmentOrders(billingTransactionItems: Array<BillingTransactionItem>, orderStatus: string, billStatus: string, insuranceApplicable: boolean, currPatVisitContext?: CurrentVisitContextVM): Observable<any> {
@@ -454,17 +454,17 @@ export class GovInsuranceBlService {
     let dptRequestIndexes = [];
     let currIndex = 0;
     if (labItms && labItms.length > 0) {
-      deptHttpRequests.push(this.insuranceDLService.PostToRequisition(labItms).map(res => res));
+      deptHttpRequests.push(this.insuranceDLService.PostToRequisition(labItms));
       dptRequestIndexes.push({ dptName: "lab", index: currIndex });
       currIndex++;
     }
     if (imgItems && imgItems.length > 0) {
-      deptHttpRequests.push(this.insuranceDLService.PostRequestItems(imgItems).map(res => res));
+      deptHttpRequests.push(this.insuranceDLService.PostRequestItems(imgItems));
       dptRequestIndexes.push({ dptName: "radiology", index: currIndex });
       currIndex++;
     }
     if (visititems && visititems.length > 0) {
-      deptHttpRequests.push(this.insuranceDLService.PostVisitsFromBillingTransaction(visititems).map(res => res));
+      deptHttpRequests.push(this.insuranceDLService.PostVisitsFromBillingTransaction(visititems));
       dptRequestIndexes.push({ dptName: "visit", index: currIndex });
       currIndex++;
     }
@@ -719,17 +719,17 @@ export class GovInsuranceBlService {
   //older code
   // public UpdateBedDurationBillTxn(bedDurationDetail: Array<BedDurationTxnDetailsVM>) {
   //   return this.insuranceDLService.PutBedDurationBillTxn(bedDurationDetail)
-  //     .map(res => res);
+  //     ;
   // }
 
   public UpdateBedDurationBillTxn(visitId: number) {
     return this.insuranceDLService.PutBedDurationBillTxn(visitId)
-      .map(res => res);
+      ;
   }
 
   public DischargePatient(dischargePatient: DischargeDetailBillingVM) {
     return this.insuranceDLService.DischargePatient(dischargePatient)
-      .map(res => res);
+      ;
   }
 
   //public Method: Map all transactionItems  for post against Labs Department

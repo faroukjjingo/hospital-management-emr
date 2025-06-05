@@ -48,7 +48,7 @@ export class DynamicTemplateEditComponent {
     GetQtnTemplateFromServer() {
         let url = "/api/DynTemplates?reqType=getSurveyTemplate&templateCode=" + this.selectedTemplate + "&renderMode=edit"
         //let url = "/api/DynTemplates?reqType=getSurveyTemplate&templateCode=ClinicalPsychiatry&renderMode=edit"
-        this.dlService.Read(url).map(res => res).subscribe(res => {
+        this.dlService.Read(url).subscribe(res => {
             let templateData: Template = res.Results;
             this.template = templateData;
             this.isTemplateLoaded = true;
@@ -78,7 +78,7 @@ export class DynamicTemplateEditComponent {
         }
         let url = "/api/DynTemplates?reqType=updateQnairs";
         let data = JSON.stringify([qnr]);
-        this.dlService.Update(data, url).map(res => res).subscribe(res => {
+        this.dlService.Update(data, url).subscribe(res => {
             if (res.Status == "OK") {
                 this.msgBoxServ.showMessage("success", ["section renamed successfully"]);
             }
@@ -103,7 +103,7 @@ export class DynamicTemplateEditComponent {
             newQnrObj.DisplaySeq = this.newQnrSeq;
             let url = "/api/DynTemplates?reqType=addQnair";
             let data = JSON.stringify(newQnrObj);
-            this.dlService.Add(data, url).map(res => res).subscribe(res => {
+            this.dlService.Add(data, url).subscribe(res => {
                 if (res.Status == "OK") {
                     //qnairId is generated at server side, we've to set it back to newqnr object.
                     newQnrObj.QnairId = res.Results.QnairId;
@@ -144,7 +144,7 @@ export class DynamicTemplateEditComponent {
 
         let url = "/api/DynTemplates?reqType=updateQnairs";
         let data = JSON.stringify(updatedQnrs);
-        this.dlService.Update(data, url).map(res => res).subscribe(res => {
+        this.dlService.Update(data, url).subscribe(res => {
             if (res.Status == "OK") {
                 this.msgBoxServ.showMessage("success", ["sequences updated successfully."]);
             }

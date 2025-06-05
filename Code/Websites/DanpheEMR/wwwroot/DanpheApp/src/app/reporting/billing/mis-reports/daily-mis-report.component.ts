@@ -70,7 +70,7 @@ export class RPT_BIL_DailyMISReportComponent {
       this.selDailyMIS.fromDate = this.curDailyMIS.fromDate;
       this.selDailyMIS.toDate = this.curDailyMIS.toDate;
       this.dlService.Read("/BillingReports/DailyMISReport?FromDate=" + this.selDailyMIS.fromDate + "&ToDate=" + this.selDailyMIS.toDate)
-        .map(res => res)
+        
         .finally(() => { this.loading = false; })
         .subscribe(res => {
           this.Success(res);
@@ -130,7 +130,7 @@ export class RPT_BIL_DailyMISReportComponent {
   //GetDoctorPatientCount() {
   //    this.drPatientCounts = [];
   //    this.dlService.Read("/BillingReports/DoctorPatientCount?FromDate=" + this.selDailyMIS.fromDate + "&ToDate=" + this.selDailyMIS.toDate)
-  //        .map(res => res)
+  //        
   //        .subscribe(res => {
   //            if (res.Status == "OK") {
   //                this.drPatientCounts = res.Results;
@@ -234,7 +234,7 @@ export class RPT_BIL_DailyMISReportComponent {
 
   // ExportToExcel() {
   //   this.dlService.ReadExcel("/ReportingNew/ExportToExcelDailyMISReport?FromDate=" + this.selDailyMIS.fromDate + "&ToDate=" + this.selDailyMIS.toDate)
-  //     .map(res => res)
+  //     
   //     .subscribe(data => {
   //       let blob = data;
   //       let a = document.createElement("a");

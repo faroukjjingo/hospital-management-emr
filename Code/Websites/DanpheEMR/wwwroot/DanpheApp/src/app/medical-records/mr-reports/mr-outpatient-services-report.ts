@@ -44,7 +44,7 @@ export class OutpatientServicesReportComponent {
     this.dlService.Read("/Reporting/DiagnosisWisePatientReport?FromDate="
       + this.currentdiagnosiswisepatient.fromDate + "&ToDate=" + this.currentdiagnosiswisepatient.toDate
       + "&Diagnosis=" + this.currentdiagnosiswisepatient.Diagnosis)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }
@@ -71,7 +71,7 @@ export class OutpatientServicesReportComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelDiagnosisWisePatientReport?FromDate="
       + this.currentdiagnosiswisepatient.fromDate + "&ToDate=" + this.currentdiagnosiswisepatient.toDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");
@@ -89,7 +89,7 @@ export class OutpatientServicesReportComponent {
 
   loadDiagnosisList() {
     this.dlService.Read("/Reporting/GetDiagnosisList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.diagnosisList = res.Results;

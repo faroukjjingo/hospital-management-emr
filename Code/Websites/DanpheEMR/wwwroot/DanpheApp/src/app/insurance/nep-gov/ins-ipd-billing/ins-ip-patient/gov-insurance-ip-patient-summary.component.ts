@@ -243,7 +243,7 @@ export class GovInsurancePatientIpSummaryComponent {
   }
   LoadPatientBillingSummary(patientId: number, patientVisitId: number) {
     this.dlService.Read("/api/GovInsurance/PatientPendingItems?patientId=" + this.patientId + "&ipVisitId=" + this.ipVisitId)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK" && res.Results) {
           this.admissionInfo = res.Results.AdmissionInfo;
@@ -300,7 +300,7 @@ export class GovInsurancePatientIpSummaryComponent {
     this.hasPreviousCredit = false;
     this.showCreditBillAlert = false;
     this.dlService.Read("/api/GovInsurance/CheckCreditBill?patientId=" + this.patientId)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           this.hasPreviousCredit = res.Results;
@@ -310,7 +310,7 @@ export class GovInsurancePatientIpSummaryComponent {
 
   GetPharmacyProvisionalBalance() {
     this.dlService.Read("/api/GetPatCrDetail/" + this.patientId + "/null/null/null")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res) {
           this.model.PharmacyProvisionalAmount = res.TotalAmount;

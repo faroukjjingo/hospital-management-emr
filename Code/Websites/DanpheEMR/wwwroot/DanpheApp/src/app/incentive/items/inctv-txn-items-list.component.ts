@@ -52,7 +52,7 @@ export class IncentiveTxnItemsListComponent {
       empIdToSend = null;
     }
     this.dlService.Read(`/api/Incentive/TransactionItems?fromDate=${this.fromDate}&toDate=${this.toDate}&employeeId=${empIdToSend}`)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
 
@@ -85,7 +85,7 @@ export class IncentiveTxnItemsListComponent {
 
   LoadAllDocList() {
     this.incentiveBLService.GetIncentiveApplicableDocterList()
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           let doclist: Array<any> = res.Results;
@@ -156,7 +156,7 @@ export class IncentiveTxnItemsListComponent {
       //this.http.post<any>('/api/Incentive?reqType=addEmpProfileMap', strData, this.options);
       let url = "/api/Incentive/FractionItems";
       let data = JSON.stringify(frcItemsToSave);
-      this.dlService.Add(data, url).map(res => res).subscribe(res => {
+      this.dlService.Add(data, url).subscribe(res => {
         if (res.Status == "OK") {
           this.msgBoxServ.showMessage("success", ["Data saved successfully."]);
 

@@ -157,7 +157,7 @@ export class PHRMStockItemsReportComponent {
     let summaryHeader = "Stock Items Report";
     this.dlService.ReadExcel("/api/PharmacyReport/ExportToExcelPHRMStockItemsReport?ItemId=" + this.itemId 
       + "&SummaryData=" + jsonStrSummary + "&SummaryHeader=" + summaryHeader)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

@@ -111,6 +111,6 @@ export class CoreBLService {
 
   public GetBillingSchemesDtoList(serviceBillingContext: string) {
     return this.coreDLService.GetBillingSchemesDtoList(serviceBillingContext)
-      .map(res => { return res })
+      
   }
 }

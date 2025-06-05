@@ -76,7 +76,7 @@ export class GOVINSIncomeSegregationComponent {
     if (this.currentIncomeSegregation.fromDate != null && this.currentIncomeSegregation.toDate != null) {
       this.dlService.Read("/BillingReports/IncomeSegregationStaticReport?FromDate="
         + this.currentIncomeSegregation.fromDate + "&ToDate=" + this.currentIncomeSegregation.toDate + "&IsInsurance=true")
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {
@@ -109,7 +109,7 @@ export class GOVINSIncomeSegregationComponent {
 
     this.dlService.Read("/BillingReports/SalesDaybook?FromDate="
       + this.currentIncomeSegregation.fromDate + "&ToDate=" + this.currentIncomeSegregation.toDate + "&IsInsurance=true")
-      .map(res => res)
+      
       .subscribe(res => this.SuccessSalesDayBook(res),
         res => this.Error(res));
   }
@@ -127,7 +127,7 @@ export class GOVINSIncomeSegregationComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelIncomeSegregation?FromDate="
       + this.currentIncomeSegregation.fromDate + "&ToDate=" + this.currentIncomeSegregation.toDate + "&IsInsurance=true")
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");

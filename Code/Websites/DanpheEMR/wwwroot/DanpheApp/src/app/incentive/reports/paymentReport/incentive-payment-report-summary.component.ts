@@ -73,7 +73,7 @@ export class RPT_INCTV_PaymentReportSummaryComponent {
 
   public loadDocPaymentSummary() {
     this.dlService.Read("/BillingReports/INCTV_DocterPaymentSummary?FromDate=" + this.curDocReportMain.fromDate + "&ToDate=" + this.curDocReportMain.toDate)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           let data = JSON.parse(res.Results.JsonData);

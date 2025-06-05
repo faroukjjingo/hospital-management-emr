@@ -28,7 +28,7 @@ export class PurchaseReport {
 
     ShowValuation() {
         this.inventoryBLService.ShowPurchaseReports()
-            .map(res => res)
+            
             .subscribe(
                 res => this.Success(res),
                 res => this.Error(res)

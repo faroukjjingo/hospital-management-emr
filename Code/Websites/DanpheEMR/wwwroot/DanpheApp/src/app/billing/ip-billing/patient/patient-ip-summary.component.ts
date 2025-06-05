@@ -606,7 +606,7 @@ export class PatientIpSummaryComponent {
 
   LoadPatientBillingSummary(patientId: number, patientVisitId: number) {
     this.dlService.Read("/api/IpBilling/InpatientPendingBillItems?patientId=" + this.patientId + "&ipVisitId=" + this.ipVisitId)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status === ENUM_DanpheHTTPResponseText.OK && res.Results) {
           this.admissionInfo = res.Results.AdmissionInfo;
@@ -692,7 +692,7 @@ export class PatientIpSummaryComponent {
     this.hasPreviousCredit = false;
     this.showCreditBillAlert = false;
     this.dlService.Read("/api/Billing/CheckCreditBill?patientId=" + this.patientId)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status === ENUM_DanpheHTTPResponseText.OK) {
           this.hasPreviousCredit = res.Results;
@@ -705,7 +705,7 @@ export class PatientIpSummaryComponent {
 
   LoadCreditInformationOfPatient(patientId: number) {
     this.dlService.Read("/api/Billing/PatientCreditInfo?patientId=" + this.patientId)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status === ENUM_DanpheHTTPResponseText.OK) {
           this.CreditTotal = res.Results;
@@ -715,7 +715,7 @@ export class PatientIpSummaryComponent {
 
   GetPharmacyProvisionalBalance() {
     this.dlService.Read("/api/GetPatCrDetail/" + this.patientId + "/null/null/null")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res) {
           this.model.PharmacyProvisionalAmount = res.TotalAmount;

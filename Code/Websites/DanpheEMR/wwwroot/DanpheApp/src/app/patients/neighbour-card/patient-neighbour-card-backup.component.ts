@@ -70,7 +70,7 @@ export class PatientNeighbourCard_Backup_Component implements OnInit {
 
     LoadProfilePic() {
         this.http.get<any>("/api/patient/PatientProfilePicture?patientId=" + this.selectedPat.PatientId)
-            .map(res => res)
+            
             .subscribe((res: DanpheHTTPResponse) => {
                 console.log(res);
                 let fileInfo = res.Results;
@@ -89,7 +89,7 @@ export class PatientNeighbourCard_Backup_Component implements OnInit {
             let data = JSON.stringify(this.currNeighbourCard);
 
             this.http.post<any>("/api/Patient/NeighbourhoodCard", data)
-                    .map(res => res)
+                    
                     .subscribe(res => {
                         if (res.Status == "OK") {
                            this.printCard();

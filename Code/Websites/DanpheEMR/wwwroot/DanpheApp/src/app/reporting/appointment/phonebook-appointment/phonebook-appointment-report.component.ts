@@ -43,7 +43,7 @@ export class RPT_APPT_PhoneBookAppointmentReportComponent {
       this.dlService.Read("/Reporting/PhoneBookAppointmentReport?FromDate="
         + this.currentphonebookappointment.fromDate + "&ToDate=" + this.currentphonebookappointment.toDate
         + "&Doctor_Name=" + this.currentphonebookappointment.Doctor_Name + "&AppointmentStatus=" + this.currentphonebookappointment.AppointmentStatus)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {
@@ -74,7 +74,7 @@ export class RPT_APPT_PhoneBookAppointmentReportComponent {
   OnGridExport($event: GridEmitModel) {
     this.dlService.ReadExcel("/ReportingNew/ExportToExcelPhoneBookAppointment?FromDate="
       + this.currentphonebookappointment.fromDate + "&ToDate=" + this.currentphonebookappointment.toDate)
-      .map(res => res)
+      
       .subscribe(data => {
         let blob = data;
         let a = document.createElement("a");
@@ -92,7 +92,7 @@ export class RPT_APPT_PhoneBookAppointmentReportComponent {
 
   loadDoctorsList() {
     this.dlService.Read("/Reporting/GetDoctorList")
-      .map(res => res)
+      
       .subscribe(res => {
         if (res.Status == "OK") {
           this.doctorList = res.Results;

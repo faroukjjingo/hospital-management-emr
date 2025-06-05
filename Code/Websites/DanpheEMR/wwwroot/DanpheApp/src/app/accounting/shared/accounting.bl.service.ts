@@ -21,7 +21,7 @@ export class AccountingBLService {
     public GetAccountInfoById(accountId: number) {
         try {
             return this.accountDlService.GetAccountInfoById(accountId)
-                .map(res => res);
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -30,9 +30,7 @@ export class AccountingBLService {
     public GetTransactionType() {
         try {
             return this.accountDlService.GetTransactionType()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -40,9 +38,7 @@ export class AccountingBLService {
     public GetLedgerFromVoucherId(voucherId: number) {
         try {
             return this.accountDlService.GetLedgerFromVoucherId(voucherId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -60,9 +56,7 @@ export class AccountingBLService {
     public GetLedgers() {
         try {
             return this.accountDlService.GetLedgerList()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -77,9 +71,7 @@ export class AccountingBLService {
     public GetVoucher() {
         try {
             return this.accountDlService.GetVoucher()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -87,9 +79,7 @@ export class AccountingBLService {
     public GetVoucherHead() {
         try {
             return this.accountDlService.GetVoucherHead()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -97,9 +87,7 @@ export class AccountingBLService {
     public GetLedgerItem(ledgerId: number) {
         try {
             return this.accountDlService.GetLedgerItem(ledgerId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -107,9 +95,7 @@ export class AccountingBLService {
     public GetItemList() {
         try {
             return this.accountDlService.GetItemList()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -119,9 +105,7 @@ export class AccountingBLService {
     public GetTransaction(transactionId: number) {
         try {
             return this.accountDlService.GetTransaction(transactionId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -129,9 +113,7 @@ export class AccountingBLService {
     public GetTransactionbyVoucher(voucherNumber: string, secId, fsYearId) {
         try {
             return this.accountDlService.GetTransactionbyVoucher(voucherNumber, secId, fsYearId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -141,9 +123,7 @@ export class AccountingBLService {
     public GetVoucherforedit(voucherNumber: string, secId, FsYId) {
         try {
             return this.accountDlService.GetVoucherforedit(voucherNumber, secId, FsYId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -151,9 +131,7 @@ export class AccountingBLService {
     public CheckTransaction(transactionId: number, voucherId: number) {
         try {
             return this.accountDlService.CheckTransaction(transactionId, voucherId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -161,9 +139,7 @@ export class AccountingBLService {
     public GetCostCenterList() {
         try {
             return this.accountDlService.GetCostCenterList()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -179,9 +155,7 @@ export class AccountingBLService {
     public GetACCTransferRule() {
         try {
             return this.accountDlService.GetACCTransferRule()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (exception) {
             throw exception;
         }
@@ -190,9 +164,7 @@ export class AccountingBLService {
     public GetAllActiveAccTenants() {
         try {
             return this.accountDlService.GetAllActiveAccTenants()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -204,16 +176,14 @@ export class AccountingBLService {
     //    //omiting the companyvalidator during post because it causes cyclic error during serialization in server side.
     //    var temp = _.omit(CurrentTransaction, ['TransactionValidator']);
     //    return this.accountDlService.PostTransaction(temp)
-    //        .map(res => { return res });
+    //        ;
     //}
 
     //get inventory goods receipts for transfer to accounting
     public GetInventoryItemsForTransferToACC(selectedDate, fiscalyearId) {
         try {
             return this.accountDlService.GetInventoryItemsForTransferToACC(selectedDate, fiscalyearId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (exception) {
             throw exception;
         }
@@ -223,9 +193,7 @@ export class AccountingBLService {
     public GetBilTxnItemsForTransferToACC(selectedDate, fiscalyearId) {
         try {
             return this.accountDlService.GetBilTxnItemsForTransferToACC(selectedDate, fiscalyearId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (exception) {
             throw exception;
         }
@@ -235,9 +203,7 @@ export class AccountingBLService {
     public GetPharmItemsForTransferToACC(selectedDate, fiscalyearId) {
         try {
             return this.accountDlService.GetPharmItemsForTransferToACC(selectedDate, fiscalyearId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (exception) {
             throw exception;
         }
@@ -246,9 +212,7 @@ export class AccountingBLService {
     public GetIncentivesForTransferToACC(selectedDate, fiscalyearId) {
         try {
             return this.accountDlService.GetIncentivesForTransferToACC(selectedDate, fiscalyearId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (exception) {
             throw exception;
         }
@@ -257,9 +221,7 @@ export class AccountingBLService {
     GetLedgerMappingDetails() {
         try {
             return this.accountDlService.GetLedgerMappingDetails()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -267,9 +229,7 @@ export class AccountingBLService {
     LoadTxnDates(fromdate, todate, sectionId) {
         try {
             return this.accountDlService.LoadTxnDates(fromdate, todate, sectionId)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -278,9 +238,7 @@ export class AccountingBLService {
     GettempVoucherNumber(voucherId: number, sectionId, transactiondate) {
         try {
             return this.accountDlService.GettempVoucherNumber(voucherId, sectionId, transactiondate)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         }
         catch (ex) {
             throw ex;
@@ -291,9 +249,7 @@ export class AccountingBLService {
     GetProvisionalLedger(referenceId, ledgerType) {
         try {
             return this.accountDlService.GetProvisionalLedger(referenceId, ledgerType)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         }
         catch (ex) {
             throw ex;
@@ -304,9 +260,7 @@ export class AccountingBLService {
     GetInvVendorList() {
         try {
             return this.accountDlService.GetInvVendorList()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         }
         catch (ex) {
             throw ex;
@@ -316,9 +270,7 @@ export class AccountingBLService {
     GetPharmacySupplier() {
         try {
             return this.accountDlService.GetPharmacySupplier()
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -327,9 +279,7 @@ export class AccountingBLService {
     GetGRList(vendorId: number, sectionId: number, number: any, date: string) {
         try {
             return this.accountDlService.GetGRList(vendorId, sectionId, number, date)
-                .map((responseData) => {
-                    return responseData;
-                });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -358,7 +308,7 @@ export class AccountingBLService {
 
             var data = JSON.stringify(newTxn);
             return this.accountDlService.PostTransaction(data)
-                .map(res => { return res })
+                
         } catch (ex) {
             throw ex;
         }
@@ -394,7 +344,7 @@ export class AccountingBLService {
             //var data = JSON.stringify(newTxnList);
             var data = JSON.stringify(txnList);
             return this.accountDlService.PostTxnListToACC(data)
-                .map(res => { return res })
+                
         } catch (ex) {
             throw ex;
         }
@@ -410,7 +360,7 @@ export class AccountingBLService {
             });
             var data = JSON.stringify(NewLedger);
             return this.accountDlService.PostLedgers(data)
-                .map(res => { return res });
+                ;
         } catch (ex) {
             throw ex;
         }
@@ -420,7 +370,7 @@ export class AccountingBLService {
         //omiting the LedgerValidator during post because it causes cyclic error during serialization in server side.
         var temp = _.omit(CurrentLedger, ['LedgerValidator']);
         return this.accountDlService.AddLedger(temp)
-            .map(res => { return res });
+            ;
     }
 
     PostAccountClosure(fiscalYear) {
@@ -472,7 +422,7 @@ export class AccountingBLService {
 
             var data = JSON.stringify(newTxn);
             return this.accountDlService.PutTransaction(data)
-                .map(res => { return res })
+                
         } catch (ex) {
             throw ex;
         }
@@ -563,7 +513,7 @@ export class AccountingBLService {
             newTxn.TransactionItems = newTxnItems;
             txn.Transaction = newTxn;
             return this.accountDlService.PostSuspenseAccReconciliationTransaction(txn)
-                .map(res => { return res })
+                
         } catch (ex) {
             throw ex;
         }

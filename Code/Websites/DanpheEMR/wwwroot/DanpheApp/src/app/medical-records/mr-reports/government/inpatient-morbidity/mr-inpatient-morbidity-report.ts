@@ -60,7 +60,7 @@ export class InpatientMorbidityReportComponent {
       this.summaryValues = new InpatientMorbidityModel();
       this.dlService.Read("/GovernmentReporting/GetInpatientMorbidityReportData?FromDate="
         + this.fromDate + "&ToDate=" + this.toDate)
-        .map(res => res)
+        
         .subscribe((res) => {
           if (res.Status == "OK") {
             // this.InpatientOutcomeTable = JSON.parse(res.Results.InpatientoutcomeModel);

@@ -30,72 +30,72 @@ export class PatientsBLService {
   // for getting the Patient
   public GetPatients(searcgTxt) {
     return this.patientDLService.GetPatients(searcgTxt)
-      .map(res => { return res })
+      
   }
   //  get registered patients
   public GetPatientsList(searcgTxt) {
     return this.patientDLService.GetPatientsList(searcgTxt)
-      .map(res => { return res })
+      
   }
 
   public GetPatientById(patientId: number) {
     return this.patientDLService.GetPatientById(patientId)
-      .map(res => { return res })
+      
   }
   // getting the CountrySubDivision from dropdown
   public GetCountrySubDivision(countryId: number) {
     return this.patientDLService.GetCountrySubDivision(countryId)
-      .map(res => { return res })
+      
 
   }
   public GetCountries() {
     return this.patientDLService.GetCountries()
-      .map(res => { return res })
+      
   }
   public GetMembershipType() {
     return this.patientDLService.GetMembershipType()
-      .map(res => { return res })
+      
   }
   public GetPatientBillHistory(patientCode: string) {
     return this.patientDLService.GetPatientBillHistory(patientCode)
-      .map(res => { return res })
+      
   }
   public GetPatientLabReport(patientId: number) {
     return this.labsDLService.GetPatientReport(patientId)
-      .map(res => res);
+      ;
   }
   public GetPatientImagingReports(patientId: number) {
     return this.imagingDLService.GetPatientReports(patientId, 'final')
-      .map(res => res);
+      ;
   }
   public GetPatientVisitList(patientId: number) {
     return this.visitDLService.GetPatientVisitList(patientId)
-      .map(res => res);
+      ;
   }
   public GetPatientDrugList(patientId: number) {
     return this.clinicalDLService.GetMedicationList(patientId)
-      .map(res => res);
+      ;
   }
 
   public getPatientUplodedDocument(patientId: number) {
     return this.patientDLService.GetPatientUplodedDocument(patientId)
-      .map(res => res);
+      ;
   }
   public GetAdmissionHistory(patientId: number) {
     return this.admissionDLService.GetAdmissionHistory(patientId)
-      .map(res => res);
+      ;
   }
   public GetLightPatientById(patientId: number) {
     return this.patientDLService.GetLightPatientById(patientId)
-      .map(res => res);
+      ;
   }
   public GetInsuranceProviderList() {
     return this.patientDLService.GetInsuranceProviderList()
-      .map(res => res);
+      ;
   }
   public GetDialysisCode() {
     return this.patientDLService.GetDialysisCode()
-      .map(res => res);
+      ;
   }
   // for posting the patient
   public PostPatient(patientObj: Patient) {
@@ -118,7 +118,7 @@ export class PatientsBLService {
     let data = JSON.stringify(temp);
     patientObj.Guarantor.GuarantorValidator = guarValidator;
     return this.patientDLService.PostPatient(data)
-      .map(res => { return res })
+      
   }
   //this returns an observable, calling client can subscribe to it..
   // for updating the patient
@@ -140,17 +140,17 @@ export class PatientsBLService {
     patientObj.Guarantor.GuarantorValidator = guarValidator;
     //pass patientid and stringyfied object to the dlservice
     return this.patientDLService.PutPatient(patientObj.PatientId, data)
-      .map(res => { return res })
+      
   }
   //this is for apppointment modules
   public PutAppointmentPatientId(appointmentId: number, patientId: number) {
     return this.appointmentDLService.PutAppointmentPatientId(appointmentId, patientId)
-      .map(res => { return res })
+      
   }
   //Get Matching Patient Details by FirstName,LastName,PhoneNumber for showing registered matching patient on Registration Creation time
   public GetExistedMatchingPatientList(FirstName, LastName, PhoneNumber, Age, Gender, IsInsurance = false, IMISCode = null) {
     return this.patientDLService.GetExistedMatchingPatientList(FirstName, LastName, PhoneNumber, Age, Gender, IsInsurance, IMISCode)
-      .map(res => { return res });
+      ;
   }
   public AddPatientFiles(filesToUpload, patReport: PatientFilesModel) {
     try {
@@ -182,14 +182,14 @@ export class PatientsBLService {
 
       //let finalIPResult = input;
       return this.patientDLService.PostPatientFiles(formToPost)
-        .map(res => res);
+        ;
 
     } catch (exception) {
       throw exception;
     }
   } public GetMunicipality(id: number) {
     return this.patientDLService.GetMunicipality(id)
-      .map(res => { return res })
+      
   }
   public GetFileFromServer(id: number) {
     return this.patientDLService.GetFileFromServer(id).map((res) => {
@@ -205,7 +205,7 @@ export class PatientsBLService {
   public GetPatientDashboardCardSummaryCalculation(FromDate, ToDate) {
     try {
       return this.patientDLService.GetPatientDashboardCardSummaryCalculation(FromDate, ToDate)
-        .map(res => { return res });
+        ;
     }
     catch (ex) {
       throw ex;
@@ -214,7 +214,7 @@ export class PatientsBLService {
   public GetPatientCountByDay(FromDate, ToDate) {
     try {
       return this.patientDLService.GetPatientCountByDay(FromDate, ToDate)
-        .map(res => { return res });
+        ;
     }
     catch (ex) {
       throw ex;
@@ -223,7 +223,7 @@ export class PatientsBLService {
   public GetAverageTreatmentCostbyAgeGroup(FromDate, ToDate) {
     try {
       return this.patientDLService.GetAverageTreatmentCostbyAgeGroup(FromDate, ToDate)
-        .map(res => { return res });
+        ;
     }
     catch (ex) {
       throw ex;
@@ -232,7 +232,7 @@ export class PatientsBLService {
   public GetDepartmentWiseAppointment(FromDate, ToDate) {
     try {
       return this.patientDLService.GetDepartmentWiseAppointment(FromDate, ToDate)
-        .map(res => { return res });
+        ;
     }
     catch (ex) {
       throw ex;
@@ -242,7 +242,7 @@ export class PatientsBLService {
   public GetPAtVisitByMembership(FromDate, ToDate) {
     try {
       return this.patientDLService.GetPAtVisitByMembership(FromDate, ToDate)
-        .map(res => { return res });
+        ;
     }
     catch (ex) {
       throw ex;
@@ -252,7 +252,7 @@ export class PatientsBLService {
   public GetPatientDistributionBasedOnRank(FromDate, ToDate, DepartmentId: number) {
     try {
       return this.patientDLService.GetPatientDistributionBasedOnRank(FromDate, ToDate, DepartmentId)
-        .map(res => { return res });
+        ;
     }
     catch (ex) {
       throw ex;
@@ -262,7 +262,7 @@ export class PatientsBLService {
   public GetHospitalManagement(FromDate, ToDate) {
     try {
       return this.patientDLService.GetHospitalManagement(FromDate, ToDate)
-        .map(res => { return res });
+        ;
     }
     catch (ex) {
       throw ex;
@@ -271,7 +271,7 @@ export class PatientsBLService {
   public GetDepartment() {
     try {
       return this.patientDLService.GetDepartment()
-        .map(res => { return res });
+        ;
     }
     catch (ex) {
       throw ex;

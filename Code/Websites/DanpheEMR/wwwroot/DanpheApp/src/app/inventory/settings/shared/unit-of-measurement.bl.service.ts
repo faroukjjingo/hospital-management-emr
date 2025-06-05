@@ -17,11 +17,11 @@ export class UnitOfMeasurementBLService {
     //Get
     public GetUnitOfMeasurementList() {
         return this.unitofmeasurementDLService.GetUnitOfMeasurementList()
-            .map(res => { return res });
+            ;
     }
     public GetUnitOfMeasurement() {
         return this.unitofmeasurementDLService.GetUnitOfMeasurement()
-            .map(res => { return res });
+            ;
     }
 
 
@@ -30,7 +30,7 @@ export class UnitOfMeasurementBLService {
 
         var temp = _.omit(CurrentUnitOfMeasurement, ['UnitOfMeasurementValidator']);
         return this.unitofmeasurementDLService.PostUnitOfMeasurement(temp)
-            .map(res => { return res });
+            ;
     }
 
     //Put
@@ -42,7 +42,7 @@ export class UnitOfMeasurementBLService {
 
         var temp = _.omit(unitofmeasurement, ['UnitOfMeasurementValidator']);
         return this.unitofmeasurementDLService.PutUnitOfMeasurement(temp)
-            .map(res => { return res });
+            ;
     }
 
 }

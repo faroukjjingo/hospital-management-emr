@@ -53,7 +53,7 @@ export class HospitalMortalityComponent {
       this.summaryValues = new HospitalMortalityModel();
       this.dlService.Read("/GovernmentReporting/GetHospitalMortalityReportData?FromDate="
         + this.fromDate + "&ToDate=" + this.toDate)
-        .map(res => res)
+        
         .subscribe((res) => {
           if (res.Status == "OK") {
             if (res.Results) {

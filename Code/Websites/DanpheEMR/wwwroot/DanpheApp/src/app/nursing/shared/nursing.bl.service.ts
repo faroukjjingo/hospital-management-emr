@@ -435,7 +435,7 @@ export class NursingBLService {
   }
   ///Get Notes Template
   public GetNoteTypeList() {
-    return this.clinicalDLService.GetNoteTypeList().map(res => res);
+    return this.clinicalDLService.GetNoteTypeList();
   }
 
   public UndoPatientTransfer(patVisitId, remarks: string) {

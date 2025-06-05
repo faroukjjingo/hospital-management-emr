@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import 'rxjs/Rx';
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs';
 import { Subscription } from 'rxjs/Subscription';
 
 import { MessageboxService } from '../../shared/messagebox/messagebox.service';

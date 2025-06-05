@@ -64,7 +64,7 @@ export class InsPatientClaimDetailsView {
     this.loading = true;
     this.selectedClaimCode = claimObj.ClaimCode;
     this.dlService.Read("/api/GovInsurance/PatientClaimDetail?patientId=" + claimObj.PatientId + "&claimCode=" + claimObj.ClaimCode)
-      .map(res => res)
+      
       .finally(() => { this.loading = false; })
       .subscribe(res => {
         if (res.Status == "OK" && res.Results) {

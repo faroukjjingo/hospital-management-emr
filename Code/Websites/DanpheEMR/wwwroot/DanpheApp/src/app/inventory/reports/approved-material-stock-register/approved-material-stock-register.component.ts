@@ -42,7 +42,7 @@ export class ApprovedMaterialStockRegisterComponent {
 
   Load() {
     this.inventoryBLService.ShowApprovedMaterialStockRegister(this.invReport)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }

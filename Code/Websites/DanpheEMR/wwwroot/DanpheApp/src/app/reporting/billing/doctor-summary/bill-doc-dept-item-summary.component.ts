@@ -53,7 +53,7 @@ export class RPT_BIL_DocDeptItemComponent {
     LoadDocDeptItemSummary() {
         let srvDept = this.ServiceDepartmentName ? this.ServiceDepartmentName.replace(/&/g, '%26') : "";
         this.dlService.Read("/BillingReports/BillDocDeptItemSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&DoctorId=" + this.DoctorId + "&SrvDeptName=" + srvDept)
-            .map(res => res)
+            
             .subscribe(res => {
                 if (res.Status == "OK") {
                     let data = res.Results;
@@ -89,7 +89,7 @@ export class RPT_BIL_DocDeptItemComponent {
     public ExportToExcelDocDeptItemSummary() {
         let srvDept = this.ServiceDepartmentName.replace(/&/g, '%26');
         this.dlService.ReadExcel("/ReportingNew/ExportToExcelBilDocDeptItemSummary?FromDate=" + this.FromDate + "&ToDate=" + this.ToDate + "&PerformerId=" + this.DoctorId + "&SrvDeptName=" + srvDept)
-            .map(res => res)
+            
             .subscribe(data => {
                 let blob = data;
                 let a = document.createElement("a");

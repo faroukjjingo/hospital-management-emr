@@ -18,30 +18,30 @@ export class SSU_BLService {
   // for getting the Patient
   public GetPatients(searcgTxt) {
     return this.ssuDLService.GetPatients(searcgTxt)
-      .map(res => { return res })
+      
   }
 
   public GetPatientById(patientId: number) {
     return this.ssuDLService.GetPatientById(patientId)
-      .map(res => { return res })
+      
   }
   // getting the CountrySubDivision from dropdown
   public GetCountrySubDivision(countryId: number) {
     return this.ssuDLService.GetCountrySubDivision(countryId)
-      .map(res => { return res })
+      
 
   }
   public GetCountries() {
     return this.ssuDLService.GetCountries()
-      .map(res => { return res })
+      
   }
   public GetMembershipType() {
     return this.ssuDLService.GetMembershipType()
-      .map(res => { return res })
+      
   }
   public GetPatientBillHistory(patientCode: string) {
     return this.ssuDLService.GetPatientBillHistory(patientCode)
-      .map(res => { return res })
+      
   }
 
 
@@ -49,15 +49,15 @@ export class SSU_BLService {
 
   public GetLightPatientById(patientId: number) {
     return this.ssuDLService.GetLightPatientById(patientId)
-      .map(res => res);
+      ;
   }
   public GetInsuranceProviderList() {
     return this.ssuDLService.GetInsuranceProviderList()
-      .map(res => res);
+      ;
   }
   public GetDialysisCode() {
     return this.ssuDLService.GetDialysisCode()
-      .map(res => res);
+      ;
   }
   // for posting the patient
   // public PostPatient(patientObj: Patient) {
@@ -84,7 +84,7 @@ export class SSU_BLService {
   //   patientObj.Guarantor.GuarantorValidator = guarValidator;
 
   //   return this.ssuDLService.PostPatient(data)
-  //     .map(res => { return res })
+  //     
 
   // }
 
@@ -110,19 +110,19 @@ export class SSU_BLService {
     patientObj.Guarantor.GuarantorValidator = guarValidator;
     //pass patientid and stringyfied object to the dlservice
     return this.ssuDLService.PutPatient(patientObj.PatientId, data)
-      .map(res => { return res })
+      
 
   }
 
   //Get Matching Patient Details by FirstName,LastName,PhoneNumber for showing registered matching patient on Registration Creation time
   public GetExistedMatchingPatientList(FirstName, LastName, PhoneNumber, Age, Gender, IsInsurance = false, IMISCode = null) {
     return this.ssuDLService.GetExistedMatchingPatientList(FirstName, LastName, PhoneNumber, Age, Gender, IsInsurance, IMISCode)
-      .map(res => { return res });
+      ;
   }
 
   public GetSsuPatients(searcgTxt) {
     return this.ssuDLService.GetSsuPatients(searcgTxt)
-      .map(res => { return res })
+      
   }
 
   public PostSsuPatient(data) {
@@ -144,7 +144,7 @@ export class SSU_BLService {
 
   public GetMunicipality(id: number) {
     return this.patientDLService.GetMunicipality(id)
-      .map(res => { return res })
+      
   }
 
 }

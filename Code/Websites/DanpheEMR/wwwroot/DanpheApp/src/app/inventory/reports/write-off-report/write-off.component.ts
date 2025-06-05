@@ -83,7 +83,7 @@ export class WriteOffComponent implements OnInit {
     this.filteredWriteOffReport = null;
 
     this.inventoryBLService.ShowWriteOffReport(this.CurrentWriteOff.ItemId)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }

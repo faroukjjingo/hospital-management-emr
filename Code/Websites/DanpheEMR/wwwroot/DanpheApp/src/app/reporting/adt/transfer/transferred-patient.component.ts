@@ -43,7 +43,7 @@ export class RPT_ADT_TransferredPatientsComponent {
 
       this.dlService.Read("/Reporting/TransferredPatient?FromDate="
         + this.currenttransferPatient.fromDate + "&ToDate=" + this.currenttransferPatient.toDate)
-        .map(res => res)
+        
         .subscribe(res => this.Success(res),
           res => this.Error(res));
     } else {

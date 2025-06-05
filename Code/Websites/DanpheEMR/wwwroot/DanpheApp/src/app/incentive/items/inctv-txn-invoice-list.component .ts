@@ -76,7 +76,7 @@ export class IncentiveTxnInvoiceListComponent {
   LoadIncentiveTxnInvoiceList() {
     //sud:12Feb'20-employeeid is not needed for this api, make necessaray changs in api and in StoredProcedure of this.
     this.dlService.Read(`/api/Incentive/TransactionInvoices?fromDate=${this.fromDate}&toDate=${this.toDate}`)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status === ENUM_DanpheHTTPResponses.OK) {
           this.allInvoiceInfoList = res.Results;
@@ -95,7 +95,7 @@ export class IncentiveTxnInvoiceListComponent {
 
     //sud:12Feb'20-employeeid is not needed for this api, make necessaray changs in api and in StoredProcedure of this.
     this.dlService.Read(`/api/Incentive/TransactionInvoiceItems?BillingTransactionId=${this.billingtransactionId}`)
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status === ENUM_DanpheHTTPResponses.OK) {
           this.allTxnInvoiceItemList = res.Results.TxnItems;
@@ -132,7 +132,7 @@ export class IncentiveTxnInvoiceListComponent {
   public allEmpList: Array<any> = [];
   LoadAllDocList() {
     this.incentiveBLService.GetIncentiveApplicableDocterList()
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           let doclist: Array<any> = res.Results;
@@ -206,7 +206,7 @@ export class IncentiveTxnInvoiceListComponent {
 
     let url = `/api/Incentive/Transactions?fromDate=2020-02-01&toDate=${this.toDate}`;
     let data = null;
-    this.dlService.Add(data, url).map(res => res).subscribe(res => {
+    this.dlService.Add(data, url).subscribe(res => {
       console.log(res);
       if (res.Status == "OK") {
         console.log("UptoDate..Fraction calculation completed.. ")
@@ -286,7 +286,7 @@ export class IncentiveTxnInvoiceListComponent {
 
   public GetEmpIncentiveInfo() {
     this.incentiveBLService.GetEmpIncentiveInfo()
-      .map(res => res)
+      
       .subscribe((res: DanpheHTTPResponse) => {
         if (res.Status == "OK") {
           this.EmpIncentiveInfo = res.Results;

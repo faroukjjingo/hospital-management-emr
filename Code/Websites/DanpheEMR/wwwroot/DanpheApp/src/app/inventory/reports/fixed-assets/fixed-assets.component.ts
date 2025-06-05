@@ -37,7 +37,7 @@ export class FixedAssetsComponent {
   
   Load() {
     this.inventoryBLService.ShowFixedAssets(this.invReport)
-      .map(res => res)
+      
       .subscribe(res => this.Success(res),
         res => this.Error(res));
   }

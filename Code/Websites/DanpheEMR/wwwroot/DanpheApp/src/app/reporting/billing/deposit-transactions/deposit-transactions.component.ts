@@ -62,7 +62,7 @@ export class RPT_BIL_DepositTransactionComponent {
     var employeeId = this.SelectedUser ? this.SelectedUser.EmployeeId : 0;
     this.dlService.Read("/BillingReports/Billing_DepositTransationsReport?FromDate="
       + this.fromDate + "&ToDate=" + this.toDate + "&patSearchText=" + patname + "&employeeId=" + employeeId)
-      .map(res => res)
+      
       .finally(()=>{this.loading=false;})
       .subscribe(res => this.Success(res),
         res => this.Error(res));
